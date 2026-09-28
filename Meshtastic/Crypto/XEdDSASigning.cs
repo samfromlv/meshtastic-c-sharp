@@ -9,6 +9,7 @@ using System.Text;
 using Meshtastic.Protobufs;
 using Org.BouncyCastle.Math.EC.Rfc8032;
 using Org.BouncyCastle.Crypto.Digests;
+using System.Buffers;
 
 namespace Meshtastic.Crypto;
 
@@ -227,6 +228,70 @@ public static class XEdDSASigning
         var (edPrivateKey, edPublicKey) = GenerateEdDSAKeysFromX25519(senderPrivateKey);
         var signature = Sign(message, edPrivateKey, edPublicKey);
         meshPacket.Decoded.XeddsaSignature = Google.Protobuf.ByteString.CopyFrom(signature);
+    }
+    /// <summary>
+    /// Adds a signature to provided MeshPacket.
+    /// </summary>
+    /// <param name="senderPrivateKey">Private X25519 key of packet sender.</param>
+    /// <param name="meshPacket">Packet to sign.</param>
+    public static void AddPacketSignature(byte[] edPrivateKey, byte[] edPublicKey, MeshPacket meshPacket)
+    {
+        var message = BuildSigningBuffer(meshPacket);
+        var signature = Sign(message, edPrivateKey, edPublicKey);
+        meshPacket.Decoded.XeddsaSignature = Google.Protobuf.ByteString.CopyFrom(signature);
+    }
+
+    /// <summary>Max LoRa frame length per Semtech SX12xx datasheets (firmware: MAX_LORA_PAYLOAD_LEN).</summary>
+    public const int MaxLoraPayloadLength = 255;
+
+    /// <summary>On-air Meshtastic packet header length (firmware: MESHTASTIC_HEADER_LENGTH).</summary>
+    public const int MeshtasticHeaderLength = 16;
+
+    /// <summary>XEdDSA signature length (firmware: XEDDSA_SIGNATURE_SIZE).</summary>
+    public const int SignatureSize = 64;
+
+    private const uint NodeNumBroadcast = 0xFFFFFFFF;
+    private const uint NodeNumBroadcastNoLora = 1;
+
+    /// <summary>
+    /// Checks whether the Data would still fit into a single LoRa frame with a 64-byte XEdDSA signature attached.
+    /// C# port of firmware's signedDataFits (src/mesh/Router.cpp): the exact encoded size of Data with a
+    /// signature-sized field, plus the on-air header, must not exceed the LoRa frame length.
+    /// Channel encryption is AES-CTR and adds no bytes, so the encoded Data size is the on-air payload size.
+    /// </summary>
+    /// <param name="data">Decoded packet payload to check. Not modified.</param>
+    /// <returns>True if the signed Data fits in a LoRa frame.</returns>
+    public static bool SignedDataFits(Meshtastic.Protobufs.Data data)
+    {
+        ArgumentNullException.ThrowIfNull(data);
+
+        // Size a copy with a signature-sized field instead of temporarily mutating the caller's object.
+        var sized = data.Clone();
+        var emptySign = ArrayPool<byte>.Shared.Rent(SignatureSize); // Ensure the ByteString has enough capacity for the signature
+        sized.XeddsaSignature = Google.Protobuf.ByteString.CopyFrom(emptySign, 0, SignatureSize);
+        ArrayPool<byte>.Shared.Return(emptySign);
+        return sized.CalculateSize() + MeshtasticHeaderLength <= MaxLoraPayloadLength;
+    }
+
+    /// <summary>
+    /// Checks whether the packet would be signed by firmware rules (Router.cpp perhapsEncode):
+    /// decoded, not PKI-encrypted, broadcast (or any destination when the sender is licensed),
+    /// and the signed Data still fits in a LoRa frame.
+    /// </summary>
+    /// <param name="meshPacket">Packet to check. Not modified.</param>
+    /// <param name="senderIsLicensed">True if the sender runs in licensed (ham) mode, where unicasts are signed too.</param>
+    /// <returns>True if the packet can be signed.</returns>
+    public static bool CanSignPacket(MeshPacket meshPacket, bool senderIsLicensed = false)
+    {
+        ArgumentNullException.ThrowIfNull(meshPacket);
+
+        if (meshPacket.PayloadVariantCase != MeshPacket.PayloadVariantOneofCase.Decoded) return false;
+        if (meshPacket.PkiEncrypted) return false;
+
+        var isBroadcast = meshPacket.To == NodeNumBroadcast || meshPacket.To == NodeNumBroadcastNoLora;
+        if (!senderIsLicensed && !isBroadcast) return false;
+
+        return SignedDataFits(meshPacket.Decoded);
     }
 
     /// <summary>

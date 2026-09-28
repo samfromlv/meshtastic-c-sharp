@@ -4,6 +4,7 @@ using Meshtastic.Data.MessageFactories;
 using Meshtastic.Data;
 using Meshtastic.Protobufs;
 using System.Text;
+using Google.Protobuf;
 
 namespace Meshtastic.Test.Crypto;
 
@@ -99,6 +100,58 @@ public class XEdDSASigningTests
 
         // Assert
         Assert.That(isValid, Is.True);
+    }
+
+    [Test]
+    public void Verify_Should_AllowSignatureForSmallPackets()
+    {
+        const int maxLoraPacketSize = 255;
+        const int meshPacketHeader = 16;
+        const int xeddsaSignatureSize = 64;
+        const int protobufOverhead = 5; // Approximate overhead for protobuf encoding
+        var canSign = XEdDSASigning.CanSignPacket(new MeshPacket
+        {
+            To = 0xFFFFFFFF/*Broadcast*/,
+            Decoded = new Meshtastic.Protobufs.Data
+            {
+                Payload = Google.Protobuf.ByteString.CopyFrom(new byte[maxLoraPacketSize - meshPacketHeader - xeddsaSignatureSize - protobufOverhead])
+            }
+        });
+
+        //assert
+        Assert.That(canSign, Is.True);
+    }
+
+
+    [Test]
+    public void Verify_Should_SkipSigantureForLargePackets()
+    {
+        const int maxLoraPacketSize = 255;
+        const int meshPacketHeader = 16;
+        const int xeddsaSignatureSize = 64;
+        const int protobufOverhead = 5; // Approximate overhead for protobuf encoding
+        var canSign = XEdDSASigning.CanSignPacket(new MeshPacket
+        {
+            To = 0xFFFFFFFF/*Broadcast*/,
+            Decoded = new Meshtastic.Protobufs.Data
+            {
+                Bitfield = 1,
+                Payload = Google.Protobuf.ByteString.CopyFrom(new byte[maxLoraPacketSize - meshPacketHeader - xeddsaSignatureSize - protobufOverhead])
+            }
+        });
+
+        //assert
+        Assert.That(canSign, Is.False);
+
+        canSign = XEdDSASigning.CanSignPacket(new MeshPacket
+        {
+            To = 0xFFFFFFFF/*Broadcast*/,
+            PkiEncrypted = true,
+            Encrypted = ByteString.CopyFrom(new byte[10]),
+        });
+
+        //assert
+        Assert.That(canSign, Is.False);
     }
 
     [Test]

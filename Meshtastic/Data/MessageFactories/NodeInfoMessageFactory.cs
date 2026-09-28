@@ -158,8 +158,7 @@ public static class NodeInfoMessageFactory
         // Note: In the actual implementation, we would add the signature to the packet
         // For now, we'll store it in a custom field or metadata
         // Once the firmware PR is merged, this would be:
-        // meshPacket.Decoded.XeddsaSignature = ByteString.CopyFrom(signature);
-        // meshPacket.Decoded.HasXeddsaSignature = true;
+         meshPacket.Decoded.XeddsaSignature = ByteString.CopyFrom(signature);
 
     }
 
