@@ -24,68 +24,161 @@ namespace Meshtastic.Protobufs {
     static InterdeviceReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChxtZXNodGFzdGljL2ludGVyZGV2aWNlLnByb3RvEgptZXNodGFzdGljImoK",
-            "ClNlbnNvckRhdGESJQoEdHlwZRgBIAEoDjIXLm1lc2h0YXN0aWMuTWVzc2Fn",
-            "ZVR5cGUSFQoLZmxvYXRfdmFsdWUYAiABKAJIABIWCgx1aW50MzJfdmFsdWUY",
-            "AyABKA1IAEIGCgRkYXRhIlYKEkludGVyZGV2aWNlTWVzc2FnZRIOCgRubWVh",
-            "GAEgASgJSAASKAoGc2Vuc29yGAIgASgLMhYubWVzaHRhc3RpYy5TZW5zb3JE",
-            "YXRhSABCBgoEZGF0YSrVAQoLTWVzc2FnZVR5cGUSBwoDQUNLEAASFQoQQ09M",
-            "TEVDVF9JTlRFUlZBTBCgARIMCgdCRUVQX09OEKEBEg0KCEJFRVBfT0ZGEKIB",
-            "Eg0KCFNIVVRET1dOEKMBEg0KCFBPV0VSX09OEKQBEg8KClNDRDQxX1RFTVAQ",
-            "sAESEwoOU0NENDFfSFVNSURJVFkQsQESDgoJU0NENDFfQ08yELIBEg8KCkFI",
-            "VDIwX1RFTVAQswESEwoOQUhUMjBfSFVNSURJVFkQtAESDwoKVFZPQ19JTkRF",
-            "WBC1AUJnChRvcmcubWVzaHRhc3RpYy5wcm90b0IRSW50ZXJkZXZpY2VQcm90",
-            "b3NaImdpdGh1Yi5jb20vbWVzaHRhc3RpYy9nby9nZW5lcmF0ZWSqAhRNZXNo",
-            "dGFzdGljLlByb3RvYnVmc7oCAGIGcHJvdG8z"));
+            "ChxtZXNodGFzdGljL2ludGVyZGV2aWNlLnByb3RvEgptZXNodGFzdGljIswB",
+            "CgxGaWxlVHJhbnNmZXISLAoJb3BlcmF0aW9uGAEgASgOMhkubWVzaHRhc3Rp",
+            "Yy5GaWxlT3BlcmF0aW9uEhAKCGZpbGVwYXRoGAIgASgJEhAKCGZpbGVkYXRh",
+            "GAMgASgMEiYKBnN0YXR1cxgEIAEoDjIWLm1lc2h0YXN0aWMuRmlsZVN0YXR1",
+            "cxIPCgdtZXNzYWdlGAUgASgJEg4KBm9mZnNldBgGIAEoBBIOCgZsZW5ndGgY",
+            "ByABKA0SEQoJZmlsZV9zaXplGAggASgEIpYBChBEaXJlY3RvcnlMaXN0aW5n",
+            "EhEKCWRpcmVjdG9yeRgBIAEoCRIRCglmaWxlbmFtZXMYAiADKAkSJgoGc3Rh",
+            "dHVzGAMgASgOMhYubWVzaHRhc3RpYy5GaWxlU3RhdHVzEg8KB21lc3NhZ2UY",
+            "BCABKAkSDgoGb2Zmc2V0GAUgASgNEhMKC3RvdGFsX2NvdW50GAYgASgNIkcK",
+            "DkkyQ1RyYW5zYWN0aW9uEg8KB2FkZHJlc3MYASABKA0SEgoKd3JpdGVfZGF0",
+            "YRgCIAEoDBIQCghyZWFkX2xlbhgDIAEoDSKAAwoKU2RDYXJkSW5mbxIPCgdw",
+            "cmVzZW50GAEgASgIEjIKCWNhcmRfdHlwZRgCIAEoDjIfLm1lc2h0YXN0aWMu",
+            "U2RDYXJkSW5mby5DYXJkVHlwZRIwCghmYXRfdHlwZRgDIAEoDjIeLm1lc2h0",
+            "YXN0aWMuU2RDYXJkSW5mby5GYXRUeXBlEhEKCWNhcmRfc2l6ZRgEIAEoBBIS",
+            "Cgp1c2VkX2J5dGVzGAUgASgEEhIKCmZyZWVfYnl0ZXMYBiABKAQSEwoLc3Rh",
+            "dHNfdmFsaWQYByABKAgSDAoEYnVzeRgIIAEoCBITCgt1bmZvcm1hdHRlZBgJ",
+            "IAEoCCJLCghDYXJkVHlwZRIICgROT05FEAASBwoDTU1DEAESBgoCU0QQAhII",
+            "CgRTREhDEAMSCAoEU0RYQxAEEhAKDFVOS05PV05fQ0FSRBAFIjsKB0ZhdFR5",
+            "cGUSDwoLVU5LTk9XTl9GQVQQABIJCgVGQVQxNhABEgkKBUZBVDMyEAISCQoF",
+            "RVhGQVQQAyKbAQoJSTJDUmVzdWx0EiwKBnN0YXR1cxgBIAEoDjIcLm1lc2h0",
+            "YXN0aWMuSTJDUmVzdWx0LlN0YXR1cxIRCglyZWFkX2RhdGEYAiABKAwiTQoG",
+            "U3RhdHVzEg8KC1VOU1BFQ0lGSUVEEAASBgoCT0sQARIQCgxOQUNLX0FERFJF",
+            "U1MQAhINCglOQUNLX0RBVEEQAxIJCgVFUlJPUhAEIqgEChJJbnRlcmRldmlj",
+            "ZU1lc3NhZ2USCgoCaWQYDyABKA0SDgoEbm1lYRgBIAEoCUgAEg4KBGJlZXAY",
+            "AiABKA1IABI1Cg9pMmNfdHJhbnNhY3Rpb24YAyABKAsyGi5tZXNodGFzdGlj",
+            "LkkyQ1RyYW5zYWN0aW9uSAASKwoKaTJjX3Jlc3VsdBgEIAEoCzIVLm1lc2h0",
+            "YXN0aWMuSTJDUmVzdWx0SAASEgoIaTJjX3NjYW4YBSABKAhIABIZCg9pMmNf",
+            "c2Nhbl9yZXN1bHQYBiABKAxIABIxCg1maWxlX3RyYW5zZmVyGAcgASgLMhgu",
+            "bWVzaHRhc3RpYy5GaWxlVHJhbnNmZXJIABI5ChFkaXJlY3RvcnlfbGlzdGlu",
+            "ZxgIIAEoCzIcLm1lc2h0YXN0aWMuRGlyZWN0b3J5TGlzdGluZ0gAEhUKC2dl",
+            "dF9zZF9pbmZvGAkgASgISAASKQoHc2RfaW5mbxgKIAEoCzIWLm1lc2h0YXN0",
+            "aWMuU2RDYXJkSW5mb0gAEi4KBHBpbmcYCyABKA4yHi5tZXNodGFzdGljLklu",
+            "dGVyZGV2aWNlVmVyc2lvbkgAEi4KBHBvbmcYDCABKA4yHi5tZXNodGFzdGlj",
+            "LkludGVyZGV2aWNlVmVyc2lvbkgAEg4KBG5hY2sYDSABKAhIABIrCgpzZF9j",
+            "b21tYW5kGA4gASgOMhUubWVzaHRhc3RpYy5TZENvbW1hbmRIAEIGCgRkYXRh",
+            "KloKEkludGVyZGV2aWNlVmVyc2lvbhIjCh9JTlRFUkRFVklDRV9WRVJTSU9O",
+            "X1VOU1BFQ0lGSUVEEAASHwobSU5URVJERVZJQ0VfVkVSU0lPTl9DVVJSRU5U",
+            "EAIqNwoNRmlsZU9wZXJhdGlvbhIHCgNHRVQQABIICgRQT1NUEAESBwoDUFVU",
+            "EAISCgoGREVMRVRFEAMqpgEKCkZpbGVTdGF0dXMSFAoQRklMRV9VTlNQRUNJ",
+            "RklFRBAAEgsKB0ZJTEVfT0sQARINCglGSUxFX0JVU1kQAhIQCgxGSUxFX05P",
+            "X0NBUkQQAxISCg5GSUxFX05PVF9GT1VORBAEEhgKFEZJTEVfT0ZGU0VUX0NP",
+            "TkZMSUNUEAUSEQoNRklMRV9JT19FUlJPUhAGEhMKD0ZJTEVfTk9UX0FfRklM",
+            "RRAHKlIKCVNkQ29tbWFuZBIaChZTRF9DT01NQU5EX1VOU1BFQ0lGSUVEEAAS",
+            "DAoIU0RfTU9VTlQQARIMCghTRF9FSkVDVBACEg0KCVNEX0ZPUk1BVBADQmcK",
+            "FG9yZy5tZXNodGFzdGljLnByb3RvQhFJbnRlcmRldmljZVByb3Rvc1oiZ2l0",
+            "aHViLmNvbS9tZXNodGFzdGljL2dvL2dlbmVyYXRlZKoCFE1lc2h0YXN0aWMu",
+            "UHJvdG9idWZzugIAYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Meshtastic.Protobufs.MessageType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.SensorData), global::Meshtastic.Protobufs.SensorData.Parser, new[]{ "Type", "FloatValue", "Uint32Value" }, new[]{ "Data" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.InterdeviceMessage), global::Meshtastic.Protobufs.InterdeviceMessage.Parser, new[]{ "Nmea", "Sensor" }, new[]{ "Data" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Meshtastic.Protobufs.InterdeviceVersion), typeof(global::Meshtastic.Protobufs.FileOperation), typeof(global::Meshtastic.Protobufs.FileStatus), typeof(global::Meshtastic.Protobufs.SdCommand), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.FileTransfer), global::Meshtastic.Protobufs.FileTransfer.Parser, new[]{ "Operation", "Filepath", "Filedata", "Status", "Message", "Offset", "Length", "FileSize" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.DirectoryListing), global::Meshtastic.Protobufs.DirectoryListing.Parser, new[]{ "Directory", "Filenames", "Status", "Message", "Offset", "TotalCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.I2CTransaction), global::Meshtastic.Protobufs.I2CTransaction.Parser, new[]{ "Address", "WriteData", "ReadLen" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.SdCardInfo), global::Meshtastic.Protobufs.SdCardInfo.Parser, new[]{ "Present", "CardType", "FatType", "CardSize", "UsedBytes", "FreeBytes", "StatsValid", "Busy", "Unformatted" }, null, new[]{ typeof(global::Meshtastic.Protobufs.SdCardInfo.Types.CardType), typeof(global::Meshtastic.Protobufs.SdCardInfo.Types.FatType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.I2CResult), global::Meshtastic.Protobufs.I2CResult.Parser, new[]{ "Status", "ReadData" }, null, new[]{ typeof(global::Meshtastic.Protobufs.I2CResult.Types.Status) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.InterdeviceMessage), global::Meshtastic.Protobufs.InterdeviceMessage.Parser, new[]{ "Id", "Nmea", "Beep", "I2CTransaction", "I2CResult", "I2CScan", "I2CScanResult", "FileTransfer", "DirectoryListing", "GetSdInfo", "SdInfo", "Ping", "Pong", "Nack", "SdCommand" }, new[]{ "Data" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Enums
-  public enum MessageType {
-    [pbr::OriginalName("ACK")] Ack = 0,
+  /// <summary>
+  /// Version of the interdevice protocol spoken on the link. Both sides send
+  /// theirs in the ping/pong handshake; a peer reporting a different one runs
+  /// firmware that does not match and is not talked to.
+  ///
+  /// On a change that breaks the other side (renumbered fields, changed
+  /// semantics, removed messages), raise the value of CURRENT. Do not add
+  /// another entry: this enum carries a single constant, not a history.
+  /// </summary>
+  public enum InterdeviceVersion {
+    [pbr::OriginalName("INTERDEVICE_VERSION_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
-    /// in ms
+    /// Never use 1: ping/pong were bools before the handshake existed, and a
+    /// bool true is the same varint on the wire as the number 1, so firmware
+    /// predating the handshake would pass it.
     /// </summary>
-    [pbr::OriginalName("COLLECT_INTERVAL")] CollectInterval = 160,
+    [pbr::OriginalName("INTERDEVICE_VERSION_CURRENT")] Current = 2,
+  }
+
+  /// <summary>
+  /// Defines the supported file operations
+  /// </summary>
+  public enum FileOperation {
+    [pbr::OriginalName("GET")] Get = 0,
+    [pbr::OriginalName("POST")] Post = 1,
+    [pbr::OriginalName("PUT")] Put = 2,
+    [pbr::OriginalName("DELETE")] Delete = 3,
+  }
+
+  /// <summary>
+  /// Outcome of a file or directory operation. The requester must be able to
+  /// tell a transient condition from a definitive one: BUSY is worth another
+  /// try, NOT_FOUND is not.
+  /// </summary>
+  public enum FileStatus {
+    [pbr::OriginalName("FILE_UNSPECIFIED")] FileUnspecified = 0,
+    [pbr::OriginalName("FILE_OK")] FileOk = 1,
     /// <summary>
-    /// duration ms
+    /// Retry later: the co-processor is doing card maintenance (mount,
+    /// free space scan) and cannot serve the request right now
     /// </summary>
-    [pbr::OriginalName("BEEP_ON")] BeepOn = 161,
+    [pbr::OriginalName("FILE_BUSY")] FileBusy = 2,
+    [pbr::OriginalName("FILE_NO_CARD")] FileNoCard = 3,
+    [pbr::OriginalName("FILE_NOT_FOUND")] FileNotFound = 4,
     /// <summary>
-    /// cancel prematurely
+    /// PUT only: offset did not match the current end of the file. file_size
+    /// carries the size the file actually has, so the writer can resync (or
+    /// recognize its own chunk as already written after a lost response).
     /// </summary>
-    [pbr::OriginalName("BEEP_OFF")] BeepOff = 162,
-    [pbr::OriginalName("SHUTDOWN")] Shutdown = 163,
-    [pbr::OriginalName("POWER_ON")] PowerOn = 164,
-    [pbr::OriginalName("SCD41_TEMP")] Scd41Temp = 176,
-    [pbr::OriginalName("SCD41_HUMIDITY")] Scd41Humidity = 177,
-    [pbr::OriginalName("SCD41_CO2")] Scd41Co2 = 178,
-    [pbr::OriginalName("AHT20_TEMP")] Aht20Temp = 179,
-    [pbr::OriginalName("AHT20_HUMIDITY")] Aht20Humidity = 180,
-    [pbr::OriginalName("TVOC_INDEX")] TvocIndex = 181,
+    [pbr::OriginalName("FILE_OFFSET_CONFLICT")] FileOffsetConflict = 5,
+    [pbr::OriginalName("FILE_IO_ERROR")] FileIoError = 6,
+    /// <summary>
+    /// path is a directory (GET) or not one (listing)
+    /// </summary>
+    [pbr::OriginalName("FILE_NOT_A_FILE")] FileNotAFile = 7,
+  }
+
+  /// <summary>
+  /// What to do with the SD card of the co-processor
+  /// </summary>
+  public enum SdCommand {
+    [pbr::OriginalName("SD_COMMAND_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// mount a card that is in the slot, also after an eject
+    /// </summary>
+    [pbr::OriginalName("SD_MOUNT")] SdMount = 1,
+    /// <summary>
+    /// flush and release the card so it can be pulled safely
+    /// </summary>
+    [pbr::OriginalName("SD_EJECT")] SdEject = 2,
+    /// <summary>
+    /// wipe the card and put a fresh FAT on it, then mount it
+    /// </summary>
+    [pbr::OriginalName("SD_FORMAT")] SdFormat = 3,
   }
 
   #endregion
 
   #region Messages
+  /// <summary>
+  /// Message for file operations
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class SensorData : pb::IMessage<SensorData>
+  public sealed partial class FileTransfer : pb::IMessage<FileTransfer>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<SensorData> _parser = new pb::MessageParser<SensorData>(() => new SensorData());
+    private static readonly pb::MessageParser<FileTransfer> _parser = new pb::MessageParser<FileTransfer>(() => new FileTransfer());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<SensorData> Parser { get { return _parser; } }
+    public static pb::MessageParser<FileTransfer> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -101,7 +194,7 @@ namespace Meshtastic.Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public SensorData() {
+    public FileTransfer() {
       OnConstruction();
     }
 
@@ -109,133 +202,169 @@ namespace Meshtastic.Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public SensorData(SensorData other) : this() {
-      type_ = other.type_;
-      switch (other.DataCase) {
-        case DataOneofCase.FloatValue:
-          FloatValue = other.FloatValue;
-          break;
-        case DataOneofCase.Uint32Value:
-          Uint32Value = other.Uint32Value;
-          break;
-      }
-
+    public FileTransfer(FileTransfer other) : this() {
+      operation_ = other.operation_;
+      filepath_ = other.filepath_;
+      filedata_ = other.filedata_;
+      status_ = other.status_;
+      message_ = other.message_;
+      offset_ = other.offset_;
+      length_ = other.length_;
+      fileSize_ = other.fileSize_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public SensorData Clone() {
-      return new SensorData(this);
+    public FileTransfer Clone() {
+      return new FileTransfer(this);
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 1;
-    private global::Meshtastic.Protobufs.MessageType type_ = global::Meshtastic.Protobufs.MessageType.Ack;
+    /// <summary>Field number for the "operation" field.</summary>
+    public const int OperationFieldNumber = 1;
+    private global::Meshtastic.Protobufs.FileOperation operation_ = global::Meshtastic.Protobufs.FileOperation.Get;
     /// <summary>
-    /// The message type
+    /// File operation (GET, POST, PUT, DELETE)
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Meshtastic.Protobufs.MessageType Type {
-      get { return type_; }
+    public global::Meshtastic.Protobufs.FileOperation Operation {
+      get { return operation_; }
       set {
-        type_ = value;
+        operation_ = value;
       }
     }
 
-    /// <summary>Field number for the "float_value" field.</summary>
-    public const int FloatValueFieldNumber = 2;
+    /// <summary>Field number for the "filepath" field.</summary>
+    public const int FilepathFieldNumber = 2;
+    private string filepath_ = "";
+    /// <summary>
+    /// Path of the file on the SD card
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float FloatValue {
-      get { return HasFloatValue ? (float) data_ : 0F; }
+    public string Filepath {
+      get { return filepath_; }
       set {
-        data_ = value;
-        dataCase_ = DataOneofCase.FloatValue;
-      }
-    }
-    /// <summary>Gets whether the "float_value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasFloatValue {
-      get { return dataCase_ == DataOneofCase.FloatValue; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "float_value" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearFloatValue() {
-      if (HasFloatValue) {
-        ClearData();
+        filepath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    /// <summary>Field number for the "uint32_value" field.</summary>
-    public const int Uint32ValueFieldNumber = 3;
+    /// <summary>Field number for the "filedata" field.</summary>
+    public const int FiledataFieldNumber = 3;
+    private pb::ByteString filedata_ = pb::ByteString.Empty;
+    /// <summary>
+    /// Chunk content (POST/PUT request, GET response)
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Uint32Value {
-      get { return HasUint32Value ? (uint) data_ : 0; }
+    public pb::ByteString Filedata {
+      get { return filedata_; }
       set {
-        data_ = value;
-        dataCase_ = DataOneofCase.Uint32Value;
-      }
-    }
-    /// <summary>Gets whether the "uint32_value" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasUint32Value {
-      get { return dataCase_ == DataOneofCase.Uint32Value; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "uint32_value" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearUint32Value() {
-      if (HasUint32Value) {
-        ClearData();
+        filedata_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
-    private object data_;
-    /// <summary>Enum of possible cases for the "data" oneof.</summary>
-    public enum DataOneofCase {
-      None = 0,
-      FloatValue = 2,
-      Uint32Value = 3,
-    }
-    private DataOneofCase dataCase_ = DataOneofCase.None;
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 4;
+    private global::Meshtastic.Protobufs.FileStatus status_ = global::Meshtastic.Protobufs.FileStatus.FileUnspecified;
+    /// <summary>
+    /// Response: outcome of the operation
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public DataOneofCase DataCase {
-      get { return dataCase_; }
+    public global::Meshtastic.Protobufs.FileStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
     }
 
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 5;
+    private string message_ = "";
+    /// <summary>
+    /// Response: human readable detail, may be empty
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearData() {
-      dataCase_ = DataOneofCase.None;
-      data_ = null;
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "offset" field.</summary>
+    public const int OffsetFieldNumber = 6;
+    private ulong offset_;
+    /// <summary>
+    /// Byte offset of this chunk within the file (ranged GET/PUT)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Offset {
+      get { return offset_; }
+      set {
+        offset_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "length" field.</summary>
+    public const int LengthFieldNumber = 7;
+    private uint length_;
+    /// <summary>
+    /// GET request: number of bytes to read, 0 = max chunk size. A response
+    /// carries at most the filedata max_size (see interdevice.options) per
+    /// chunk; larger requests are truncated, visible in the filedata length.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Length {
+      get { return length_; }
+      set {
+        length_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "file_size" field.</summary>
+    public const int FileSizeFieldNumber = 8;
+    private ulong fileSize_;
+    /// <summary>
+    /// GET response: total size of the file
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong FileSize {
+      get { return fileSize_; }
+      set {
+        fileSize_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as SensorData);
+      return Equals(other as FileTransfer);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(SensorData other) {
+    public bool Equals(FileTransfer other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Type != other.Type) return false;
-      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(FloatValue, other.FloatValue)) return false;
-      if (Uint32Value != other.Uint32Value) return false;
-      if (DataCase != other.DataCase) return false;
+      if (Operation != other.Operation) return false;
+      if (Filepath != other.Filepath) return false;
+      if (Filedata != other.Filedata) return false;
+      if (Status != other.Status) return false;
+      if (Message != other.Message) return false;
+      if (Offset != other.Offset) return false;
+      if (Length != other.Length) return false;
+      if (FileSize != other.FileSize) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -243,10 +372,14 @@ namespace Meshtastic.Protobufs {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Type != global::Meshtastic.Protobufs.MessageType.Ack) hash ^= Type.GetHashCode();
-      if (HasFloatValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatValue);
-      if (HasUint32Value) hash ^= Uint32Value.GetHashCode();
-      hash ^= (int) dataCase_;
+      if (Operation != global::Meshtastic.Protobufs.FileOperation.Get) hash ^= Operation.GetHashCode();
+      if (Filepath.Length != 0) hash ^= Filepath.GetHashCode();
+      if (Filedata.Length != 0) hash ^= Filedata.GetHashCode();
+      if (Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) hash ^= Status.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (Offset != 0UL) hash ^= Offset.GetHashCode();
+      if (Length != 0) hash ^= Length.GetHashCode();
+      if (FileSize != 0UL) hash ^= FileSize.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -265,17 +398,37 @@ namespace Meshtastic.Protobufs {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Type != global::Meshtastic.Protobufs.MessageType.Ack) {
+      if (Operation != global::Meshtastic.Protobufs.FileOperation.Get) {
         output.WriteRawTag(8);
-        output.WriteEnum((int) Type);
+        output.WriteEnum((int) Operation);
       }
-      if (HasFloatValue) {
-        output.WriteRawTag(21);
-        output.WriteFloat(FloatValue);
+      if (Filepath.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Filepath);
       }
-      if (HasUint32Value) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Uint32Value);
+      if (Filedata.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Filedata);
+      }
+      if (Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Status);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Message);
+      }
+      if (Offset != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(Offset);
+      }
+      if (Length != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Length);
+      }
+      if (FileSize != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(FileSize);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -287,17 +440,37 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Type != global::Meshtastic.Protobufs.MessageType.Ack) {
+      if (Operation != global::Meshtastic.Protobufs.FileOperation.Get) {
         output.WriteRawTag(8);
-        output.WriteEnum((int) Type);
+        output.WriteEnum((int) Operation);
       }
-      if (HasFloatValue) {
-        output.WriteRawTag(21);
-        output.WriteFloat(FloatValue);
+      if (Filepath.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Filepath);
       }
-      if (HasUint32Value) {
-        output.WriteRawTag(24);
-        output.WriteUInt32(Uint32Value);
+      if (Filedata.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(Filedata);
+      }
+      if (Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Status);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Message);
+      }
+      if (Offset != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(Offset);
+      }
+      if (Length != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Length);
+      }
+      if (FileSize != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(FileSize);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -309,14 +482,29 @@ namespace Meshtastic.Protobufs {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Type != global::Meshtastic.Protobufs.MessageType.Ack) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      if (Operation != global::Meshtastic.Protobufs.FileOperation.Get) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Operation);
       }
-      if (HasFloatValue) {
-        size += 1 + 4;
+      if (Filepath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Filepath);
       }
-      if (HasUint32Value) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uint32Value);
+      if (Filedata.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(Filedata);
+      }
+      if (Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (Offset != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Offset);
+      }
+      if (Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Length);
+      }
+      if (FileSize != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(FileSize);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -326,22 +514,34 @@ namespace Meshtastic.Protobufs {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(SensorData other) {
+    public void MergeFrom(FileTransfer other) {
       if (other == null) {
         return;
       }
-      if (other.Type != global::Meshtastic.Protobufs.MessageType.Ack) {
-        Type = other.Type;
+      if (other.Operation != global::Meshtastic.Protobufs.FileOperation.Get) {
+        Operation = other.Operation;
       }
-      switch (other.DataCase) {
-        case DataOneofCase.FloatValue:
-          FloatValue = other.FloatValue;
-          break;
-        case DataOneofCase.Uint32Value:
-          Uint32Value = other.Uint32Value;
-          break;
+      if (other.Filepath.Length != 0) {
+        Filepath = other.Filepath;
       }
-
+      if (other.Filedata.Length != 0) {
+        Filedata = other.Filedata;
+      }
+      if (other.Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) {
+        Status = other.Status;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      if (other.Offset != 0UL) {
+        Offset = other.Offset;
+      }
+      if (other.Length != 0) {
+        Length = other.Length;
+      }
+      if (other.FileSize != 0UL) {
+        FileSize = other.FileSize;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -362,15 +562,35 @@ namespace Meshtastic.Protobufs {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Type = (global::Meshtastic.Protobufs.MessageType) input.ReadEnum();
+            Operation = (global::Meshtastic.Protobufs.FileOperation) input.ReadEnum();
             break;
           }
-          case 21: {
-            FloatValue = input.ReadFloat();
+          case 18: {
+            Filepath = input.ReadString();
             break;
           }
-          case 24: {
-            Uint32Value = input.ReadUInt32();
+          case 26: {
+            Filedata = input.ReadBytes();
+            break;
+          }
+          case 32: {
+            Status = (global::Meshtastic.Protobufs.FileStatus) input.ReadEnum();
+            break;
+          }
+          case 42: {
+            Message = input.ReadString();
+            break;
+          }
+          case 48: {
+            Offset = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            Length = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            FileSize = input.ReadUInt64();
             break;
           }
         }
@@ -393,15 +613,35 @@ namespace Meshtastic.Protobufs {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Type = (global::Meshtastic.Protobufs.MessageType) input.ReadEnum();
+            Operation = (global::Meshtastic.Protobufs.FileOperation) input.ReadEnum();
             break;
           }
-          case 21: {
-            FloatValue = input.ReadFloat();
+          case 18: {
+            Filepath = input.ReadString();
             break;
           }
-          case 24: {
-            Uint32Value = input.ReadUInt32();
+          case 26: {
+            Filedata = input.ReadBytes();
+            break;
+          }
+          case 32: {
+            Status = (global::Meshtastic.Protobufs.FileStatus) input.ReadEnum();
+            break;
+          }
+          case 42: {
+            Message = input.ReadString();
+            break;
+          }
+          case 48: {
+            Offset = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            Length = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            FileSize = input.ReadUInt64();
             break;
           }
         }
@@ -411,6 +651,1503 @@ namespace Meshtastic.Protobufs {
 
   }
 
+  /// <summary>
+  /// Message for structured directory listing
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class DirectoryListing : pb::IMessage<DirectoryListing>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DirectoryListing> _parser = new pb::MessageParser<DirectoryListing>(() => new DirectoryListing());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DirectoryListing> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Meshtastic.Protobufs.InterdeviceReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DirectoryListing() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DirectoryListing(DirectoryListing other) : this() {
+      directory_ = other.directory_;
+      filenames_ = other.filenames_.Clone();
+      status_ = other.status_;
+      message_ = other.message_;
+      offset_ = other.offset_;
+      totalCount_ = other.totalCount_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DirectoryListing Clone() {
+      return new DirectoryListing(this);
+    }
+
+    /// <summary>Field number for the "directory" field.</summary>
+    public const int DirectoryFieldNumber = 1;
+    private string directory_ = "";
+    /// <summary>
+    /// Path of the directory
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Directory {
+      get { return directory_; }
+      set {
+        directory_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "filenames" field.</summary>
+    public const int FilenamesFieldNumber = 2;
+    private static readonly pb::FieldCodec<string> _repeated_filenames_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> filenames_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// One page of entry names, full FAT LFN length. Subdirectories carry a
+    /// trailing slash. Note that a name whose directory prefix pushes the
+    /// combined path past the FileTransfer.filepath limit cannot round-trip.
+    /// Page size is the max_count in interdevice.options; page through with
+    /// offset and total_count.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> Filenames {
+      get { return filenames_; }
+    }
+
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 3;
+    private global::Meshtastic.Protobufs.FileStatus status_ = global::Meshtastic.Protobufs.FileStatus.FileUnspecified;
+    /// <summary>
+    /// Response: outcome of the operation
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.FileStatus Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 4;
+    private string message_ = "";
+    /// <summary>
+    /// Response: human readable detail, may be empty
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "offset" field.</summary>
+    public const int OffsetFieldNumber = 5;
+    private uint offset_;
+    /// <summary>
+    /// Request: skip this many entries (paging)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Offset {
+      get { return offset_; }
+      set {
+        offset_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_count" field.</summary>
+    public const int TotalCountFieldNumber = 6;
+    private uint totalCount_;
+    /// <summary>
+    /// Response: total number of entries in the directory
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalCount {
+      get { return totalCount_; }
+      set {
+        totalCount_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DirectoryListing);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DirectoryListing other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Directory != other.Directory) return false;
+      if(!filenames_.Equals(other.filenames_)) return false;
+      if (Status != other.Status) return false;
+      if (Message != other.Message) return false;
+      if (Offset != other.Offset) return false;
+      if (TotalCount != other.TotalCount) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Directory.Length != 0) hash ^= Directory.GetHashCode();
+      hash ^= filenames_.GetHashCode();
+      if (Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) hash ^= Status.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (Offset != 0) hash ^= Offset.GetHashCode();
+      if (TotalCount != 0) hash ^= TotalCount.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Directory.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Directory);
+      }
+      filenames_.WriteTo(output, _repeated_filenames_codec);
+      if (Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Status);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Message);
+      }
+      if (Offset != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Offset);
+      }
+      if (TotalCount != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(TotalCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Directory.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Directory);
+      }
+      filenames_.WriteTo(ref output, _repeated_filenames_codec);
+      if (Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Status);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Message);
+      }
+      if (Offset != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Offset);
+      }
+      if (TotalCount != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(TotalCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Directory.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Directory);
+      }
+      size += filenames_.CalculateSize(_repeated_filenames_codec);
+      if (Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (Offset != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Offset);
+      }
+      if (TotalCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalCount);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DirectoryListing other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Directory.Length != 0) {
+        Directory = other.Directory;
+      }
+      filenames_.Add(other.filenames_);
+      if (other.Status != global::Meshtastic.Protobufs.FileStatus.FileUnspecified) {
+        Status = other.Status;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      if (other.Offset != 0) {
+        Offset = other.Offset;
+      }
+      if (other.TotalCount != 0) {
+        TotalCount = other.TotalCount;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Directory = input.ReadString();
+            break;
+          }
+          case 18: {
+            filenames_.AddEntriesFrom(input, _repeated_filenames_codec);
+            break;
+          }
+          case 24: {
+            Status = (global::Meshtastic.Protobufs.FileStatus) input.ReadEnum();
+            break;
+          }
+          case 34: {
+            Message = input.ReadString();
+            break;
+          }
+          case 40: {
+            Offset = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            TotalCount = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Directory = input.ReadString();
+            break;
+          }
+          case 18: {
+            filenames_.AddEntriesFrom(ref input, _repeated_filenames_codec);
+            break;
+          }
+          case 24: {
+            Status = (global::Meshtastic.Protobufs.FileStatus) input.ReadEnum();
+            break;
+          }
+          case 34: {
+            Message = input.ReadString();
+            break;
+          }
+          case 40: {
+            Offset = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            TotalCount = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// A single I2C transaction: an optional write followed by an optional
+  /// read with repeated start, matching the TwoWire usage of sensor drivers
+  /// (beginTransmission/write.../endTransmission(false)/requestFrom)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class I2CTransaction : pb::IMessage<I2CTransaction>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<I2CTransaction> _parser = new pb::MessageParser<I2CTransaction>(() => new I2CTransaction());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<I2CTransaction> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Meshtastic.Protobufs.InterdeviceReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public I2CTransaction() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public I2CTransaction(I2CTransaction other) : this() {
+      address_ = other.address_;
+      writeData_ = other.writeData_;
+      readLen_ = other.readLen_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public I2CTransaction Clone() {
+      return new I2CTransaction(this);
+    }
+
+    /// <summary>Field number for the "address" field.</summary>
+    public const int AddressFieldNumber = 1;
+    private uint address_;
+    /// <summary>
+    /// 7-bit device address
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Address {
+      get { return address_; }
+      set {
+        address_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "write_data" field.</summary>
+    public const int WriteDataFieldNumber = 2;
+    private pb::ByteString writeData_ = pb::ByteString.Empty;
+    /// <summary>
+    /// Bytes to write, may be empty
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString WriteData {
+      get { return writeData_; }
+      set {
+        writeData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "read_len" field.</summary>
+    public const int ReadLenFieldNumber = 3;
+    private uint readLen_;
+    /// <summary>
+    /// Number of bytes to read after the write, 0 = write-only. Bounded by
+    /// the read_data max_size of I2CResult (see interdevice.options); larger
+    /// requests are truncated, visible in the returned byte count.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ReadLen {
+      get { return readLen_; }
+      set {
+        readLen_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as I2CTransaction);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(I2CTransaction other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Address != other.Address) return false;
+      if (WriteData != other.WriteData) return false;
+      if (ReadLen != other.ReadLen) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Address != 0) hash ^= Address.GetHashCode();
+      if (WriteData.Length != 0) hash ^= WriteData.GetHashCode();
+      if (ReadLen != 0) hash ^= ReadLen.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Address != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Address);
+      }
+      if (WriteData.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(WriteData);
+      }
+      if (ReadLen != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ReadLen);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Address != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Address);
+      }
+      if (WriteData.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(WriteData);
+      }
+      if (ReadLen != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ReadLen);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Address != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Address);
+      }
+      if (WriteData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(WriteData);
+      }
+      if (ReadLen != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReadLen);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(I2CTransaction other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Address != 0) {
+        Address = other.Address;
+      }
+      if (other.WriteData.Length != 0) {
+        WriteData = other.WriteData;
+      }
+      if (other.ReadLen != 0) {
+        ReadLen = other.ReadLen;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Address = input.ReadUInt32();
+            break;
+          }
+          case 18: {
+            WriteData = input.ReadBytes();
+            break;
+          }
+          case 24: {
+            ReadLen = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Address = input.ReadUInt32();
+            break;
+          }
+          case 18: {
+            WriteData = input.ReadBytes();
+            break;
+          }
+          case 24: {
+            ReadLen = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// SD card statistics
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class SdCardInfo : pb::IMessage<SdCardInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SdCardInfo> _parser = new pb::MessageParser<SdCardInfo>(() => new SdCardInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SdCardInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Meshtastic.Protobufs.InterdeviceReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SdCardInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SdCardInfo(SdCardInfo other) : this() {
+      present_ = other.present_;
+      cardType_ = other.cardType_;
+      fatType_ = other.fatType_;
+      cardSize_ = other.cardSize_;
+      usedBytes_ = other.usedBytes_;
+      freeBytes_ = other.freeBytes_;
+      statsValid_ = other.statsValid_;
+      busy_ = other.busy_;
+      unformatted_ = other.unformatted_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SdCardInfo Clone() {
+      return new SdCardInfo(this);
+    }
+
+    /// <summary>Field number for the "present" field.</summary>
+    public const int PresentFieldNumber = 1;
+    private bool present_;
+    /// <summary>
+    /// Card initialized and usable. False while `busy` is set does not mean
+    /// there is no card: the co-processor does not know yet.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Present {
+      get { return present_; }
+      set {
+        present_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "card_type" field.</summary>
+    public const int CardTypeFieldNumber = 2;
+    private global::Meshtastic.Protobufs.SdCardInfo.Types.CardType cardType_ = global::Meshtastic.Protobufs.SdCardInfo.Types.CardType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.SdCardInfo.Types.CardType CardType {
+      get { return cardType_; }
+      set {
+        cardType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fat_type" field.</summary>
+    public const int FatTypeFieldNumber = 3;
+    private global::Meshtastic.Protobufs.SdCardInfo.Types.FatType fatType_ = global::Meshtastic.Protobufs.SdCardInfo.Types.FatType.UnknownFat;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.SdCardInfo.Types.FatType FatType {
+      get { return fatType_; }
+      set {
+        fatType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "card_size" field.</summary>
+    public const int CardSizeFieldNumber = 4;
+    private ulong cardSize_;
+    /// <summary>
+    /// Filesystem size in bytes
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong CardSize {
+      get { return cardSize_; }
+      set {
+        cardSize_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "used_bytes" field.</summary>
+    public const int UsedBytesFieldNumber = 5;
+    private ulong usedBytes_;
+    /// <summary>
+    /// Used bytes (may be expensive to compute on FAT32)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong UsedBytes {
+      get { return usedBytes_; }
+      set {
+        usedBytes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "free_bytes" field.</summary>
+    public const int FreeBytesFieldNumber = 6;
+    private ulong freeBytes_;
+    /// <summary>
+    /// Free bytes
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong FreeBytes {
+      get { return freeBytes_; }
+      set {
+        freeBytes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stats_valid" field.</summary>
+    public const int StatsValidFieldNumber = 7;
+    private bool statsValid_;
+    /// <summary>
+    /// used_bytes/free_bytes are only meaningful when true: the scan behind
+    /// them runs in the background after mount and can take a while, and a
+    /// full card is otherwise indistinguishable from a scan in progress
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool StatsValid {
+      get { return statsValid_; }
+      set {
+        statsValid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "busy" field.</summary>
+    public const int BusyFieldNumber = 8;
+    private bool busy_;
+    /// <summary>
+    /// The co-processor is mounting a card right now, so whether one is
+    /// present is not decided yet. Ask again rather than concluding the slot
+    /// is empty.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Busy {
+      get { return busy_; }
+      set {
+        busy_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unformatted" field.</summary>
+    public const int UnformattedFieldNumber = 9;
+    private bool unformatted_;
+    /// <summary>
+    /// A card answers in the slot but carries no filesystem that could be
+    /// mounted (present is false then). Formatting it makes it usable.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unformatted {
+      get { return unformatted_; }
+      set {
+        unformatted_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SdCardInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SdCardInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Present != other.Present) return false;
+      if (CardType != other.CardType) return false;
+      if (FatType != other.FatType) return false;
+      if (CardSize != other.CardSize) return false;
+      if (UsedBytes != other.UsedBytes) return false;
+      if (FreeBytes != other.FreeBytes) return false;
+      if (StatsValid != other.StatsValid) return false;
+      if (Busy != other.Busy) return false;
+      if (Unformatted != other.Unformatted) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Present != false) hash ^= Present.GetHashCode();
+      if (CardType != global::Meshtastic.Protobufs.SdCardInfo.Types.CardType.None) hash ^= CardType.GetHashCode();
+      if (FatType != global::Meshtastic.Protobufs.SdCardInfo.Types.FatType.UnknownFat) hash ^= FatType.GetHashCode();
+      if (CardSize != 0UL) hash ^= CardSize.GetHashCode();
+      if (UsedBytes != 0UL) hash ^= UsedBytes.GetHashCode();
+      if (FreeBytes != 0UL) hash ^= FreeBytes.GetHashCode();
+      if (StatsValid != false) hash ^= StatsValid.GetHashCode();
+      if (Busy != false) hash ^= Busy.GetHashCode();
+      if (Unformatted != false) hash ^= Unformatted.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Present != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Present);
+      }
+      if (CardType != global::Meshtastic.Protobufs.SdCardInfo.Types.CardType.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) CardType);
+      }
+      if (FatType != global::Meshtastic.Protobufs.SdCardInfo.Types.FatType.UnknownFat) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) FatType);
+      }
+      if (CardSize != 0UL) {
+        output.WriteRawTag(32);
+        output.WriteUInt64(CardSize);
+      }
+      if (UsedBytes != 0UL) {
+        output.WriteRawTag(40);
+        output.WriteUInt64(UsedBytes);
+      }
+      if (FreeBytes != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(FreeBytes);
+      }
+      if (StatsValid != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(StatsValid);
+      }
+      if (Busy != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Busy);
+      }
+      if (Unformatted != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unformatted);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Present != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Present);
+      }
+      if (CardType != global::Meshtastic.Protobufs.SdCardInfo.Types.CardType.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) CardType);
+      }
+      if (FatType != global::Meshtastic.Protobufs.SdCardInfo.Types.FatType.UnknownFat) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) FatType);
+      }
+      if (CardSize != 0UL) {
+        output.WriteRawTag(32);
+        output.WriteUInt64(CardSize);
+      }
+      if (UsedBytes != 0UL) {
+        output.WriteRawTag(40);
+        output.WriteUInt64(UsedBytes);
+      }
+      if (FreeBytes != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(FreeBytes);
+      }
+      if (StatsValid != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(StatsValid);
+      }
+      if (Busy != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Busy);
+      }
+      if (Unformatted != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Unformatted);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Present != false) {
+        size += 1 + 1;
+      }
+      if (CardType != global::Meshtastic.Protobufs.SdCardInfo.Types.CardType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) CardType);
+      }
+      if (FatType != global::Meshtastic.Protobufs.SdCardInfo.Types.FatType.UnknownFat) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FatType);
+      }
+      if (CardSize != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CardSize);
+      }
+      if (UsedBytes != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UsedBytes);
+      }
+      if (FreeBytes != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(FreeBytes);
+      }
+      if (StatsValid != false) {
+        size += 1 + 1;
+      }
+      if (Busy != false) {
+        size += 1 + 1;
+      }
+      if (Unformatted != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SdCardInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Present != false) {
+        Present = other.Present;
+      }
+      if (other.CardType != global::Meshtastic.Protobufs.SdCardInfo.Types.CardType.None) {
+        CardType = other.CardType;
+      }
+      if (other.FatType != global::Meshtastic.Protobufs.SdCardInfo.Types.FatType.UnknownFat) {
+        FatType = other.FatType;
+      }
+      if (other.CardSize != 0UL) {
+        CardSize = other.CardSize;
+      }
+      if (other.UsedBytes != 0UL) {
+        UsedBytes = other.UsedBytes;
+      }
+      if (other.FreeBytes != 0UL) {
+        FreeBytes = other.FreeBytes;
+      }
+      if (other.StatsValid != false) {
+        StatsValid = other.StatsValid;
+      }
+      if (other.Busy != false) {
+        Busy = other.Busy;
+      }
+      if (other.Unformatted != false) {
+        Unformatted = other.Unformatted;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Present = input.ReadBool();
+            break;
+          }
+          case 16: {
+            CardType = (global::Meshtastic.Protobufs.SdCardInfo.Types.CardType) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            FatType = (global::Meshtastic.Protobufs.SdCardInfo.Types.FatType) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            CardSize = input.ReadUInt64();
+            break;
+          }
+          case 40: {
+            UsedBytes = input.ReadUInt64();
+            break;
+          }
+          case 48: {
+            FreeBytes = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            StatsValid = input.ReadBool();
+            break;
+          }
+          case 64: {
+            Busy = input.ReadBool();
+            break;
+          }
+          case 72: {
+            Unformatted = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Present = input.ReadBool();
+            break;
+          }
+          case 16: {
+            CardType = (global::Meshtastic.Protobufs.SdCardInfo.Types.CardType) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            FatType = (global::Meshtastic.Protobufs.SdCardInfo.Types.FatType) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            CardSize = input.ReadUInt64();
+            break;
+          }
+          case 40: {
+            UsedBytes = input.ReadUInt64();
+            break;
+          }
+          case 48: {
+            FreeBytes = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            StatsValid = input.ReadBool();
+            break;
+          }
+          case 64: {
+            Busy = input.ReadBool();
+            break;
+          }
+          case 72: {
+            Unformatted = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the SdCardInfo message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum CardType {
+        [pbr::OriginalName("NONE")] None = 0,
+        [pbr::OriginalName("MMC")] Mmc = 1,
+        [pbr::OriginalName("SD")] Sd = 2,
+        [pbr::OriginalName("SDHC")] Sdhc = 3,
+        [pbr::OriginalName("SDXC")] Sdxc = 4,
+        [pbr::OriginalName("UNKNOWN_CARD")] UnknownCard = 5,
+      }
+
+      public enum FatType {
+        [pbr::OriginalName("UNKNOWN_FAT")] UnknownFat = 0,
+        [pbr::OriginalName("FAT16")] Fat16 = 1,
+        [pbr::OriginalName("FAT32")] Fat32 = 2,
+        [pbr::OriginalName("EXFAT")] Exfat = 3,
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
+  /// Result of an I2CTransaction
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class I2CResult : pb::IMessage<I2CResult>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<I2CResult> _parser = new pb::MessageParser<I2CResult>(() => new I2CResult());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<I2CResult> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Meshtastic.Protobufs.InterdeviceReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public I2CResult() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public I2CResult(I2CResult other) : this() {
+      status_ = other.status_;
+      readData_ = other.readData_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public I2CResult Clone() {
+      return new I2CResult(this);
+    }
+
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 1;
+    private global::Meshtastic.Protobufs.I2CResult.Types.Status status_ = global::Meshtastic.Protobufs.I2CResult.Types.Status.Unspecified;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.I2CResult.Types.Status Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "read_data" field.</summary>
+    public const int ReadDataFieldNumber = 2;
+    private pb::ByteString readData_ = pb::ByteString.Empty;
+    /// <summary>
+    /// Data read from the device, empty for write-only transactions
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString ReadData {
+      get { return readData_; }
+      set {
+        readData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as I2CResult);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(I2CResult other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Status != other.Status) return false;
+      if (ReadData != other.ReadData) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Status != global::Meshtastic.Protobufs.I2CResult.Types.Status.Unspecified) hash ^= Status.GetHashCode();
+      if (ReadData.Length != 0) hash ^= ReadData.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Status != global::Meshtastic.Protobufs.I2CResult.Types.Status.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Status);
+      }
+      if (ReadData.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(ReadData);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Status != global::Meshtastic.Protobufs.I2CResult.Types.Status.Unspecified) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Status);
+      }
+      if (ReadData.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteBytes(ReadData);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Status != global::Meshtastic.Protobufs.I2CResult.Types.Status.Unspecified) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      if (ReadData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(ReadData);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(I2CResult other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Status != global::Meshtastic.Protobufs.I2CResult.Types.Status.Unspecified) {
+        Status = other.Status;
+      }
+      if (other.ReadData.Length != 0) {
+        ReadData = other.ReadData;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Status = (global::Meshtastic.Protobufs.I2CResult.Types.Status) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            ReadData = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Status = (global::Meshtastic.Protobufs.I2CResult.Types.Status) input.ReadEnum();
+            break;
+          }
+          case 18: {
+            ReadData = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the I2CResult message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum Status {
+        /// <summary>
+        /// Never sent: an all-defaults (e.g. accidentally empty) message must
+        /// not decode as a successful transaction
+        /// </summary>
+        [pbr::OriginalName("UNSPECIFIED")] Unspecified = 0,
+        [pbr::OriginalName("OK")] Ok = 1,
+        [pbr::OriginalName("NACK_ADDRESS")] NackAddress = 2,
+        [pbr::OriginalName("NACK_DATA")] NackData = 3,
+        [pbr::OriginalName("ERROR")] Error = 4,
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
+  /// Main message for interdevice communication
+  /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class InterdeviceMessage : pb::IMessage<InterdeviceMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -426,7 +2163,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.InterdeviceReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Meshtastic.Protobufs.InterdeviceReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -446,12 +2183,49 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InterdeviceMessage(InterdeviceMessage other) : this() {
+      id_ = other.id_;
       switch (other.DataCase) {
         case DataOneofCase.Nmea:
           Nmea = other.Nmea;
           break;
-        case DataOneofCase.Sensor:
-          Sensor = other.Sensor.Clone();
+        case DataOneofCase.Beep:
+          Beep = other.Beep;
+          break;
+        case DataOneofCase.I2CTransaction:
+          I2CTransaction = other.I2CTransaction.Clone();
+          break;
+        case DataOneofCase.I2CResult:
+          I2CResult = other.I2CResult.Clone();
+          break;
+        case DataOneofCase.I2CScan:
+          I2CScan = other.I2CScan;
+          break;
+        case DataOneofCase.I2CScanResult:
+          I2CScanResult = other.I2CScanResult;
+          break;
+        case DataOneofCase.FileTransfer:
+          FileTransfer = other.FileTransfer.Clone();
+          break;
+        case DataOneofCase.DirectoryListing:
+          DirectoryListing = other.DirectoryListing.Clone();
+          break;
+        case DataOneofCase.GetSdInfo:
+          GetSdInfo = other.GetSdInfo;
+          break;
+        case DataOneofCase.SdInfo:
+          SdInfo = other.SdInfo.Clone();
+          break;
+        case DataOneofCase.Ping:
+          Ping = other.Ping;
+          break;
+        case DataOneofCase.Pong:
+          Pong = other.Pong;
+          break;
+        case DataOneofCase.Nack:
+          Nack = other.Nack;
+          break;
+        case DataOneofCase.SdCommand:
+          SdCommand = other.SdCommand;
           break;
       }
 
@@ -462,6 +2236,22 @@ namespace Meshtastic.Protobufs {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public InterdeviceMessage Clone() {
       return new InterdeviceMessage(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 15;
+    private uint id_;
+    /// <summary>
+    /// Correlates a response with its request: responses echo the id of the
+    /// request they answer. 0 for unsolicited messages (e.g. the nmea stream).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
     }
 
     /// <summary>Field number for the "nmea" field.</summary>
@@ -490,15 +2280,302 @@ namespace Meshtastic.Protobufs {
       }
     }
 
-    /// <summary>Field number for the "sensor" field.</summary>
-    public const int SensorFieldNumber = 2;
+    /// <summary>Field number for the "beep" field.</summary>
+    public const int BeepFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Meshtastic.Protobufs.SensorData Sensor {
-      get { return dataCase_ == DataOneofCase.Sensor ? (global::Meshtastic.Protobufs.SensorData) data_ : null; }
+    public uint Beep {
+      get { return HasBeep ? (uint) data_ : 0; }
       set {
         data_ = value;
-        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.Sensor;
+        dataCase_ = DataOneofCase.Beep;
+      }
+    }
+    /// <summary>Gets whether the "beep" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasBeep {
+      get { return dataCase_ == DataOneofCase.Beep; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "beep" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearBeep() {
+      if (HasBeep) {
+        ClearData();
+      }
+    }
+
+    /// <summary>Field number for the "i2c_transaction" field.</summary>
+    public const int I2CTransactionFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.I2CTransaction I2CTransaction {
+      get { return dataCase_ == DataOneofCase.I2CTransaction ? (global::Meshtastic.Protobufs.I2CTransaction) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.I2CTransaction;
+      }
+    }
+
+    /// <summary>Field number for the "i2c_result" field.</summary>
+    public const int I2CResultFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.I2CResult I2CResult {
+      get { return dataCase_ == DataOneofCase.I2CResult ? (global::Meshtastic.Protobufs.I2CResult) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.I2CResult;
+      }
+    }
+
+    /// <summary>Field number for the "i2c_scan" field.</summary>
+    public const int I2CScanFieldNumber = 5;
+    /// <summary>
+    /// Request: scan the secondary I2C bus
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool I2CScan {
+      get { return HasI2CScan ? (bool) data_ : false; }
+      set {
+        data_ = value;
+        dataCase_ = DataOneofCase.I2CScan;
+      }
+    }
+    /// <summary>Gets whether the "i2c_scan" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasI2CScan {
+      get { return dataCase_ == DataOneofCase.I2CScan; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "i2c_scan" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearI2CScan() {
+      if (HasI2CScan) {
+        ClearData();
+      }
+    }
+
+    /// <summary>Field number for the "i2c_scan_result" field.</summary>
+    public const int I2CScanResultFieldNumber = 6;
+    /// <summary>
+    /// Response: 7-bit addresses of discovered devices
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString I2CScanResult {
+      get { return HasI2CScanResult ? (pb::ByteString) data_ : pb::ByteString.Empty; }
+      set {
+        data_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        dataCase_ = DataOneofCase.I2CScanResult;
+      }
+    }
+    /// <summary>Gets whether the "i2c_scan_result" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasI2CScanResult {
+      get { return dataCase_ == DataOneofCase.I2CScanResult; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "i2c_scan_result" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearI2CScanResult() {
+      if (HasI2CScanResult) {
+        ClearData();
+      }
+    }
+
+    /// <summary>Field number for the "file_transfer" field.</summary>
+    public const int FileTransferFieldNumber = 7;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.FileTransfer FileTransfer {
+      get { return dataCase_ == DataOneofCase.FileTransfer ? (global::Meshtastic.Protobufs.FileTransfer) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.FileTransfer;
+      }
+    }
+
+    /// <summary>Field number for the "directory_listing" field.</summary>
+    public const int DirectoryListingFieldNumber = 8;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.DirectoryListing DirectoryListing {
+      get { return dataCase_ == DataOneofCase.DirectoryListing ? (global::Meshtastic.Protobufs.DirectoryListing) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.DirectoryListing;
+      }
+    }
+
+    /// <summary>Field number for the "get_sd_info" field.</summary>
+    public const int GetSdInfoFieldNumber = 9;
+    /// <summary>
+    /// Request: SD card statistics
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool GetSdInfo {
+      get { return HasGetSdInfo ? (bool) data_ : false; }
+      set {
+        data_ = value;
+        dataCase_ = DataOneofCase.GetSdInfo;
+      }
+    }
+    /// <summary>Gets whether the "get_sd_info" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasGetSdInfo {
+      get { return dataCase_ == DataOneofCase.GetSdInfo; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "get_sd_info" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGetSdInfo() {
+      if (HasGetSdInfo) {
+        ClearData();
+      }
+    }
+
+    /// <summary>Field number for the "sd_info" field.</summary>
+    public const int SdInfoFieldNumber = 10;
+    /// <summary>
+    /// Response
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.SdCardInfo SdInfo {
+      get { return dataCase_ == DataOneofCase.SdInfo ? (global::Meshtastic.Protobufs.SdCardInfo) data_ : null; }
+      set {
+        data_ = value;
+        dataCase_ = value == null ? DataOneofCase.None : DataOneofCase.SdInfo;
+      }
+    }
+
+    /// <summary>Field number for the "ping" field.</summary>
+    public const int PingFieldNumber = 11;
+    /// <summary>
+    /// Link liveness probe and version handshake. The receiver answers ping
+    /// with pong, echoing the id. Touches no peripherals, so it works with
+    /// nothing attached. Both carry the version the sender speaks; a peer
+    /// that answers with a different one speaks another protocol and must
+    /// not be used.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.InterdeviceVersion Ping {
+      get { return HasPing ? (global::Meshtastic.Protobufs.InterdeviceVersion) data_ : global::Meshtastic.Protobufs.InterdeviceVersion.Unspecified; }
+      set {
+        data_ = value;
+        dataCase_ = DataOneofCase.Ping;
+      }
+    }
+    /// <summary>Gets whether the "ping" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPing {
+      get { return dataCase_ == DataOneofCase.Ping; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "ping" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPing() {
+      if (HasPing) {
+        ClearData();
+      }
+    }
+
+    /// <summary>Field number for the "pong" field.</summary>
+    public const int PongFieldNumber = 12;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.InterdeviceVersion Pong {
+      get { return HasPong ? (global::Meshtastic.Protobufs.InterdeviceVersion) data_ : global::Meshtastic.Protobufs.InterdeviceVersion.Unspecified; }
+      set {
+        data_ = value;
+        dataCase_ = DataOneofCase.Pong;
+      }
+    }
+    /// <summary>Gets whether the "pong" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPong {
+      get { return dataCase_ == DataOneofCase.Pong; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "pong" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPong() {
+      if (HasPong) {
+        ClearData();
+      }
+    }
+
+    /// <summary>Field number for the "nack" field.</summary>
+    public const int NackFieldNumber = 13;
+    /// <summary>
+    /// Response: the request could not be decoded or is of an unhandled
+    /// type, so the requester fails fast instead of burning its timeout.
+    /// Echoes the id when known, 0 when the frame was undecodable. Never
+    /// sent in reaction to a nack.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Nack {
+      get { return HasNack ? (bool) data_ : false; }
+      set {
+        data_ = value;
+        dataCase_ = DataOneofCase.Nack;
+      }
+    }
+    /// <summary>Gets whether the "nack" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasNack {
+      get { return dataCase_ == DataOneofCase.Nack; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "nack" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearNack() {
+      if (HasNack) {
+        ClearData();
+      }
+    }
+
+    /// <summary>Field number for the "sd_command" field.</summary>
+    public const int SdCommandFieldNumber = 14;
+    /// <summary>
+    /// Request: mount the card, or release it so it can be pulled safely. The
+    /// co-processor answers with sd_info. Without an eject the card is mounted
+    /// on its own and kept mounted; after one it stays released until a mount
+    /// is asked for.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.SdCommand SdCommand {
+      get { return HasSdCommand ? (global::Meshtastic.Protobufs.SdCommand) data_ : global::Meshtastic.Protobufs.SdCommand.Unspecified; }
+      set {
+        data_ = value;
+        dataCase_ = DataOneofCase.SdCommand;
+      }
+    }
+    /// <summary>Gets whether the "sd_command" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasSdCommand {
+      get { return dataCase_ == DataOneofCase.SdCommand; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "sd_command" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearSdCommand() {
+      if (HasSdCommand) {
+        ClearData();
       }
     }
 
@@ -507,7 +2584,19 @@ namespace Meshtastic.Protobufs {
     public enum DataOneofCase {
       None = 0,
       Nmea = 1,
-      Sensor = 2,
+      Beep = 2,
+      I2CTransaction = 3,
+      I2CResult = 4,
+      I2CScan = 5,
+      I2CScanResult = 6,
+      FileTransfer = 7,
+      DirectoryListing = 8,
+      GetSdInfo = 9,
+      SdInfo = 10,
+      Ping = 11,
+      Pong = 12,
+      Nack = 13,
+      SdCommand = 14,
     }
     private DataOneofCase dataCase_ = DataOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -538,8 +2627,21 @@ namespace Meshtastic.Protobufs {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
       if (Nmea != other.Nmea) return false;
-      if (!object.Equals(Sensor, other.Sensor)) return false;
+      if (Beep != other.Beep) return false;
+      if (!object.Equals(I2CTransaction, other.I2CTransaction)) return false;
+      if (!object.Equals(I2CResult, other.I2CResult)) return false;
+      if (I2CScan != other.I2CScan) return false;
+      if (I2CScanResult != other.I2CScanResult) return false;
+      if (!object.Equals(FileTransfer, other.FileTransfer)) return false;
+      if (!object.Equals(DirectoryListing, other.DirectoryListing)) return false;
+      if (GetSdInfo != other.GetSdInfo) return false;
+      if (!object.Equals(SdInfo, other.SdInfo)) return false;
+      if (Ping != other.Ping) return false;
+      if (Pong != other.Pong) return false;
+      if (Nack != other.Nack) return false;
+      if (SdCommand != other.SdCommand) return false;
       if (DataCase != other.DataCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -548,8 +2650,21 @@ namespace Meshtastic.Protobufs {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (HasNmea) hash ^= Nmea.GetHashCode();
-      if (dataCase_ == DataOneofCase.Sensor) hash ^= Sensor.GetHashCode();
+      if (HasBeep) hash ^= Beep.GetHashCode();
+      if (dataCase_ == DataOneofCase.I2CTransaction) hash ^= I2CTransaction.GetHashCode();
+      if (dataCase_ == DataOneofCase.I2CResult) hash ^= I2CResult.GetHashCode();
+      if (HasI2CScan) hash ^= I2CScan.GetHashCode();
+      if (HasI2CScanResult) hash ^= I2CScanResult.GetHashCode();
+      if (dataCase_ == DataOneofCase.FileTransfer) hash ^= FileTransfer.GetHashCode();
+      if (dataCase_ == DataOneofCase.DirectoryListing) hash ^= DirectoryListing.GetHashCode();
+      if (HasGetSdInfo) hash ^= GetSdInfo.GetHashCode();
+      if (dataCase_ == DataOneofCase.SdInfo) hash ^= SdInfo.GetHashCode();
+      if (HasPing) hash ^= Ping.GetHashCode();
+      if (HasPong) hash ^= Pong.GetHashCode();
+      if (HasNack) hash ^= Nack.GetHashCode();
+      if (HasSdCommand) hash ^= SdCommand.GetHashCode();
       hash ^= (int) dataCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -573,9 +2688,61 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(10);
         output.WriteString(Nmea);
       }
-      if (dataCase_ == DataOneofCase.Sensor) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Sensor);
+      if (HasBeep) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Beep);
+      }
+      if (dataCase_ == DataOneofCase.I2CTransaction) {
+        output.WriteRawTag(26);
+        output.WriteMessage(I2CTransaction);
+      }
+      if (dataCase_ == DataOneofCase.I2CResult) {
+        output.WriteRawTag(34);
+        output.WriteMessage(I2CResult);
+      }
+      if (HasI2CScan) {
+        output.WriteRawTag(40);
+        output.WriteBool(I2CScan);
+      }
+      if (HasI2CScanResult) {
+        output.WriteRawTag(50);
+        output.WriteBytes(I2CScanResult);
+      }
+      if (dataCase_ == DataOneofCase.FileTransfer) {
+        output.WriteRawTag(58);
+        output.WriteMessage(FileTransfer);
+      }
+      if (dataCase_ == DataOneofCase.DirectoryListing) {
+        output.WriteRawTag(66);
+        output.WriteMessage(DirectoryListing);
+      }
+      if (HasGetSdInfo) {
+        output.WriteRawTag(72);
+        output.WriteBool(GetSdInfo);
+      }
+      if (dataCase_ == DataOneofCase.SdInfo) {
+        output.WriteRawTag(82);
+        output.WriteMessage(SdInfo);
+      }
+      if (HasPing) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) Ping);
+      }
+      if (HasPong) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Pong);
+      }
+      if (HasNack) {
+        output.WriteRawTag(104);
+        output.WriteBool(Nack);
+      }
+      if (HasSdCommand) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) SdCommand);
+      }
+      if (Id != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -591,9 +2758,61 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(10);
         output.WriteString(Nmea);
       }
-      if (dataCase_ == DataOneofCase.Sensor) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Sensor);
+      if (HasBeep) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Beep);
+      }
+      if (dataCase_ == DataOneofCase.I2CTransaction) {
+        output.WriteRawTag(26);
+        output.WriteMessage(I2CTransaction);
+      }
+      if (dataCase_ == DataOneofCase.I2CResult) {
+        output.WriteRawTag(34);
+        output.WriteMessage(I2CResult);
+      }
+      if (HasI2CScan) {
+        output.WriteRawTag(40);
+        output.WriteBool(I2CScan);
+      }
+      if (HasI2CScanResult) {
+        output.WriteRawTag(50);
+        output.WriteBytes(I2CScanResult);
+      }
+      if (dataCase_ == DataOneofCase.FileTransfer) {
+        output.WriteRawTag(58);
+        output.WriteMessage(FileTransfer);
+      }
+      if (dataCase_ == DataOneofCase.DirectoryListing) {
+        output.WriteRawTag(66);
+        output.WriteMessage(DirectoryListing);
+      }
+      if (HasGetSdInfo) {
+        output.WriteRawTag(72);
+        output.WriteBool(GetSdInfo);
+      }
+      if (dataCase_ == DataOneofCase.SdInfo) {
+        output.WriteRawTag(82);
+        output.WriteMessage(SdInfo);
+      }
+      if (HasPing) {
+        output.WriteRawTag(88);
+        output.WriteEnum((int) Ping);
+      }
+      if (HasPong) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Pong);
+      }
+      if (HasNack) {
+        output.WriteRawTag(104);
+        output.WriteBool(Nack);
+      }
+      if (HasSdCommand) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) SdCommand);
+      }
+      if (Id != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Id);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -605,11 +2824,50 @@ namespace Meshtastic.Protobufs {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
       if (HasNmea) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Nmea);
       }
-      if (dataCase_ == DataOneofCase.Sensor) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Sensor);
+      if (HasBeep) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Beep);
+      }
+      if (dataCase_ == DataOneofCase.I2CTransaction) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(I2CTransaction);
+      }
+      if (dataCase_ == DataOneofCase.I2CResult) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(I2CResult);
+      }
+      if (HasI2CScan) {
+        size += 1 + 1;
+      }
+      if (HasI2CScanResult) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(I2CScanResult);
+      }
+      if (dataCase_ == DataOneofCase.FileTransfer) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FileTransfer);
+      }
+      if (dataCase_ == DataOneofCase.DirectoryListing) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DirectoryListing);
+      }
+      if (HasGetSdInfo) {
+        size += 1 + 1;
+      }
+      if (dataCase_ == DataOneofCase.SdInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SdInfo);
+      }
+      if (HasPing) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Ping);
+      }
+      if (HasPong) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Pong);
+      }
+      if (HasNack) {
+        size += 1 + 1;
+      }
+      if (HasSdCommand) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) SdCommand);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -623,15 +2881,66 @@ namespace Meshtastic.Protobufs {
       if (other == null) {
         return;
       }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
       switch (other.DataCase) {
         case DataOneofCase.Nmea:
           Nmea = other.Nmea;
           break;
-        case DataOneofCase.Sensor:
-          if (Sensor == null) {
-            Sensor = new global::Meshtastic.Protobufs.SensorData();
+        case DataOneofCase.Beep:
+          Beep = other.Beep;
+          break;
+        case DataOneofCase.I2CTransaction:
+          if (I2CTransaction == null) {
+            I2CTransaction = new global::Meshtastic.Protobufs.I2CTransaction();
           }
-          Sensor.MergeFrom(other.Sensor);
+          I2CTransaction.MergeFrom(other.I2CTransaction);
+          break;
+        case DataOneofCase.I2CResult:
+          if (I2CResult == null) {
+            I2CResult = new global::Meshtastic.Protobufs.I2CResult();
+          }
+          I2CResult.MergeFrom(other.I2CResult);
+          break;
+        case DataOneofCase.I2CScan:
+          I2CScan = other.I2CScan;
+          break;
+        case DataOneofCase.I2CScanResult:
+          I2CScanResult = other.I2CScanResult;
+          break;
+        case DataOneofCase.FileTransfer:
+          if (FileTransfer == null) {
+            FileTransfer = new global::Meshtastic.Protobufs.FileTransfer();
+          }
+          FileTransfer.MergeFrom(other.FileTransfer);
+          break;
+        case DataOneofCase.DirectoryListing:
+          if (DirectoryListing == null) {
+            DirectoryListing = new global::Meshtastic.Protobufs.DirectoryListing();
+          }
+          DirectoryListing.MergeFrom(other.DirectoryListing);
+          break;
+        case DataOneofCase.GetSdInfo:
+          GetSdInfo = other.GetSdInfo;
+          break;
+        case DataOneofCase.SdInfo:
+          if (SdInfo == null) {
+            SdInfo = new global::Meshtastic.Protobufs.SdCardInfo();
+          }
+          SdInfo.MergeFrom(other.SdInfo);
+          break;
+        case DataOneofCase.Ping:
+          Ping = other.Ping;
+          break;
+        case DataOneofCase.Pong:
+          Pong = other.Pong;
+          break;
+        case DataOneofCase.Nack:
+          Nack = other.Nack;
+          break;
+        case DataOneofCase.SdCommand:
+          SdCommand = other.SdCommand;
           break;
       }
 
@@ -658,13 +2967,88 @@ namespace Meshtastic.Protobufs {
             Nmea = input.ReadString();
             break;
           }
-          case 18: {
-            global::Meshtastic.Protobufs.SensorData subBuilder = new global::Meshtastic.Protobufs.SensorData();
-            if (dataCase_ == DataOneofCase.Sensor) {
-              subBuilder.MergeFrom(Sensor);
+          case 16: {
+            Beep = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            global::Meshtastic.Protobufs.I2CTransaction subBuilder = new global::Meshtastic.Protobufs.I2CTransaction();
+            if (dataCase_ == DataOneofCase.I2CTransaction) {
+              subBuilder.MergeFrom(I2CTransaction);
             }
             input.ReadMessage(subBuilder);
-            Sensor = subBuilder;
+            I2CTransaction = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Meshtastic.Protobufs.I2CResult subBuilder = new global::Meshtastic.Protobufs.I2CResult();
+            if (dataCase_ == DataOneofCase.I2CResult) {
+              subBuilder.MergeFrom(I2CResult);
+            }
+            input.ReadMessage(subBuilder);
+            I2CResult = subBuilder;
+            break;
+          }
+          case 40: {
+            I2CScan = input.ReadBool();
+            break;
+          }
+          case 50: {
+            I2CScanResult = input.ReadBytes();
+            break;
+          }
+          case 58: {
+            global::Meshtastic.Protobufs.FileTransfer subBuilder = new global::Meshtastic.Protobufs.FileTransfer();
+            if (dataCase_ == DataOneofCase.FileTransfer) {
+              subBuilder.MergeFrom(FileTransfer);
+            }
+            input.ReadMessage(subBuilder);
+            FileTransfer = subBuilder;
+            break;
+          }
+          case 66: {
+            global::Meshtastic.Protobufs.DirectoryListing subBuilder = new global::Meshtastic.Protobufs.DirectoryListing();
+            if (dataCase_ == DataOneofCase.DirectoryListing) {
+              subBuilder.MergeFrom(DirectoryListing);
+            }
+            input.ReadMessage(subBuilder);
+            DirectoryListing = subBuilder;
+            break;
+          }
+          case 72: {
+            GetSdInfo = input.ReadBool();
+            break;
+          }
+          case 82: {
+            global::Meshtastic.Protobufs.SdCardInfo subBuilder = new global::Meshtastic.Protobufs.SdCardInfo();
+            if (dataCase_ == DataOneofCase.SdInfo) {
+              subBuilder.MergeFrom(SdInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SdInfo = subBuilder;
+            break;
+          }
+          case 88: {
+            data_ = input.ReadEnum();
+            dataCase_ = DataOneofCase.Ping;
+            break;
+          }
+          case 96: {
+            data_ = input.ReadEnum();
+            dataCase_ = DataOneofCase.Pong;
+            break;
+          }
+          case 104: {
+            Nack = input.ReadBool();
+            break;
+          }
+          case 112: {
+            data_ = input.ReadEnum();
+            dataCase_ = DataOneofCase.SdCommand;
+            break;
+          }
+          case 120: {
+            Id = input.ReadUInt32();
             break;
           }
         }
@@ -690,13 +3074,88 @@ namespace Meshtastic.Protobufs {
             Nmea = input.ReadString();
             break;
           }
-          case 18: {
-            global::Meshtastic.Protobufs.SensorData subBuilder = new global::Meshtastic.Protobufs.SensorData();
-            if (dataCase_ == DataOneofCase.Sensor) {
-              subBuilder.MergeFrom(Sensor);
+          case 16: {
+            Beep = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            global::Meshtastic.Protobufs.I2CTransaction subBuilder = new global::Meshtastic.Protobufs.I2CTransaction();
+            if (dataCase_ == DataOneofCase.I2CTransaction) {
+              subBuilder.MergeFrom(I2CTransaction);
             }
             input.ReadMessage(subBuilder);
-            Sensor = subBuilder;
+            I2CTransaction = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Meshtastic.Protobufs.I2CResult subBuilder = new global::Meshtastic.Protobufs.I2CResult();
+            if (dataCase_ == DataOneofCase.I2CResult) {
+              subBuilder.MergeFrom(I2CResult);
+            }
+            input.ReadMessage(subBuilder);
+            I2CResult = subBuilder;
+            break;
+          }
+          case 40: {
+            I2CScan = input.ReadBool();
+            break;
+          }
+          case 50: {
+            I2CScanResult = input.ReadBytes();
+            break;
+          }
+          case 58: {
+            global::Meshtastic.Protobufs.FileTransfer subBuilder = new global::Meshtastic.Protobufs.FileTransfer();
+            if (dataCase_ == DataOneofCase.FileTransfer) {
+              subBuilder.MergeFrom(FileTransfer);
+            }
+            input.ReadMessage(subBuilder);
+            FileTransfer = subBuilder;
+            break;
+          }
+          case 66: {
+            global::Meshtastic.Protobufs.DirectoryListing subBuilder = new global::Meshtastic.Protobufs.DirectoryListing();
+            if (dataCase_ == DataOneofCase.DirectoryListing) {
+              subBuilder.MergeFrom(DirectoryListing);
+            }
+            input.ReadMessage(subBuilder);
+            DirectoryListing = subBuilder;
+            break;
+          }
+          case 72: {
+            GetSdInfo = input.ReadBool();
+            break;
+          }
+          case 82: {
+            global::Meshtastic.Protobufs.SdCardInfo subBuilder = new global::Meshtastic.Protobufs.SdCardInfo();
+            if (dataCase_ == DataOneofCase.SdInfo) {
+              subBuilder.MergeFrom(SdInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SdInfo = subBuilder;
+            break;
+          }
+          case 88: {
+            data_ = input.ReadEnum();
+            dataCase_ = DataOneofCase.Ping;
+            break;
+          }
+          case 96: {
+            data_ = input.ReadEnum();
+            dataCase_ = DataOneofCase.Pong;
+            break;
+          }
+          case 104: {
+            Nack = input.ReadBool();
+            break;
+          }
+          case 112: {
+            data_ = input.ReadEnum();
+            dataCase_ = DataOneofCase.SdCommand;
+            break;
+          }
+          case 120: {
+            Id = input.ReadUInt32();
             break;
           }
         }

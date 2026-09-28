@@ -30,7 +30,7 @@ namespace Meshtastic.Protobufs {
             "KAJIAogBARIYCgthaXJfdXRpbF90eBgEIAEoAkgDiAEBEhsKDnVwdGltZV9z",
             "ZWNvbmRzGAUgASgNSASIAQFCEAoOX2JhdHRlcnlfbGV2ZWxCCgoIX3ZvbHRh",
             "Z2VCFgoUX2NoYW5uZWxfdXRpbGl6YXRpb25CDgoMX2Fpcl91dGlsX3R4QhEK",
-            "D191cHRpbWVfc2Vjb25kcyKCBwoSRW52aXJvbm1lbnRNZXRyaWNzEhgKC3Rl",
+            "D191cHRpbWVfc2Vjb25kcyKpEQoSRW52aXJvbm1lbnRNZXRyaWNzEhgKC3Rl",
             "bXBlcmF0dXJlGAEgASgCSACIAQESHgoRcmVsYXRpdmVfaHVtaWRpdHkYAiAB",
             "KAJIAYgBARIgChNiYXJvbWV0cmljX3ByZXNzdXJlGAMgASgCSAKIAQESGwoO",
             "Z2FzX3Jlc2lzdGFuY2UYBCABKAJIA4gBARIUCgd2b2x0YWdlGAUgASgCSASI",
@@ -43,128 +43,187 @@ namespace Meshtastic.Protobufs {
             "AQESFgoJcmFkaWF0aW9uGBIgASgCSBGIAQESGAoLcmFpbmZhbGxfMWgYEyAB",
             "KAJIEogBARIZCgxyYWluZmFsbF8yNGgYFCABKAJIE4gBARIaCg1zb2lsX21v",
             "aXN0dXJlGBUgASgNSBSIAQESHQoQc29pbF90ZW1wZXJhdHVyZRgWIAEoAkgV",
-            "iAEBQg4KDF90ZW1wZXJhdHVyZUIUChJfcmVsYXRpdmVfaHVtaWRpdHlCFgoU",
-            "X2Jhcm9tZXRyaWNfcHJlc3N1cmVCEQoPX2dhc19yZXNpc3RhbmNlQgoKCF92",
-            "b2x0YWdlQgoKCF9jdXJyZW50QgYKBF9pYXFCCwoJX2Rpc3RhbmNlQgYKBF9s",
-            "dXhCDAoKX3doaXRlX2x1eEIJCgdfaXJfbHV4QgkKB191dl9sdXhCEQoPX3dp",
-            "bmRfZGlyZWN0aW9uQg0KC193aW5kX3NwZWVkQgkKB193ZWlnaHRCDAoKX3dp",
-            "bmRfZ3VzdEIMCgpfd2luZF9sdWxsQgwKCl9yYWRpYXRpb25CDgoMX3JhaW5m",
-            "YWxsXzFoQg8KDV9yYWluZmFsbF8yNGhCEAoOX3NvaWxfbW9pc3R1cmVCEwoR",
-            "X3NvaWxfdGVtcGVyYXR1cmUirgUKDFBvd2VyTWV0cmljcxIYCgtjaDFfdm9s",
-            "dGFnZRgBIAEoAkgAiAEBEhgKC2NoMV9jdXJyZW50GAIgASgCSAGIAQESGAoL",
-            "Y2gyX3ZvbHRhZ2UYAyABKAJIAogBARIYCgtjaDJfY3VycmVudBgEIAEoAkgD",
-            "iAEBEhgKC2NoM192b2x0YWdlGAUgASgCSASIAQESGAoLY2gzX2N1cnJlbnQY",
-            "BiABKAJIBYgBARIYCgtjaDRfdm9sdGFnZRgHIAEoAkgGiAEBEhgKC2NoNF9j",
-            "dXJyZW50GAggASgCSAeIAQESGAoLY2g1X3ZvbHRhZ2UYCSABKAJICIgBARIY",
-            "CgtjaDVfY3VycmVudBgKIAEoAkgJiAEBEhgKC2NoNl92b2x0YWdlGAsgASgC",
-            "SAqIAQESGAoLY2g2X2N1cnJlbnQYDCABKAJIC4gBARIYCgtjaDdfdm9sdGFn",
-            "ZRgNIAEoAkgMiAEBEhgKC2NoN19jdXJyZW50GA4gASgCSA2IAQESGAoLY2g4",
-            "X3ZvbHRhZ2UYDyABKAJIDogBARIYCgtjaDhfY3VycmVudBgQIAEoAkgPiAEB",
-            "Qg4KDF9jaDFfdm9sdGFnZUIOCgxfY2gxX2N1cnJlbnRCDgoMX2NoMl92b2x0",
-            "YWdlQg4KDF9jaDJfY3VycmVudEIOCgxfY2gzX3ZvbHRhZ2VCDgoMX2NoM19j",
-            "dXJyZW50Qg4KDF9jaDRfdm9sdGFnZUIOCgxfY2g0X2N1cnJlbnRCDgoMX2No",
-            "NV92b2x0YWdlQg4KDF9jaDVfY3VycmVudEIOCgxfY2g2X3ZvbHRhZ2VCDgoM",
-            "X2NoNl9jdXJyZW50Qg4KDF9jaDdfdm9sdGFnZUIOCgxfY2g3X2N1cnJlbnRC",
-            "DgoMX2NoOF92b2x0YWdlQg4KDF9jaDhfY3VycmVudCKxCQoRQWlyUXVhbGl0",
-            "eU1ldHJpY3MSGgoNcG0xMF9zdGFuZGFyZBgBIAEoDUgAiAEBEhoKDXBtMjVf",
-            "c3RhbmRhcmQYAiABKA1IAYgBARIbCg5wbTEwMF9zdGFuZGFyZBgDIAEoDUgC",
-            "iAEBEh8KEnBtMTBfZW52aXJvbm1lbnRhbBgEIAEoDUgDiAEBEh8KEnBtMjVf",
-            "ZW52aXJvbm1lbnRhbBgFIAEoDUgEiAEBEiAKE3BtMTAwX2Vudmlyb25tZW50",
-            "YWwYBiABKA1IBYgBARIbCg5wYXJ0aWNsZXNfMDN1bRgHIAEoDUgGiAEBEhsK",
-            "DnBhcnRpY2xlc18wNXVtGAggASgNSAeIAQESGwoOcGFydGljbGVzXzEwdW0Y",
-            "CSABKA1ICIgBARIbCg5wYXJ0aWNsZXNfMjV1bRgKIAEoDUgJiAEBEhsKDnBh",
-            "cnRpY2xlc181MHVtGAsgASgNSAqIAQESHAoPcGFydGljbGVzXzEwMHVtGAwg",
-            "ASgNSAuIAQESEAoDY28yGA0gASgNSAyIAQESHAoPY28yX3RlbXBlcmF0dXJl",
-            "GA4gASgCSA2IAQESGQoMY28yX2h1bWlkaXR5GA8gASgCSA6IAQESHgoRZm9y",
-            "bV9mb3JtYWxkZWh5ZGUYECABKAJID4gBARIaCg1mb3JtX2h1bWlkaXR5GBEg",
-            "ASgCSBCIAQESHQoQZm9ybV90ZW1wZXJhdHVyZRgSIAEoAkgRiAEBEhoKDXBt",
-            "NDBfc3RhbmRhcmQYEyABKA1IEogBARIbCg5wYXJ0aWNsZXNfNDB1bRgUIAEo",
-            "DUgTiAEBEhsKDnBtX3RlbXBlcmF0dXJlGBUgASgCSBSIAQESGAoLcG1faHVt",
-            "aWRpdHkYFiABKAJIFYgBARIXCgpwbV92b2NfaWR4GBcgASgCSBaIAQESFwoK",
-            "cG1fbm94X2lkeBgYIAEoAkgXiAEBEhoKDXBhcnRpY2xlc190cHMYGSABKAJI",
-            "GIgBAUIQCg5fcG0xMF9zdGFuZGFyZEIQCg5fcG0yNV9zdGFuZGFyZEIRCg9f",
-            "cG0xMDBfc3RhbmRhcmRCFQoTX3BtMTBfZW52aXJvbm1lbnRhbEIVChNfcG0y",
-            "NV9lbnZpcm9ubWVudGFsQhYKFF9wbTEwMF9lbnZpcm9ubWVudGFsQhEKD19w",
-            "YXJ0aWNsZXNfMDN1bUIRCg9fcGFydGljbGVzXzA1dW1CEQoPX3BhcnRpY2xl",
-            "c18xMHVtQhEKD19wYXJ0aWNsZXNfMjV1bUIRCg9fcGFydGljbGVzXzUwdW1C",
-            "EgoQX3BhcnRpY2xlc18xMDB1bUIGCgRfY28yQhIKEF9jbzJfdGVtcGVyYXR1",
-            "cmVCDwoNX2NvMl9odW1pZGl0eUIUChJfZm9ybV9mb3JtYWxkZWh5ZGVCEAoO",
-            "X2Zvcm1faHVtaWRpdHlCEwoRX2Zvcm1fdGVtcGVyYXR1cmVCEAoOX3BtNDBf",
-            "c3RhbmRhcmRCEQoPX3BhcnRpY2xlc180MHVtQhEKD19wbV90ZW1wZXJhdHVy",
-            "ZUIOCgxfcG1faHVtaWRpdHlCDQoLX3BtX3ZvY19pZHhCDQoLX3BtX25veF9p",
-            "ZHhCEAoOX3BhcnRpY2xlc190cHMi/wIKCkxvY2FsU3RhdHMSFgoOdXB0aW1l",
-            "X3NlY29uZHMYASABKA0SGwoTY2hhbm5lbF91dGlsaXphdGlvbhgCIAEoAhIT",
-            "CgthaXJfdXRpbF90eBgDIAEoAhIWCg5udW1fcGFja2V0c190eBgEIAEoDRIW",
-            "Cg5udW1fcGFja2V0c19yeBgFIAEoDRIaChJudW1fcGFja2V0c19yeF9iYWQY",
-            "BiABKA0SGAoQbnVtX29ubGluZV9ub2RlcxgHIAEoDRIXCg9udW1fdG90YWxf",
-            "bm9kZXMYCCABKA0SEwoLbnVtX3J4X2R1cGUYCSABKA0SFAoMbnVtX3R4X3Jl",
-            "bGF5GAogASgNEh0KFW51bV90eF9yZWxheV9jYW5jZWxlZBgLIAEoDRIYChBo",
-            "ZWFwX3RvdGFsX2J5dGVzGAwgASgNEhcKD2hlYXBfZnJlZV9ieXRlcxgNIAEo",
-            "DRIWCg5udW1fdHhfZHJvcHBlZBgOIAEoDRITCgtub2lzZV9mbG9vchgPIAEo",
-            "BSLkAQoWVHJhZmZpY01hbmFnZW1lbnRTdGF0cxIZChFwYWNrZXRzX2luc3Bl",
-            "Y3RlZBgBIAEoDRIcChRwb3NpdGlvbl9kZWR1cF9kcm9wcxgCIAEoDRIbChNu",
-            "b2RlaW5mb19jYWNoZV9oaXRzGAMgASgNEhgKEHJhdGVfbGltaXRfZHJvcHMY",
-            "BCABKA0SHAoUdW5rbm93bl9wYWNrZXRfZHJvcHMYBSABKA0SHQoVaG9wX2V4",
-            "aGF1c3RlZF9wYWNrZXRzGAYgASgNEh0KFXJvdXRlcl9ob3BzX3ByZXNlcnZl",
-            "ZBgHIAEoDSJ7Cg1IZWFsdGhNZXRyaWNzEhYKCWhlYXJ0X2JwbRgBIAEoDUgA",
-            "iAEBEhEKBHNwTzIYAiABKA1IAYgBARIYCgt0ZW1wZXJhdHVyZRgDIAEoAkgC",
-            "iAEBQgwKCl9oZWFydF9icG1CBwoFX3NwTzJCDgoMX3RlbXBlcmF0dXJlIpEC",
-            "CgtIb3N0TWV0cmljcxIWCg51cHRpbWVfc2Vjb25kcxgBIAEoDRIVCg1mcmVl",
-            "bWVtX2J5dGVzGAIgASgEEhcKD2Rpc2tmcmVlMV9ieXRlcxgDIAEoBBIcCg9k",
-            "aXNrZnJlZTJfYnl0ZXMYBCABKARIAIgBARIcCg9kaXNrZnJlZTNfYnl0ZXMY",
-            "BSABKARIAYgBARINCgVsb2FkMRgGIAEoDRINCgVsb2FkNRgHIAEoDRIOCgZs",
-            "b2FkMTUYCCABKA0SGAoLdXNlcl9zdHJpbmcYCSABKAlIAogBAUISChBfZGlz",
-            "a2ZyZWUyX2J5dGVzQhIKEF9kaXNrZnJlZTNfYnl0ZXNCDgoMX3VzZXJfc3Ry",
-            "aW5nIuYDCglUZWxlbWV0cnkSDAoEdGltZRgBIAEoBxIzCg5kZXZpY2VfbWV0",
-            "cmljcxgCIAEoCzIZLm1lc2h0YXN0aWMuRGV2aWNlTWV0cmljc0gAEj0KE2Vu",
-            "dmlyb25tZW50X21ldHJpY3MYAyABKAsyHi5tZXNodGFzdGljLkVudmlyb25t",
-            "ZW50TWV0cmljc0gAEjwKE2Fpcl9xdWFsaXR5X21ldHJpY3MYBCABKAsyHS5t",
-            "ZXNodGFzdGljLkFpclF1YWxpdHlNZXRyaWNzSAASMQoNcG93ZXJfbWV0cmlj",
-            "cxgFIAEoCzIYLm1lc2h0YXN0aWMuUG93ZXJNZXRyaWNzSAASLQoLbG9jYWxf",
-            "c3RhdHMYBiABKAsyFi5tZXNodGFzdGljLkxvY2FsU3RhdHNIABIzCg5oZWFs",
-            "dGhfbWV0cmljcxgHIAEoCzIZLm1lc2h0YXN0aWMuSGVhbHRoTWV0cmljc0gA",
-            "Ei8KDGhvc3RfbWV0cmljcxgIIAEoCzIXLm1lc2h0YXN0aWMuSG9zdE1ldHJp",
-            "Y3NIABJGChh0cmFmZmljX21hbmFnZW1lbnRfc3RhdHMYCSABKAsyIi5tZXNo",
-            "dGFzdGljLlRyYWZmaWNNYW5hZ2VtZW50U3RhdHNIAEIJCgd2YXJpYW50Ij4K",
-            "DU5hdTc4MDJDb25maWcSEgoKemVyb09mZnNldBgBIAEoBRIZChFjYWxpYnJh",
-            "dGlvbkZhY3RvchgCIAEoAiLwAQoKU0VONVhTdGF0ZRIaChJsYXN0X2NsZWFu",
-            "aW5nX3RpbWUYASABKA0SGwoTbGFzdF9jbGVhbmluZ192YWxpZBgCIAEoCBIV",
-            "Cg1vbmVfc2hvdF9tb2RlGAMgASgIEhsKDnZvY19zdGF0ZV90aW1lGAQgASgN",
-            "SACIAQESHAoPdm9jX3N0YXRlX3ZhbGlkGAUgASgISAGIAQESHAoPdm9jX3N0",
-            "YXRlX2FycmF5GAYgASgGSAKIAQFCEQoPX3ZvY19zdGF0ZV90aW1lQhIKEF92",
-            "b2Nfc3RhdGVfdmFsaWRCEgoQX3ZvY19zdGF0ZV9hcnJheSqnBQoTVGVsZW1l",
-            "dHJ5U2Vuc29yVHlwZRIQCgxTRU5TT1JfVU5TRVQQABIKCgZCTUUyODAQARIK",
-            "CgZCTUU2ODAQAhILCgdNQ1A5ODA4EAMSCgoGSU5BMjYwEAQSCgoGSU5BMjE5",
-            "EAUSCgoGQk1QMjgwEAYSCQoFU0hUQzMQBxIJCgVMUFMyMhAIEgsKB1FNQzYz",
-            "MTAQCRILCgdRTUk4NjU4EAoSDAoIUU1DNTg4M0wQCxIJCgVTSFQzMRAMEgwK",
-            "CFBNU0EwMDNJEA0SCwoHSU5BMzIyMRAOEgoKBkJNUDA4NRAPEgwKCFJDV0w5",
-            "NjIwEBASCQoFU0hUNFgQERIMCghWRU1MNzcwMBASEgwKCE1MWDkwNjMyEBMS",
-            "CwoHT1BUMzAwMRAUEgwKCExUUjM5MFVWEBUSDgoKVFNMMjU5MTFGThAWEgkK",
-            "BUFIVDEwEBcSEAoMREZST0JPVF9MQVJLEBgSCwoHTkFVNzgwMhAZEgoKBkJN",
-            "UDNYWBAaEgwKCElDTTIwOTQ4EBsSDAoITUFYMTcwNDgQHBIRCg1DVVNUT01f",
-            "U0VOU09SEB0SDAoITUFYMzAxMDIQHhIMCghNTFg5MDYxNBAfEgkKBVNDRDRY",
-            "ECASCwoHUkFEU0VOUxAhEgoKBklOQTIyNhAiEhAKDERGUk9CT1RfUkFJThAj",
-            "EgoKBkRQUzMxMBAkEgwKCFJBSzEyMDM1ECUSDAoITUFYMTcyNjEQJhILCgdQ",
-            "Q1QyMDc1ECcSCwoHQURTMVgxNRAoEg8KC0FEUzFYMTVfQUxUECkSCQoFU0ZB",
-            "MzAQKhIJCgVTRU41WBArEgsKB1RTTDI1NjEQLBIKCgZCSDE3NTAQLRILCgdI",
-            "REMxMDgwEC4SCQoFU0hUMjEQLxIJCgVTVEMzMRAwEgkKBVNDRDMwEDFCZQoU",
-            "b3JnLm1lc2h0YXN0aWMucHJvdG9CD1RlbGVtZXRyeVByb3Rvc1oiZ2l0aHVi",
-            "LmNvbS9tZXNodGFzdGljL2dvL2dlbmVyYXRlZKoCFE1lc2h0YXN0aWMuUHJv",
-            "dG9idWZzugIAYgZwcm90bzM="));
+            "iAEBEiAKFG9uZV93aXJlX3RlbXBlcmF0dXJlGBcgAygCQgIYARIcCg9hZGNf",
+            "dm9sdGFnZV9jaDAYGCABKAJIFogBARIcCg9hZGNfdm9sdGFnZV9jaDEYGSAB",
+            "KAJIF4gBARIcCg9hZGNfdm9sdGFnZV9jaDIYGiABKAJIGIgBARIcCg9hZGNf",
+            "dm9sdGFnZV9jaDMYGyABKAJIGYgBARIcCg9hZGNfdm9sdGFnZV9jaDQYHCAB",
+            "KAJIGogBARIcCg9hZGNfdm9sdGFnZV9jaDUYHSABKAJIG4gBARIcCg9hZGNf",
+            "dm9sdGFnZV9jaDYYHiABKAJIHIgBARIcCg9hZGNfdm9sdGFnZV9jaDcYHyAB",
+            "KAJIHYgBARIlChhvbmVfd2lyZV90ZW1wZXJhdHVyZV9jaDAYICABKAJIHogB",
+            "ARIlChhvbmVfd2lyZV90ZW1wZXJhdHVyZV9jaDEYISABKAJIH4gBARIlChhv",
+            "bmVfd2lyZV90ZW1wZXJhdHVyZV9jaDIYIiABKAJIIIgBARIlChhvbmVfd2ly",
+            "ZV90ZW1wZXJhdHVyZV9jaDMYIyABKAJIIYgBARIlChhvbmVfd2lyZV90ZW1w",
+            "ZXJhdHVyZV9jaDQYJCABKAJIIogBARIlChhvbmVfd2lyZV90ZW1wZXJhdHVy",
+            "ZV9jaDUYJSABKAJII4gBARIlChhvbmVfd2lyZV90ZW1wZXJhdHVyZV9jaDYY",
+            "JiABKAJIJIgBARIlChhvbmVfd2lyZV90ZW1wZXJhdHVyZV9jaDcYJyABKAJI",
+            "JYgBARImChlsaWdodG5pbmdfc3RyaWtlX2NvdW50XzFoGCggASgNSCaIAQES",
+            "IgoVbGlnaHRuaW5nX2Rpc3RhbmNlX2ttGCkgASgCSCeIAQFCDgoMX3RlbXBl",
+            "cmF0dXJlQhQKEl9yZWxhdGl2ZV9odW1pZGl0eUIWChRfYmFyb21ldHJpY19w",
+            "cmVzc3VyZUIRCg9fZ2FzX3Jlc2lzdGFuY2VCCgoIX3ZvbHRhZ2VCCgoIX2N1",
+            "cnJlbnRCBgoEX2lhcUILCglfZGlzdGFuY2VCBgoEX2x1eEIMCgpfd2hpdGVf",
+            "bHV4QgkKB19pcl9sdXhCCQoHX3V2X2x1eEIRCg9fd2luZF9kaXJlY3Rpb25C",
+            "DQoLX3dpbmRfc3BlZWRCCQoHX3dlaWdodEIMCgpfd2luZF9ndXN0QgwKCl93",
+            "aW5kX2x1bGxCDAoKX3JhZGlhdGlvbkIOCgxfcmFpbmZhbGxfMWhCDwoNX3Jh",
+            "aW5mYWxsXzI0aEIQCg5fc29pbF9tb2lzdHVyZUITChFfc29pbF90ZW1wZXJh",
+            "dHVyZUISChBfYWRjX3ZvbHRhZ2VfY2gwQhIKEF9hZGNfdm9sdGFnZV9jaDFC",
+            "EgoQX2FkY192b2x0YWdlX2NoMkISChBfYWRjX3ZvbHRhZ2VfY2gzQhIKEF9h",
+            "ZGNfdm9sdGFnZV9jaDRCEgoQX2FkY192b2x0YWdlX2NoNUISChBfYWRjX3Zv",
+            "bHRhZ2VfY2g2QhIKEF9hZGNfdm9sdGFnZV9jaDdCGwoZX29uZV93aXJlX3Rl",
+            "bXBlcmF0dXJlX2NoMEIbChlfb25lX3dpcmVfdGVtcGVyYXR1cmVfY2gxQhsK",
+            "GV9vbmVfd2lyZV90ZW1wZXJhdHVyZV9jaDJCGwoZX29uZV93aXJlX3RlbXBl",
+            "cmF0dXJlX2NoM0IbChlfb25lX3dpcmVfdGVtcGVyYXR1cmVfY2g0QhsKGV9v",
+            "bmVfd2lyZV90ZW1wZXJhdHVyZV9jaDVCGwoZX29uZV93aXJlX3RlbXBlcmF0",
+            "dXJlX2NoNkIbChlfb25lX3dpcmVfdGVtcGVyYXR1cmVfY2g3QhwKGl9saWdo",
+            "dG5pbmdfc3RyaWtlX2NvdW50XzFoQhgKFl9saWdodG5pbmdfZGlzdGFuY2Vf",
+            "a21KBAgqEDlSB3NvaWxfcGhSAnBoUhdlbGVjdHJpY2FsX2NvbmR1Y3Rpdml0",
+            "eVIIc2FsaW5pdHlSCG5pdHJvZ2VuUgpwaG9zcGhvcnVzUglwb3Rhc3NpdW1S",
+            "EGRpc3NvbHZlZF9veHlnZW5SA29ycFIWY2hlbWljYWxfb3h5Z2VuX2RlbWFu",
+            "ZFIJdHVyYmlkaXR5UgduaXRyYXRlUghhbW1vbml1bVIZYmlvY2hlbWljYWxf",
+            "b3h5Z2VuX2RlbWFuZFIQc29sYXJfaXJyYWRpYW5jZSKYBQoQU29pbFdhdGVy",
+            "TWV0cmljcxIUCgdzb2lsX3BoGAEgASgCSACIAQESDwoCcGgYAiABKAJIAYgB",
+            "ARIkChdlbGVjdHJpY2FsX2NvbmR1Y3Rpdml0eRgDIAEoAkgCiAEBEhUKCHNh",
+            "bGluaXR5GAQgASgCSAOIAQESFQoIbml0cm9nZW4YBSABKAJIBIgBARIXCgpw",
+            "aG9zcGhvcnVzGAYgASgCSAWIAQESFgoJcG90YXNzaXVtGAcgASgCSAaIAQES",
+            "HQoQZGlzc29sdmVkX294eWdlbhgIIAEoAkgHiAEBEhAKA29ycBgJIAEoAkgI",
+            "iAEBEiMKFmNoZW1pY2FsX294eWdlbl9kZW1hbmQYCiABKAJICYgBARIWCgl0",
+            "dXJiaWRpdHkYCyABKAJICogBARIUCgduaXRyYXRlGAwgASgCSAuIAQESFQoI",
+            "YW1tb25pdW0YDSABKAJIDIgBARImChliaW9jaGVtaWNhbF9veHlnZW5fZGVt",
+            "YW5kGA4gASgCSA2IAQESHQoQc29sYXJfaXJyYWRpYW5jZRgPIAEoAkgOiAEB",
+            "QgoKCF9zb2lsX3BoQgUKA19waEIaChhfZWxlY3RyaWNhbF9jb25kdWN0aXZp",
+            "dHlCCwoJX3NhbGluaXR5QgsKCV9uaXRyb2dlbkINCgtfcGhvc3Bob3J1c0IM",
+            "CgpfcG90YXNzaXVtQhMKEV9kaXNzb2x2ZWRfb3h5Z2VuQgYKBF9vcnBCGQoX",
+            "X2NoZW1pY2FsX294eWdlbl9kZW1hbmRCDAoKX3R1cmJpZGl0eUIKCghfbml0",
+            "cmF0ZUILCglfYW1tb25pdW1CHAoaX2Jpb2NoZW1pY2FsX294eWdlbl9kZW1h",
+            "bmRCEwoRX3NvbGFyX2lycmFkaWFuY2Ui1gUKDFBvd2VyTWV0cmljcxIYCgtj",
+            "aDFfdm9sdGFnZRgBIAEoAkgAiAEBEhgKC2NoMV9jdXJyZW50GAIgASgCSAGI",
+            "AQESGAoLY2gyX3ZvbHRhZ2UYAyABKAJIAogBARIYCgtjaDJfY3VycmVudBgE",
+            "IAEoAkgDiAEBEhgKC2NoM192b2x0YWdlGAUgASgCSASIAQESGAoLY2gzX2N1",
+            "cnJlbnQYBiABKAJIBYgBARIcCgtjaDRfdm9sdGFnZRgHIAEoAkICGAFIBogB",
+            "ARIcCgtjaDRfY3VycmVudBgIIAEoAkICGAFIB4gBARIcCgtjaDVfdm9sdGFn",
+            "ZRgJIAEoAkICGAFICIgBARIcCgtjaDVfY3VycmVudBgKIAEoAkICGAFICYgB",
+            "ARIcCgtjaDZfdm9sdGFnZRgLIAEoAkICGAFICogBARIcCgtjaDZfY3VycmVu",
+            "dBgMIAEoAkICGAFIC4gBARIcCgtjaDdfdm9sdGFnZRgNIAEoAkICGAFIDIgB",
+            "ARIcCgtjaDdfY3VycmVudBgOIAEoAkICGAFIDYgBARIcCgtjaDhfdm9sdGFn",
+            "ZRgPIAEoAkICGAFIDogBARIcCgtjaDhfY3VycmVudBgQIAEoAkICGAFID4gB",
+            "AUIOCgxfY2gxX3ZvbHRhZ2VCDgoMX2NoMV9jdXJyZW50Qg4KDF9jaDJfdm9s",
+            "dGFnZUIOCgxfY2gyX2N1cnJlbnRCDgoMX2NoM192b2x0YWdlQg4KDF9jaDNf",
+            "Y3VycmVudEIOCgxfY2g0X3ZvbHRhZ2VCDgoMX2NoNF9jdXJyZW50Qg4KDF9j",
+            "aDVfdm9sdGFnZUIOCgxfY2g1X2N1cnJlbnRCDgoMX2NoNl92b2x0YWdlQg4K",
+            "DF9jaDZfY3VycmVudEIOCgxfY2g3X3ZvbHRhZ2VCDgoMX2NoN19jdXJyZW50",
+            "Qg4KDF9jaDhfdm9sdGFnZUIOCgxfY2g4X2N1cnJlbnQi4wkKEUFpclF1YWxp",
+            "dHlNZXRyaWNzEhoKDXBtMTBfc3RhbmRhcmQYASABKA1IAIgBARIaCg1wbTI1",
+            "X3N0YW5kYXJkGAIgASgNSAGIAQESGwoOcG0xMDBfc3RhbmRhcmQYAyABKA1I",
+            "AogBARIfChJwbTEwX2Vudmlyb25tZW50YWwYBCABKA1IA4gBARIfChJwbTI1",
+            "X2Vudmlyb25tZW50YWwYBSABKA1IBIgBARIgChNwbTEwMF9lbnZpcm9ubWVu",
+            "dGFsGAYgASgNSAWIAQESGwoOcGFydGljbGVzXzAzdW0YByABKA1IBogBARIb",
+            "Cg5wYXJ0aWNsZXNfMDV1bRgIIAEoDUgHiAEBEhsKDnBhcnRpY2xlc18xMHVt",
+            "GAkgASgNSAiIAQESGwoOcGFydGljbGVzXzI1dW0YCiABKA1ICYgBARIbCg5w",
+            "YXJ0aWNsZXNfNTB1bRgLIAEoDUgKiAEBEhwKD3BhcnRpY2xlc18xMDB1bRgM",
+            "IAEoDUgLiAEBEhAKA2NvMhgNIAEoDUgMiAEBEhwKD2NvMl90ZW1wZXJhdHVy",
+            "ZRgOIAEoAkgNiAEBEhkKDGNvMl9odW1pZGl0eRgPIAEoAkgOiAEBEh4KEWZv",
+            "cm1fZm9ybWFsZGVoeWRlGBAgASgCSA+IAQESGgoNZm9ybV9odW1pZGl0eRgR",
+            "IAEoAkgQiAEBEh0KEGZvcm1fdGVtcGVyYXR1cmUYEiABKAJIEYgBARIaCg1w",
+            "bTQwX3N0YW5kYXJkGBMgASgNSBKIAQESGwoOcGFydGljbGVzXzQwdW0YFCAB",
+            "KA1IE4gBARIbCg5wbV90ZW1wZXJhdHVyZRgVIAEoAkgUiAEBEhgKC3BtX2h1",
+            "bWlkaXR5GBYgASgCSBWIAQESFwoKcG1fdm9jX2lkeBgXIAEoAkgWiAEBEhcK",
+            "CnBtX25veF9pZHgYGCABKAJIF4gBARIaCg1wYXJ0aWNsZXNfdHBzGBkgASgC",
+            "SBiIAQESHAoPcG1fc3RhdHVzX2ZsYWdzGBogASgNSBmIAQFCEAoOX3BtMTBf",
+            "c3RhbmRhcmRCEAoOX3BtMjVfc3RhbmRhcmRCEQoPX3BtMTAwX3N0YW5kYXJk",
+            "QhUKE19wbTEwX2Vudmlyb25tZW50YWxCFQoTX3BtMjVfZW52aXJvbm1lbnRh",
+            "bEIWChRfcG0xMDBfZW52aXJvbm1lbnRhbEIRCg9fcGFydGljbGVzXzAzdW1C",
+            "EQoPX3BhcnRpY2xlc18wNXVtQhEKD19wYXJ0aWNsZXNfMTB1bUIRCg9fcGFy",
+            "dGljbGVzXzI1dW1CEQoPX3BhcnRpY2xlc181MHVtQhIKEF9wYXJ0aWNsZXNf",
+            "MTAwdW1CBgoEX2NvMkISChBfY28yX3RlbXBlcmF0dXJlQg8KDV9jbzJfaHVt",
+            "aWRpdHlCFAoSX2Zvcm1fZm9ybWFsZGVoeWRlQhAKDl9mb3JtX2h1bWlkaXR5",
+            "QhMKEV9mb3JtX3RlbXBlcmF0dXJlQhAKDl9wbTQwX3N0YW5kYXJkQhEKD19w",
+            "YXJ0aWNsZXNfNDB1bUIRCg9fcG1fdGVtcGVyYXR1cmVCDgoMX3BtX2h1bWlk",
+            "aXR5Qg0KC19wbV92b2NfaWR4Qg0KC19wbV9ub3hfaWR4QhAKDl9wYXJ0aWNs",
+            "ZXNfdHBzQhIKEF9wbV9zdGF0dXNfZmxhZ3Mi/wIKCkxvY2FsU3RhdHMSFgoO",
+            "dXB0aW1lX3NlY29uZHMYASABKA0SGwoTY2hhbm5lbF91dGlsaXphdGlvbhgC",
+            "IAEoAhITCgthaXJfdXRpbF90eBgDIAEoAhIWCg5udW1fcGFja2V0c190eBgE",
+            "IAEoDRIWCg5udW1fcGFja2V0c19yeBgFIAEoDRIaChJudW1fcGFja2V0c19y",
+            "eF9iYWQYBiABKA0SGAoQbnVtX29ubGluZV9ub2RlcxgHIAEoDRIXCg9udW1f",
+            "dG90YWxfbm9kZXMYCCABKA0SEwoLbnVtX3J4X2R1cGUYCSABKA0SFAoMbnVt",
+            "X3R4X3JlbGF5GAogASgNEh0KFW51bV90eF9yZWxheV9jYW5jZWxlZBgLIAEo",
+            "DRIYChBoZWFwX3RvdGFsX2J5dGVzGAwgASgNEhcKD2hlYXBfZnJlZV9ieXRl",
+            "cxgNIAEoDRIWCg5udW1fdHhfZHJvcHBlZBgOIAEoDRITCgtub2lzZV9mbG9v",
+            "chgPIAEoBSLkAQoWVHJhZmZpY01hbmFnZW1lbnRTdGF0cxIZChFwYWNrZXRz",
+            "X2luc3BlY3RlZBgBIAEoDRIcChRwb3NpdGlvbl9kZWR1cF9kcm9wcxgCIAEo",
+            "DRIbChNub2RlaW5mb19jYWNoZV9oaXRzGAMgASgNEhgKEHJhdGVfbGltaXRf",
+            "ZHJvcHMYBCABKA0SHAoUdW5rbm93bl9wYWNrZXRfZHJvcHMYBSABKA0SHQoV",
+            "aG9wX2V4aGF1c3RlZF9wYWNrZXRzGAYgASgNEh0KFXJvdXRlcl9ob3BzX3By",
+            "ZXNlcnZlZBgHIAEoDSJ7Cg1IZWFsdGhNZXRyaWNzEhYKCWhlYXJ0X2JwbRgB",
+            "IAEoDUgAiAEBEhEKBHNwTzIYAiABKA1IAYgBARIYCgt0ZW1wZXJhdHVyZRgD",
+            "IAEoAkgCiAEBQgwKCl9oZWFydF9icG1CBwoFX3NwTzJCDgoMX3RlbXBlcmF0",
+            "dXJlIpECCgtIb3N0TWV0cmljcxIWCg51cHRpbWVfc2Vjb25kcxgBIAEoDRIV",
+            "Cg1mcmVlbWVtX2J5dGVzGAIgASgEEhcKD2Rpc2tmcmVlMV9ieXRlcxgDIAEo",
+            "BBIcCg9kaXNrZnJlZTJfYnl0ZXMYBCABKARIAIgBARIcCg9kaXNrZnJlZTNf",
+            "Ynl0ZXMYBSABKARIAYgBARINCgVsb2FkMRgGIAEoDRINCgVsb2FkNRgHIAEo",
+            "DRIOCgZsb2FkMTUYCCABKA0SGAoLdXNlcl9zdHJpbmcYCSABKAlIAogBAUIS",
+            "ChBfZGlza2ZyZWUyX2J5dGVzQhIKEF9kaXNrZnJlZTNfYnl0ZXNCDgoMX3Vz",
+            "ZXJfc3RyaW5nIqIECglUZWxlbWV0cnkSDAoEdGltZRgBIAEoBxIzCg5kZXZp",
+            "Y2VfbWV0cmljcxgCIAEoCzIZLm1lc2h0YXN0aWMuRGV2aWNlTWV0cmljc0gA",
+            "Ej0KE2Vudmlyb25tZW50X21ldHJpY3MYAyABKAsyHi5tZXNodGFzdGljLkVu",
+            "dmlyb25tZW50TWV0cmljc0gAEjwKE2Fpcl9xdWFsaXR5X21ldHJpY3MYBCAB",
+            "KAsyHS5tZXNodGFzdGljLkFpclF1YWxpdHlNZXRyaWNzSAASMQoNcG93ZXJf",
+            "bWV0cmljcxgFIAEoCzIYLm1lc2h0YXN0aWMuUG93ZXJNZXRyaWNzSAASLQoL",
+            "bG9jYWxfc3RhdHMYBiABKAsyFi5tZXNodGFzdGljLkxvY2FsU3RhdHNIABIz",
+            "Cg5oZWFsdGhfbWV0cmljcxgHIAEoCzIZLm1lc2h0YXN0aWMuSGVhbHRoTWV0",
+            "cmljc0gAEi8KDGhvc3RfbWV0cmljcxgIIAEoCzIXLm1lc2h0YXN0aWMuSG9z",
+            "dE1ldHJpY3NIABJGChh0cmFmZmljX21hbmFnZW1lbnRfc3RhdHMYCSABKAsy",
+            "Ii5tZXNodGFzdGljLlRyYWZmaWNNYW5hZ2VtZW50U3RhdHNIABI6ChJzb2ls",
+            "X3dhdGVyX21ldHJpY3MYCyABKAsyHC5tZXNodGFzdGljLlNvaWxXYXRlck1l",
+            "dHJpY3NIAEIJCgd2YXJpYW50Ij4KDU5hdTc4MDJDb25maWcSEgoKemVyb09m",
+            "ZnNldBgBIAEoBRIZChFjYWxpYnJhdGlvbkZhY3RvchgCIAEoAiIkCgtBUzM5",
+            "MzVTdGF0ZRIVCg10dW5pbmdfY2FwX3BmGAEgASgNIvABCgpTRU41WFN0YXRl",
+            "EhoKEmxhc3RfY2xlYW5pbmdfdGltZRgBIAEoDRIbChNsYXN0X2NsZWFuaW5n",
+            "X3ZhbGlkGAIgASgIEhUKDW9uZV9zaG90X21vZGUYAyABKAgSGwoOdm9jX3N0",
+            "YXRlX3RpbWUYBCABKA1IAIgBARIcCg92b2Nfc3RhdGVfdmFsaWQYBSABKAhI",
+            "AYgBARIcCg92b2Nfc3RhdGVfYXJyYXkYBiABKAZIAogBAUIRCg9fdm9jX3N0",
+            "YXRlX3RpbWVCEgoQX3ZvY19zdGF0ZV92YWxpZEISChBfdm9jX3N0YXRlX2Fy",
+            "cmF5IvABCgpTRU42WFN0YXRlEhoKEmxhc3RfY2xlYW5pbmdfdGltZRgBIAEo",
+            "DRIbChNsYXN0X2NsZWFuaW5nX3ZhbGlkGAIgASgIEhUKDW9uZV9zaG90X21v",
+            "ZGUYAyABKAgSGwoOdm9jX3N0YXRlX3RpbWUYBCABKA1IAIgBARIcCg92b2Nf",
+            "c3RhdGVfdmFsaWQYBSABKAhIAYgBARIcCg92b2Nfc3RhdGVfYXJyYXkYBiAB",
+            "KAZIAogBAUIRCg9fdm9jX3N0YXRlX3RpbWVCEgoQX3ZvY19zdGF0ZV92YWxp",
+            "ZEISChBfdm9jX3N0YXRlX2FycmF5KpoGChNUZWxlbWV0cnlTZW5zb3JUeXBl",
+            "EhAKDFNFTlNPUl9VTlNFVBAAEgoKBkJNRTI4MBABEgoKBkJNRTY4MBACEgsK",
+            "B01DUDk4MDgQAxIKCgZJTkEyNjAQBBIKCgZJTkEyMTkQBRIKCgZCTVAyODAQ",
+            "BhINCgVTSFRDMxAHGgIIARIJCgVMUFMyMhAIEgsKB1FNQzYzMTAQCRILCgdR",
+            "TUk4NjU4EAoSDAoIUU1DNTg4M0wQCxINCgVTSFQzMRAMGgIIARIMCghQTVNB",
+            "MDAzSRANEgsKB0lOQTMyMjEQDhIKCgZCTVAwODUQDxIMCghSQ1dMOTYyMBAQ",
+            "Eg0KBVNIVDRYEBEaAggBEgwKCFZFTUw3NzAwEBISDAoITUxYOTA2MzIQExIL",
+            "CgdPUFQzMDAxEBQSDAoITFRSMzkwVVYQFRIOCgpUU0wyNTkxMUZOEBYSCQoF",
+            "QUhUMTAQFxIQCgxERlJPQk9UX0xBUksQGBILCgdOQVU3ODAyEBkSCgoGQk1Q",
+            "M1hYEBoSDAoISUNNMjA5NDgQGxIMCghNQVgxNzA0OBAcEhEKDUNVU1RPTV9T",
+            "RU5TT1IQHRIMCghNQVgzMDEwMhAeEgwKCE1MWDkwNjE0EB8SCQoFU0NENFgQ",
+            "IBILCgdSQURTRU5TECESCgoGSU5BMjI2ECISEAoMREZST0JPVF9SQUlOECMS",
+            "CgoGRFBTMzEwECQSDAoIUkFLMTIwMzUQJRIMCghNQVgxNzI2MRAmEgsKB1BD",
+            "VDIwNzUQJxILCgdBRFMxWDE1ECgSDwoLQURTMVgxNV9BTFQQKRIJCgVTRkEz",
+            "MBAqEgkKBVNFTjVYECsSCwoHVFNMMjU2MRAsEgoKBkJIMTc1MBAtEgsKB0hE",
+            "QzEwODAQLhINCgVTSFQyMRAvGgIIARIJCgVTVEMzMRAwEgkKBVNDRDMwEDES",
+            "CQoFU0hUWFgQMhIKCgZEUzI0OFgQMxINCglNTUM1OTgzTUEQNBINCglJQ000",
+            "MjYwN1AQNRIJCgVTUEEwNhA2EgoKBkhNMzMwWBA3EgkKBVNFTjZYEDgSCgoG",
+            "QVMzOTM1EDlCZQoUb3JnLm1lc2h0YXN0aWMucHJvdG9CD1RlbGVtZXRyeVBy",
+            "b3Rvc1oiZ2l0aHViLmNvbS9tZXNodGFzdGljL2dvL2dlbmVyYXRlZKoCFE1l",
+            "c2h0YXN0aWMuUHJvdG9idWZzugIAYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Meshtastic.Protobufs.TelemetrySensorType), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.DeviceMetrics), global::Meshtastic.Protobufs.DeviceMetrics.Parser, new[]{ "BatteryLevel", "Voltage", "ChannelUtilization", "AirUtilTx", "UptimeSeconds" }, new[]{ "BatteryLevel", "Voltage", "ChannelUtilization", "AirUtilTx", "UptimeSeconds" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.EnvironmentMetrics), global::Meshtastic.Protobufs.EnvironmentMetrics.Parser, new[]{ "Temperature", "RelativeHumidity", "BarometricPressure", "GasResistance", "Voltage", "Current", "Iaq", "Distance", "Lux", "WhiteLux", "IrLux", "UvLux", "WindDirection", "WindSpeed", "Weight", "WindGust", "WindLull", "Radiation", "Rainfall1H", "Rainfall24H", "SoilMoisture", "SoilTemperature" }, new[]{ "Temperature", "RelativeHumidity", "BarometricPressure", "GasResistance", "Voltage", "Current", "Iaq", "Distance", "Lux", "WhiteLux", "IrLux", "UvLux", "WindDirection", "WindSpeed", "Weight", "WindGust", "WindLull", "Radiation", "Rainfall1H", "Rainfall24H", "SoilMoisture", "SoilTemperature" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.EnvironmentMetrics), global::Meshtastic.Protobufs.EnvironmentMetrics.Parser, new[]{ "Temperature", "RelativeHumidity", "BarometricPressure", "GasResistance", "Voltage", "Current", "Iaq", "Distance", "Lux", "WhiteLux", "IrLux", "UvLux", "WindDirection", "WindSpeed", "Weight", "WindGust", "WindLull", "Radiation", "Rainfall1H", "Rainfall24H", "SoilMoisture", "SoilTemperature", "OneWireTemperature", "AdcVoltageCh0", "AdcVoltageCh1", "AdcVoltageCh2", "AdcVoltageCh3", "AdcVoltageCh4", "AdcVoltageCh5", "AdcVoltageCh6", "AdcVoltageCh7", "OneWireTemperatureCh0", "OneWireTemperatureCh1", "OneWireTemperatureCh2", "OneWireTemperatureCh3", "OneWireTemperatureCh4", "OneWireTemperatureCh5", "OneWireTemperatureCh6", "OneWireTemperatureCh7", "LightningStrikeCount1H", "LightningDistanceKm" }, new[]{ "Temperature", "RelativeHumidity", "BarometricPressure", "GasResistance", "Voltage", "Current", "Iaq", "Distance", "Lux", "WhiteLux", "IrLux", "UvLux", "WindDirection", "WindSpeed", "Weight", "WindGust", "WindLull", "Radiation", "Rainfall1H", "Rainfall24H", "SoilMoisture", "SoilTemperature", "AdcVoltageCh0", "AdcVoltageCh1", "AdcVoltageCh2", "AdcVoltageCh3", "AdcVoltageCh4", "AdcVoltageCh5", "AdcVoltageCh6", "AdcVoltageCh7", "OneWireTemperatureCh0", "OneWireTemperatureCh1", "OneWireTemperatureCh2", "OneWireTemperatureCh3", "OneWireTemperatureCh4", "OneWireTemperatureCh5", "OneWireTemperatureCh6", "OneWireTemperatureCh7", "LightningStrikeCount1H", "LightningDistanceKm" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.SoilWaterMetrics), global::Meshtastic.Protobufs.SoilWaterMetrics.Parser, new[]{ "SoilPh", "Ph", "ElectricalConductivity", "Salinity", "Nitrogen", "Phosphorus", "Potassium", "DissolvedOxygen", "Orp", "ChemicalOxygenDemand", "Turbidity", "Nitrate", "Ammonium", "BiochemicalOxygenDemand", "SolarIrradiance" }, new[]{ "SoilPh", "Ph", "ElectricalConductivity", "Salinity", "Nitrogen", "Phosphorus", "Potassium", "DissolvedOxygen", "Orp", "ChemicalOxygenDemand", "Turbidity", "Nitrate", "Ammonium", "BiochemicalOxygenDemand", "SolarIrradiance" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.PowerMetrics), global::Meshtastic.Protobufs.PowerMetrics.Parser, new[]{ "Ch1Voltage", "Ch1Current", "Ch2Voltage", "Ch2Current", "Ch3Voltage", "Ch3Current", "Ch4Voltage", "Ch4Current", "Ch5Voltage", "Ch5Current", "Ch6Voltage", "Ch6Current", "Ch7Voltage", "Ch7Current", "Ch8Voltage", "Ch8Current" }, new[]{ "Ch1Voltage", "Ch1Current", "Ch2Voltage", "Ch2Current", "Ch3Voltage", "Ch3Current", "Ch4Voltage", "Ch4Current", "Ch5Voltage", "Ch5Current", "Ch6Voltage", "Ch6Current", "Ch7Voltage", "Ch7Current", "Ch8Voltage", "Ch8Current" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.AirQualityMetrics), global::Meshtastic.Protobufs.AirQualityMetrics.Parser, new[]{ "Pm10Standard", "Pm25Standard", "Pm100Standard", "Pm10Environmental", "Pm25Environmental", "Pm100Environmental", "Particles03Um", "Particles05Um", "Particles10Um", "Particles25Um", "Particles50Um", "Particles100Um", "Co2", "Co2Temperature", "Co2Humidity", "FormFormaldehyde", "FormHumidity", "FormTemperature", "Pm40Standard", "Particles40Um", "PmTemperature", "PmHumidity", "PmVocIdx", "PmNoxIdx", "ParticlesTps" }, new[]{ "Pm10Standard", "Pm25Standard", "Pm100Standard", "Pm10Environmental", "Pm25Environmental", "Pm100Environmental", "Particles03Um", "Particles05Um", "Particles10Um", "Particles25Um", "Particles50Um", "Particles100Um", "Co2", "Co2Temperature", "Co2Humidity", "FormFormaldehyde", "FormHumidity", "FormTemperature", "Pm40Standard", "Particles40Um", "PmTemperature", "PmHumidity", "PmVocIdx", "PmNoxIdx", "ParticlesTps" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.AirQualityMetrics), global::Meshtastic.Protobufs.AirQualityMetrics.Parser, new[]{ "Pm10Standard", "Pm25Standard", "Pm100Standard", "Pm10Environmental", "Pm25Environmental", "Pm100Environmental", "Particles03Um", "Particles05Um", "Particles10Um", "Particles25Um", "Particles50Um", "Particles100Um", "Co2", "Co2Temperature", "Co2Humidity", "FormFormaldehyde", "FormHumidity", "FormTemperature", "Pm40Standard", "Particles40Um", "PmTemperature", "PmHumidity", "PmVocIdx", "PmNoxIdx", "ParticlesTps", "PmStatusFlags" }, new[]{ "Pm10Standard", "Pm25Standard", "Pm100Standard", "Pm10Environmental", "Pm25Environmental", "Pm100Environmental", "Particles03Um", "Particles05Um", "Particles10Um", "Particles25Um", "Particles50Um", "Particles100Um", "Co2", "Co2Temperature", "Co2Humidity", "FormFormaldehyde", "FormHumidity", "FormTemperature", "Pm40Standard", "Particles40Um", "PmTemperature", "PmHumidity", "PmVocIdx", "PmNoxIdx", "ParticlesTps", "PmStatusFlags" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.LocalStats), global::Meshtastic.Protobufs.LocalStats.Parser, new[]{ "UptimeSeconds", "ChannelUtilization", "AirUtilTx", "NumPacketsTx", "NumPacketsRx", "NumPacketsRxBad", "NumOnlineNodes", "NumTotalNodes", "NumRxDupe", "NumTxRelay", "NumTxRelayCanceled", "HeapTotalBytes", "HeapFreeBytes", "NumTxDropped", "NoiseFloor" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.TrafficManagementStats), global::Meshtastic.Protobufs.TrafficManagementStats.Parser, new[]{ "PacketsInspected", "PositionDedupDrops", "NodeinfoCacheHits", "RateLimitDrops", "UnknownPacketDrops", "HopExhaustedPackets", "RouterHopsPreserved" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.HealthMetrics), global::Meshtastic.Protobufs.HealthMetrics.Parser, new[]{ "HeartBpm", "SpO2", "Temperature" }, new[]{ "HeartBpm", "SpO2", "Temperature" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.HostMetrics), global::Meshtastic.Protobufs.HostMetrics.Parser, new[]{ "UptimeSeconds", "FreememBytes", "Diskfree1Bytes", "Diskfree2Bytes", "Diskfree3Bytes", "Load1", "Load5", "Load15", "UserString" }, new[]{ "Diskfree2Bytes", "Diskfree3Bytes", "UserString" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.Telemetry), global::Meshtastic.Protobufs.Telemetry.Parser, new[]{ "Time", "DeviceMetrics", "EnvironmentMetrics", "AirQualityMetrics", "PowerMetrics", "LocalStats", "HealthMetrics", "HostMetrics", "TrafficManagementStats" }, new[]{ "Variant" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.Telemetry), global::Meshtastic.Protobufs.Telemetry.Parser, new[]{ "Time", "DeviceMetrics", "EnvironmentMetrics", "AirQualityMetrics", "PowerMetrics", "LocalStats", "HealthMetrics", "HostMetrics", "TrafficManagementStats", "SoilWaterMetrics" }, new[]{ "Variant" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.Nau7802Config), global::Meshtastic.Protobufs.Nau7802Config.Parser, new[]{ "ZeroOffset", "CalibrationFactor" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.SEN5XState), global::Meshtastic.Protobufs.SEN5XState.Parser, new[]{ "LastCleaningTime", "LastCleaningValid", "OneShotMode", "VocStateTime", "VocStateValid", "VocStateArray" }, new[]{ "VocStateTime", "VocStateValid", "VocStateArray" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.AS3935State), global::Meshtastic.Protobufs.AS3935State.Parser, new[]{ "TuningCapPf" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.SEN5XState), global::Meshtastic.Protobufs.SEN5XState.Parser, new[]{ "LastCleaningTime", "LastCleaningValid", "OneShotMode", "VocStateTime", "VocStateValid", "VocStateArray" }, new[]{ "VocStateTime", "VocStateValid", "VocStateArray" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.SEN6XState), global::Meshtastic.Protobufs.SEN6XState.Parser, new[]{ "LastCleaningTime", "LastCleaningValid", "OneShotMode", "VocStateTime", "VocStateValid", "VocStateArray" }, new[]{ "VocStateTime", "VocStateValid", "VocStateArray" }, null, null, null)
           }));
     }
     #endregion
@@ -213,8 +272,9 @@ namespace Meshtastic.Protobufs {
     [pbr::OriginalName("BMP280")] Bmp280 = 6,
     /// <summary>
     ///
-    /// High accuracy temperature and humidity
+    /// TODO - REMOVE High accuracy temperature and humidity
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [pbr::OriginalName("SHTC3")] Shtc3 = 7,
     /// <summary>
     ///
@@ -238,8 +298,9 @@ namespace Meshtastic.Protobufs {
     [pbr::OriginalName("QMC5883L")] Qmc5883L = 11,
     /// <summary>
     ///
-    /// High accuracy temperature and humidity
+    /// TODO - REMOVE High accuracy temperature and humidity
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [pbr::OriginalName("SHT31")] Sht31 = 12,
     /// <summary>
     ///
@@ -263,8 +324,9 @@ namespace Meshtastic.Protobufs {
     [pbr::OriginalName("RCWL9620")] Rcwl9620 = 16,
     /// <summary>
     ///
-    /// Sensirion High accuracy temperature and humidity
+    /// TODO - REMOVE Sensirion High accuracy temperature and humidity
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [pbr::OriginalName("SHT4X")] Sht4X = 17,
     /// <summary>
     ///
@@ -413,8 +475,9 @@ namespace Meshtastic.Protobufs {
     [pbr::OriginalName("HDC1080")] Hdc1080 = 46,
     /// <summary>
     ///
-    /// STH21 Temperature and R. Humidity sensor
+    /// TODO - REMOVE STH21 Temperature and R. Humidity sensor
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [pbr::OriginalName("SHT21")] Sht21 = 47,
     /// <summary>
     ///
@@ -426,6 +489,46 @@ namespace Meshtastic.Protobufs {
     /// SCD30 CO2, humidity, temperature sensor
     /// </summary>
     [pbr::OriginalName("SCD30")] Scd30 = 49,
+    /// <summary>
+    ///
+    /// SHT family of sensors for temperature and humidity
+    /// </summary>
+    [pbr::OriginalName("SHTXX")] Shtxx = 50,
+    /// <summary>
+    ///
+    /// DS248X Bridge for one-wire temperature sensors
+    /// </summary>
+    [pbr::OriginalName("DS248X")] Ds248X = 51,
+    /// <summary>
+    ///
+    /// MMC5983MA 3-Axis Digital Magnetic Sensor
+    /// </summary>
+    [pbr::OriginalName("MMC5983MA")] Mmc5983Ma = 52,
+    /// <summary>
+    ///
+    /// ICM-42607-P 6-Axis IMU
+    /// </summary>
+    [pbr::OriginalName("ICM42607P")] Icm42607P = 53,
+    /// <summary>
+    ///
+    /// SPA06 pressure and temperature
+    /// </summary>
+    [pbr::OriginalName("SPA06")] Spa06 = 54,
+    /// <summary>
+    ///
+    /// HM330X PM SENSOR
+    /// </summary>
+    [pbr::OriginalName("HM330X")] Hm330X = 55,
+    /// <summary>
+    ///
+    /// Sensirion SEN6X PM/RHT/VOC/NOx/CO2/HCHO sensor family (SEN62, SEN63C, SEN65, SEN66, SEN68, SEN69C)
+    /// </summary>
+    [pbr::OriginalName("SEN6X")] Sen6X = 56,
+    /// <summary>
+    ///
+    /// AS3935 Franklin lightning sensor
+    /// </summary>
+    [pbr::OriginalName("AS3935")] As3935 = 57,
   }
 
   #endregion
@@ -891,6 +994,7 @@ namespace Meshtastic.Protobufs {
     private static readonly pb::MessageParser<EnvironmentMetrics> _parser = new pb::MessageParser<EnvironmentMetrics>(() => new EnvironmentMetrics());
     private pb::UnknownFieldSet _unknownFields;
     private int _hasBits0;
+    private int _hasBits1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<EnvironmentMetrics> Parser { get { return _parser; } }
@@ -919,6 +1023,7 @@ namespace Meshtastic.Protobufs {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public EnvironmentMetrics(EnvironmentMetrics other) : this() {
       _hasBits0 = other._hasBits0;
+      _hasBits1 = other._hasBits1;
       temperature_ = other.temperature_;
       relativeHumidity_ = other.relativeHumidity_;
       barometricPressure_ = other.barometricPressure_;
@@ -941,6 +1046,25 @@ namespace Meshtastic.Protobufs {
       rainfall24H_ = other.rainfall24H_;
       soilMoisture_ = other.soilMoisture_;
       soilTemperature_ = other.soilTemperature_;
+      oneWireTemperature_ = other.oneWireTemperature_.Clone();
+      adcVoltageCh0_ = other.adcVoltageCh0_;
+      adcVoltageCh1_ = other.adcVoltageCh1_;
+      adcVoltageCh2_ = other.adcVoltageCh2_;
+      adcVoltageCh3_ = other.adcVoltageCh3_;
+      adcVoltageCh4_ = other.adcVoltageCh4_;
+      adcVoltageCh5_ = other.adcVoltageCh5_;
+      adcVoltageCh6_ = other.adcVoltageCh6_;
+      adcVoltageCh7_ = other.adcVoltageCh7_;
+      oneWireTemperatureCh0_ = other.oneWireTemperatureCh0_;
+      oneWireTemperatureCh1_ = other.oneWireTemperatureCh1_;
+      oneWireTemperatureCh2_ = other.oneWireTemperatureCh2_;
+      oneWireTemperatureCh3_ = other.oneWireTemperatureCh3_;
+      oneWireTemperatureCh4_ = other.oneWireTemperatureCh4_;
+      oneWireTemperatureCh5_ = other.oneWireTemperatureCh5_;
+      oneWireTemperatureCh6_ = other.oneWireTemperatureCh6_;
+      oneWireTemperatureCh7_ = other.oneWireTemperatureCh7_;
+      lightningStrikeCount1H_ = other.lightningStrikeCount1H_;
+      lightningDistanceKm_ = other.lightningDistanceKm_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1634,6 +1758,580 @@ namespace Meshtastic.Protobufs {
       _hasBits0 &= ~2097152;
     }
 
+    /// <summary>Field number for the "one_wire_temperature" field.</summary>
+    public const int OneWireTemperatureFieldNumber = 23;
+    private static readonly pb::FieldCodec<float> _repeated_oneWireTemperature_codec
+        = pb::FieldCodec.ForFloat(186);
+    private readonly pbc::RepeatedField<float> oneWireTemperature_ = new pbc::RepeatedField<float>();
+    /// <summary>
+    ///
+    /// Never implemented, but Voltage may be mis-interpreted by old clients as temperature
+    /// </summary>
+    [global::System.ObsoleteAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<float> OneWireTemperature {
+      get { return oneWireTemperature_; }
+    }
+
+    /// <summary>Field number for the "adc_voltage_ch0" field.</summary>
+    public const int AdcVoltageCh0FieldNumber = 24;
+    private readonly static float AdcVoltageCh0DefaultValue = 0F;
+
+    private float adcVoltageCh0_;
+    /// <summary>
+    ///
+    /// Multi-channel ADC Voltage Channel 0 (V)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AdcVoltageCh0 {
+      get { if ((_hasBits0 & 4194304) != 0) { return adcVoltageCh0_; } else { return AdcVoltageCh0DefaultValue; } }
+      set {
+        _hasBits0 |= 4194304;
+        adcVoltageCh0_ = value;
+      }
+    }
+    /// <summary>Gets whether the "adc_voltage_ch0" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAdcVoltageCh0 {
+      get { return (_hasBits0 & 4194304) != 0; }
+    }
+    /// <summary>Clears the value of the "adc_voltage_ch0" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAdcVoltageCh0() {
+      _hasBits0 &= ~4194304;
+    }
+
+    /// <summary>Field number for the "adc_voltage_ch1" field.</summary>
+    public const int AdcVoltageCh1FieldNumber = 25;
+    private readonly static float AdcVoltageCh1DefaultValue = 0F;
+
+    private float adcVoltageCh1_;
+    /// <summary>
+    ///
+    /// Multi-channel ADC Voltage Channel 1 (V)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AdcVoltageCh1 {
+      get { if ((_hasBits0 & 8388608) != 0) { return adcVoltageCh1_; } else { return AdcVoltageCh1DefaultValue; } }
+      set {
+        _hasBits0 |= 8388608;
+        adcVoltageCh1_ = value;
+      }
+    }
+    /// <summary>Gets whether the "adc_voltage_ch1" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAdcVoltageCh1 {
+      get { return (_hasBits0 & 8388608) != 0; }
+    }
+    /// <summary>Clears the value of the "adc_voltage_ch1" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAdcVoltageCh1() {
+      _hasBits0 &= ~8388608;
+    }
+
+    /// <summary>Field number for the "adc_voltage_ch2" field.</summary>
+    public const int AdcVoltageCh2FieldNumber = 26;
+    private readonly static float AdcVoltageCh2DefaultValue = 0F;
+
+    private float adcVoltageCh2_;
+    /// <summary>
+    ///
+    /// Multi-channel ADC Voltage Channel 2 (V)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AdcVoltageCh2 {
+      get { if ((_hasBits0 & 16777216) != 0) { return adcVoltageCh2_; } else { return AdcVoltageCh2DefaultValue; } }
+      set {
+        _hasBits0 |= 16777216;
+        adcVoltageCh2_ = value;
+      }
+    }
+    /// <summary>Gets whether the "adc_voltage_ch2" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAdcVoltageCh2 {
+      get { return (_hasBits0 & 16777216) != 0; }
+    }
+    /// <summary>Clears the value of the "adc_voltage_ch2" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAdcVoltageCh2() {
+      _hasBits0 &= ~16777216;
+    }
+
+    /// <summary>Field number for the "adc_voltage_ch3" field.</summary>
+    public const int AdcVoltageCh3FieldNumber = 27;
+    private readonly static float AdcVoltageCh3DefaultValue = 0F;
+
+    private float adcVoltageCh3_;
+    /// <summary>
+    ///
+    /// Multi-channel ADC Voltage Channel 3 (V)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AdcVoltageCh3 {
+      get { if ((_hasBits0 & 33554432) != 0) { return adcVoltageCh3_; } else { return AdcVoltageCh3DefaultValue; } }
+      set {
+        _hasBits0 |= 33554432;
+        adcVoltageCh3_ = value;
+      }
+    }
+    /// <summary>Gets whether the "adc_voltage_ch3" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAdcVoltageCh3 {
+      get { return (_hasBits0 & 33554432) != 0; }
+    }
+    /// <summary>Clears the value of the "adc_voltage_ch3" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAdcVoltageCh3() {
+      _hasBits0 &= ~33554432;
+    }
+
+    /// <summary>Field number for the "adc_voltage_ch4" field.</summary>
+    public const int AdcVoltageCh4FieldNumber = 28;
+    private readonly static float AdcVoltageCh4DefaultValue = 0F;
+
+    private float adcVoltageCh4_;
+    /// <summary>
+    ///
+    /// Multi-channel ADC Voltage Channel 4 (V)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AdcVoltageCh4 {
+      get { if ((_hasBits0 & 67108864) != 0) { return adcVoltageCh4_; } else { return AdcVoltageCh4DefaultValue; } }
+      set {
+        _hasBits0 |= 67108864;
+        adcVoltageCh4_ = value;
+      }
+    }
+    /// <summary>Gets whether the "adc_voltage_ch4" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAdcVoltageCh4 {
+      get { return (_hasBits0 & 67108864) != 0; }
+    }
+    /// <summary>Clears the value of the "adc_voltage_ch4" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAdcVoltageCh4() {
+      _hasBits0 &= ~67108864;
+    }
+
+    /// <summary>Field number for the "adc_voltage_ch5" field.</summary>
+    public const int AdcVoltageCh5FieldNumber = 29;
+    private readonly static float AdcVoltageCh5DefaultValue = 0F;
+
+    private float adcVoltageCh5_;
+    /// <summary>
+    ///
+    /// Multi-channel ADC Voltage Channel 5 (V)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AdcVoltageCh5 {
+      get { if ((_hasBits0 & 134217728) != 0) { return adcVoltageCh5_; } else { return AdcVoltageCh5DefaultValue; } }
+      set {
+        _hasBits0 |= 134217728;
+        adcVoltageCh5_ = value;
+      }
+    }
+    /// <summary>Gets whether the "adc_voltage_ch5" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAdcVoltageCh5 {
+      get { return (_hasBits0 & 134217728) != 0; }
+    }
+    /// <summary>Clears the value of the "adc_voltage_ch5" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAdcVoltageCh5() {
+      _hasBits0 &= ~134217728;
+    }
+
+    /// <summary>Field number for the "adc_voltage_ch6" field.</summary>
+    public const int AdcVoltageCh6FieldNumber = 30;
+    private readonly static float AdcVoltageCh6DefaultValue = 0F;
+
+    private float adcVoltageCh6_;
+    /// <summary>
+    ///
+    /// Multi-channel ADC Voltage Channel 6 (V)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AdcVoltageCh6 {
+      get { if ((_hasBits0 & 268435456) != 0) { return adcVoltageCh6_; } else { return AdcVoltageCh6DefaultValue; } }
+      set {
+        _hasBits0 |= 268435456;
+        adcVoltageCh6_ = value;
+      }
+    }
+    /// <summary>Gets whether the "adc_voltage_ch6" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAdcVoltageCh6 {
+      get { return (_hasBits0 & 268435456) != 0; }
+    }
+    /// <summary>Clears the value of the "adc_voltage_ch6" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAdcVoltageCh6() {
+      _hasBits0 &= ~268435456;
+    }
+
+    /// <summary>Field number for the "adc_voltage_ch7" field.</summary>
+    public const int AdcVoltageCh7FieldNumber = 31;
+    private readonly static float AdcVoltageCh7DefaultValue = 0F;
+
+    private float adcVoltageCh7_;
+    /// <summary>
+    ///
+    /// Multi-channel ADC Voltage Channel 7 (V)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AdcVoltageCh7 {
+      get { if ((_hasBits0 & 536870912) != 0) { return adcVoltageCh7_; } else { return AdcVoltageCh7DefaultValue; } }
+      set {
+        _hasBits0 |= 536870912;
+        adcVoltageCh7_ = value;
+      }
+    }
+    /// <summary>Gets whether the "adc_voltage_ch7" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAdcVoltageCh7 {
+      get { return (_hasBits0 & 536870912) != 0; }
+    }
+    /// <summary>Clears the value of the "adc_voltage_ch7" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAdcVoltageCh7() {
+      _hasBits0 &= ~536870912;
+    }
+
+    /// <summary>Field number for the "one_wire_temperature_ch0" field.</summary>
+    public const int OneWireTemperatureCh0FieldNumber = 32;
+    private readonly static float OneWireTemperatureCh0DefaultValue = 0F;
+
+    private float oneWireTemperatureCh0_;
+    /// <summary>
+    ///
+    /// Multi-channel One-Wire Temperature Channel 0 (*C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float OneWireTemperatureCh0 {
+      get { if ((_hasBits0 & 1073741824) != 0) { return oneWireTemperatureCh0_; } else { return OneWireTemperatureCh0DefaultValue; } }
+      set {
+        _hasBits0 |= 1073741824;
+        oneWireTemperatureCh0_ = value;
+      }
+    }
+    /// <summary>Gets whether the "one_wire_temperature_ch0" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOneWireTemperatureCh0 {
+      get { return (_hasBits0 & 1073741824) != 0; }
+    }
+    /// <summary>Clears the value of the "one_wire_temperature_ch0" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOneWireTemperatureCh0() {
+      _hasBits0 &= ~1073741824;
+    }
+
+    /// <summary>Field number for the "one_wire_temperature_ch1" field.</summary>
+    public const int OneWireTemperatureCh1FieldNumber = 33;
+    private readonly static float OneWireTemperatureCh1DefaultValue = 0F;
+
+    private float oneWireTemperatureCh1_;
+    /// <summary>
+    ///
+    /// Multi-channel One-Wire Temperature Channel 1 (*C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float OneWireTemperatureCh1 {
+      get { if ((_hasBits0 & -2147483648) != 0) { return oneWireTemperatureCh1_; } else { return OneWireTemperatureCh1DefaultValue; } }
+      set {
+        _hasBits0 |= -2147483648;
+        oneWireTemperatureCh1_ = value;
+      }
+    }
+    /// <summary>Gets whether the "one_wire_temperature_ch1" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOneWireTemperatureCh1 {
+      get { return (_hasBits0 & -2147483648) != 0; }
+    }
+    /// <summary>Clears the value of the "one_wire_temperature_ch1" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOneWireTemperatureCh1() {
+      _hasBits0 &= ~-2147483648;
+    }
+
+    /// <summary>Field number for the "one_wire_temperature_ch2" field.</summary>
+    public const int OneWireTemperatureCh2FieldNumber = 34;
+    private readonly static float OneWireTemperatureCh2DefaultValue = 0F;
+
+    private float oneWireTemperatureCh2_;
+    /// <summary>
+    ///
+    /// Multi-channel One-Wire Temperature Channel 2 (*C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float OneWireTemperatureCh2 {
+      get { if ((_hasBits1 & 1) != 0) { return oneWireTemperatureCh2_; } else { return OneWireTemperatureCh2DefaultValue; } }
+      set {
+        _hasBits1 |= 1;
+        oneWireTemperatureCh2_ = value;
+      }
+    }
+    /// <summary>Gets whether the "one_wire_temperature_ch2" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOneWireTemperatureCh2 {
+      get { return (_hasBits1 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "one_wire_temperature_ch2" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOneWireTemperatureCh2() {
+      _hasBits1 &= ~1;
+    }
+
+    /// <summary>Field number for the "one_wire_temperature_ch3" field.</summary>
+    public const int OneWireTemperatureCh3FieldNumber = 35;
+    private readonly static float OneWireTemperatureCh3DefaultValue = 0F;
+
+    private float oneWireTemperatureCh3_;
+    /// <summary>
+    ///
+    /// Multi-channel One-Wire Temperature Channel 3 (*C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float OneWireTemperatureCh3 {
+      get { if ((_hasBits1 & 2) != 0) { return oneWireTemperatureCh3_; } else { return OneWireTemperatureCh3DefaultValue; } }
+      set {
+        _hasBits1 |= 2;
+        oneWireTemperatureCh3_ = value;
+      }
+    }
+    /// <summary>Gets whether the "one_wire_temperature_ch3" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOneWireTemperatureCh3 {
+      get { return (_hasBits1 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "one_wire_temperature_ch3" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOneWireTemperatureCh3() {
+      _hasBits1 &= ~2;
+    }
+
+    /// <summary>Field number for the "one_wire_temperature_ch4" field.</summary>
+    public const int OneWireTemperatureCh4FieldNumber = 36;
+    private readonly static float OneWireTemperatureCh4DefaultValue = 0F;
+
+    private float oneWireTemperatureCh4_;
+    /// <summary>
+    ///
+    /// Multi-channel One-Wire Temperature Channel 4 (*C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float OneWireTemperatureCh4 {
+      get { if ((_hasBits1 & 4) != 0) { return oneWireTemperatureCh4_; } else { return OneWireTemperatureCh4DefaultValue; } }
+      set {
+        _hasBits1 |= 4;
+        oneWireTemperatureCh4_ = value;
+      }
+    }
+    /// <summary>Gets whether the "one_wire_temperature_ch4" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOneWireTemperatureCh4 {
+      get { return (_hasBits1 & 4) != 0; }
+    }
+    /// <summary>Clears the value of the "one_wire_temperature_ch4" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOneWireTemperatureCh4() {
+      _hasBits1 &= ~4;
+    }
+
+    /// <summary>Field number for the "one_wire_temperature_ch5" field.</summary>
+    public const int OneWireTemperatureCh5FieldNumber = 37;
+    private readonly static float OneWireTemperatureCh5DefaultValue = 0F;
+
+    private float oneWireTemperatureCh5_;
+    /// <summary>
+    ///
+    /// Multi-channel One-Wire Temperature Channel 5 (*C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float OneWireTemperatureCh5 {
+      get { if ((_hasBits1 & 8) != 0) { return oneWireTemperatureCh5_; } else { return OneWireTemperatureCh5DefaultValue; } }
+      set {
+        _hasBits1 |= 8;
+        oneWireTemperatureCh5_ = value;
+      }
+    }
+    /// <summary>Gets whether the "one_wire_temperature_ch5" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOneWireTemperatureCh5 {
+      get { return (_hasBits1 & 8) != 0; }
+    }
+    /// <summary>Clears the value of the "one_wire_temperature_ch5" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOneWireTemperatureCh5() {
+      _hasBits1 &= ~8;
+    }
+
+    /// <summary>Field number for the "one_wire_temperature_ch6" field.</summary>
+    public const int OneWireTemperatureCh6FieldNumber = 38;
+    private readonly static float OneWireTemperatureCh6DefaultValue = 0F;
+
+    private float oneWireTemperatureCh6_;
+    /// <summary>
+    ///
+    /// Multi-channel One-Wire Temperature Channel 6 (*C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float OneWireTemperatureCh6 {
+      get { if ((_hasBits1 & 16) != 0) { return oneWireTemperatureCh6_; } else { return OneWireTemperatureCh6DefaultValue; } }
+      set {
+        _hasBits1 |= 16;
+        oneWireTemperatureCh6_ = value;
+      }
+    }
+    /// <summary>Gets whether the "one_wire_temperature_ch6" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOneWireTemperatureCh6 {
+      get { return (_hasBits1 & 16) != 0; }
+    }
+    /// <summary>Clears the value of the "one_wire_temperature_ch6" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOneWireTemperatureCh6() {
+      _hasBits1 &= ~16;
+    }
+
+    /// <summary>Field number for the "one_wire_temperature_ch7" field.</summary>
+    public const int OneWireTemperatureCh7FieldNumber = 39;
+    private readonly static float OneWireTemperatureCh7DefaultValue = 0F;
+
+    private float oneWireTemperatureCh7_;
+    /// <summary>
+    ///
+    /// Multi-channel One-Wire Temperature Channel 7 (*C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float OneWireTemperatureCh7 {
+      get { if ((_hasBits1 & 32) != 0) { return oneWireTemperatureCh7_; } else { return OneWireTemperatureCh7DefaultValue; } }
+      set {
+        _hasBits1 |= 32;
+        oneWireTemperatureCh7_ = value;
+      }
+    }
+    /// <summary>Gets whether the "one_wire_temperature_ch7" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOneWireTemperatureCh7 {
+      get { return (_hasBits1 & 32) != 0; }
+    }
+    /// <summary>Clears the value of the "one_wire_temperature_ch7" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOneWireTemperatureCh7() {
+      _hasBits1 &= ~32;
+    }
+
+    /// <summary>Field number for the "lightning_strike_count_1h" field.</summary>
+    public const int LightningStrikeCount1HFieldNumber = 40;
+    private readonly static uint LightningStrikeCount1HDefaultValue = 0;
+
+    private uint lightningStrikeCount1H_;
+    /// <summary>
+    ///
+    /// Lightning strikes detected in the last hour
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LightningStrikeCount1H {
+      get { if ((_hasBits1 & 64) != 0) { return lightningStrikeCount1H_; } else { return LightningStrikeCount1HDefaultValue; } }
+      set {
+        _hasBits1 |= 64;
+        lightningStrikeCount1H_ = value;
+      }
+    }
+    /// <summary>Gets whether the "lightning_strike_count_1h" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasLightningStrikeCount1H {
+      get { return (_hasBits1 & 64) != 0; }
+    }
+    /// <summary>Clears the value of the "lightning_strike_count_1h" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLightningStrikeCount1H() {
+      _hasBits1 &= ~64;
+    }
+
+    /// <summary>Field number for the "lightning_distance_km" field.</summary>
+    public const int LightningDistanceKmFieldNumber = 41;
+    private readonly static float LightningDistanceKmDefaultValue = 0F;
+
+    private float lightningDistanceKm_;
+    /// <summary>
+    ///
+    /// Estimated distance to the leading edge of the storm, in km
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float LightningDistanceKm {
+      get { if ((_hasBits1 & 128) != 0) { return lightningDistanceKm_; } else { return LightningDistanceKmDefaultValue; } }
+      set {
+        _hasBits1 |= 128;
+        lightningDistanceKm_ = value;
+      }
+    }
+    /// <summary>Gets whether the "lightning_distance_km" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasLightningDistanceKm {
+      get { return (_hasBits1 & 128) != 0; }
+    }
+    /// <summary>Clears the value of the "lightning_distance_km" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLightningDistanceKm() {
+      _hasBits1 &= ~128;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1671,6 +2369,25 @@ namespace Meshtastic.Protobufs {
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Rainfall24H, other.Rainfall24H)) return false;
       if (SoilMoisture != other.SoilMoisture) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(SoilTemperature, other.SoilTemperature)) return false;
+      if(!oneWireTemperature_.Equals(other.oneWireTemperature_)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AdcVoltageCh0, other.AdcVoltageCh0)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AdcVoltageCh1, other.AdcVoltageCh1)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AdcVoltageCh2, other.AdcVoltageCh2)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AdcVoltageCh3, other.AdcVoltageCh3)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AdcVoltageCh4, other.AdcVoltageCh4)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AdcVoltageCh5, other.AdcVoltageCh5)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AdcVoltageCh6, other.AdcVoltageCh6)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AdcVoltageCh7, other.AdcVoltageCh7)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OneWireTemperatureCh0, other.OneWireTemperatureCh0)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OneWireTemperatureCh1, other.OneWireTemperatureCh1)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OneWireTemperatureCh2, other.OneWireTemperatureCh2)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OneWireTemperatureCh3, other.OneWireTemperatureCh3)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OneWireTemperatureCh4, other.OneWireTemperatureCh4)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OneWireTemperatureCh5, other.OneWireTemperatureCh5)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OneWireTemperatureCh6, other.OneWireTemperatureCh6)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OneWireTemperatureCh7, other.OneWireTemperatureCh7)) return false;
+      if (LightningStrikeCount1H != other.LightningStrikeCount1H) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(LightningDistanceKm, other.LightningDistanceKm)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1700,6 +2417,25 @@ namespace Meshtastic.Protobufs {
       if (HasRainfall24H) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Rainfall24H);
       if (HasSoilMoisture) hash ^= SoilMoisture.GetHashCode();
       if (HasSoilTemperature) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SoilTemperature);
+      hash ^= oneWireTemperature_.GetHashCode();
+      if (HasAdcVoltageCh0) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AdcVoltageCh0);
+      if (HasAdcVoltageCh1) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AdcVoltageCh1);
+      if (HasAdcVoltageCh2) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AdcVoltageCh2);
+      if (HasAdcVoltageCh3) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AdcVoltageCh3);
+      if (HasAdcVoltageCh4) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AdcVoltageCh4);
+      if (HasAdcVoltageCh5) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AdcVoltageCh5);
+      if (HasAdcVoltageCh6) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AdcVoltageCh6);
+      if (HasAdcVoltageCh7) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AdcVoltageCh7);
+      if (HasOneWireTemperatureCh0) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneWireTemperatureCh0);
+      if (HasOneWireTemperatureCh1) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneWireTemperatureCh1);
+      if (HasOneWireTemperatureCh2) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneWireTemperatureCh2);
+      if (HasOneWireTemperatureCh3) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneWireTemperatureCh3);
+      if (HasOneWireTemperatureCh4) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneWireTemperatureCh4);
+      if (HasOneWireTemperatureCh5) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneWireTemperatureCh5);
+      if (HasOneWireTemperatureCh6) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneWireTemperatureCh6);
+      if (HasOneWireTemperatureCh7) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OneWireTemperatureCh7);
+      if (HasLightningStrikeCount1H) hash ^= LightningStrikeCount1H.GetHashCode();
+      if (HasLightningDistanceKm) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(LightningDistanceKm);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1806,6 +2542,79 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(181, 1);
         output.WriteFloat(SoilTemperature);
       }
+      oneWireTemperature_.WriteTo(output, _repeated_oneWireTemperature_codec);
+      if (HasAdcVoltageCh0) {
+        output.WriteRawTag(197, 1);
+        output.WriteFloat(AdcVoltageCh0);
+      }
+      if (HasAdcVoltageCh1) {
+        output.WriteRawTag(205, 1);
+        output.WriteFloat(AdcVoltageCh1);
+      }
+      if (HasAdcVoltageCh2) {
+        output.WriteRawTag(213, 1);
+        output.WriteFloat(AdcVoltageCh2);
+      }
+      if (HasAdcVoltageCh3) {
+        output.WriteRawTag(221, 1);
+        output.WriteFloat(AdcVoltageCh3);
+      }
+      if (HasAdcVoltageCh4) {
+        output.WriteRawTag(229, 1);
+        output.WriteFloat(AdcVoltageCh4);
+      }
+      if (HasAdcVoltageCh5) {
+        output.WriteRawTag(237, 1);
+        output.WriteFloat(AdcVoltageCh5);
+      }
+      if (HasAdcVoltageCh6) {
+        output.WriteRawTag(245, 1);
+        output.WriteFloat(AdcVoltageCh6);
+      }
+      if (HasAdcVoltageCh7) {
+        output.WriteRawTag(253, 1);
+        output.WriteFloat(AdcVoltageCh7);
+      }
+      if (HasOneWireTemperatureCh0) {
+        output.WriteRawTag(133, 2);
+        output.WriteFloat(OneWireTemperatureCh0);
+      }
+      if (HasOneWireTemperatureCh1) {
+        output.WriteRawTag(141, 2);
+        output.WriteFloat(OneWireTemperatureCh1);
+      }
+      if (HasOneWireTemperatureCh2) {
+        output.WriteRawTag(149, 2);
+        output.WriteFloat(OneWireTemperatureCh2);
+      }
+      if (HasOneWireTemperatureCh3) {
+        output.WriteRawTag(157, 2);
+        output.WriteFloat(OneWireTemperatureCh3);
+      }
+      if (HasOneWireTemperatureCh4) {
+        output.WriteRawTag(165, 2);
+        output.WriteFloat(OneWireTemperatureCh4);
+      }
+      if (HasOneWireTemperatureCh5) {
+        output.WriteRawTag(173, 2);
+        output.WriteFloat(OneWireTemperatureCh5);
+      }
+      if (HasOneWireTemperatureCh6) {
+        output.WriteRawTag(181, 2);
+        output.WriteFloat(OneWireTemperatureCh6);
+      }
+      if (HasOneWireTemperatureCh7) {
+        output.WriteRawTag(189, 2);
+        output.WriteFloat(OneWireTemperatureCh7);
+      }
+      if (HasLightningStrikeCount1H) {
+        output.WriteRawTag(192, 2);
+        output.WriteUInt32(LightningStrikeCount1H);
+      }
+      if (HasLightningDistanceKm) {
+        output.WriteRawTag(205, 2);
+        output.WriteFloat(LightningDistanceKm);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1904,6 +2713,79 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(181, 1);
         output.WriteFloat(SoilTemperature);
       }
+      oneWireTemperature_.WriteTo(ref output, _repeated_oneWireTemperature_codec);
+      if (HasAdcVoltageCh0) {
+        output.WriteRawTag(197, 1);
+        output.WriteFloat(AdcVoltageCh0);
+      }
+      if (HasAdcVoltageCh1) {
+        output.WriteRawTag(205, 1);
+        output.WriteFloat(AdcVoltageCh1);
+      }
+      if (HasAdcVoltageCh2) {
+        output.WriteRawTag(213, 1);
+        output.WriteFloat(AdcVoltageCh2);
+      }
+      if (HasAdcVoltageCh3) {
+        output.WriteRawTag(221, 1);
+        output.WriteFloat(AdcVoltageCh3);
+      }
+      if (HasAdcVoltageCh4) {
+        output.WriteRawTag(229, 1);
+        output.WriteFloat(AdcVoltageCh4);
+      }
+      if (HasAdcVoltageCh5) {
+        output.WriteRawTag(237, 1);
+        output.WriteFloat(AdcVoltageCh5);
+      }
+      if (HasAdcVoltageCh6) {
+        output.WriteRawTag(245, 1);
+        output.WriteFloat(AdcVoltageCh6);
+      }
+      if (HasAdcVoltageCh7) {
+        output.WriteRawTag(253, 1);
+        output.WriteFloat(AdcVoltageCh7);
+      }
+      if (HasOneWireTemperatureCh0) {
+        output.WriteRawTag(133, 2);
+        output.WriteFloat(OneWireTemperatureCh0);
+      }
+      if (HasOneWireTemperatureCh1) {
+        output.WriteRawTag(141, 2);
+        output.WriteFloat(OneWireTemperatureCh1);
+      }
+      if (HasOneWireTemperatureCh2) {
+        output.WriteRawTag(149, 2);
+        output.WriteFloat(OneWireTemperatureCh2);
+      }
+      if (HasOneWireTemperatureCh3) {
+        output.WriteRawTag(157, 2);
+        output.WriteFloat(OneWireTemperatureCh3);
+      }
+      if (HasOneWireTemperatureCh4) {
+        output.WriteRawTag(165, 2);
+        output.WriteFloat(OneWireTemperatureCh4);
+      }
+      if (HasOneWireTemperatureCh5) {
+        output.WriteRawTag(173, 2);
+        output.WriteFloat(OneWireTemperatureCh5);
+      }
+      if (HasOneWireTemperatureCh6) {
+        output.WriteRawTag(181, 2);
+        output.WriteFloat(OneWireTemperatureCh6);
+      }
+      if (HasOneWireTemperatureCh7) {
+        output.WriteRawTag(189, 2);
+        output.WriteFloat(OneWireTemperatureCh7);
+      }
+      if (HasLightningStrikeCount1H) {
+        output.WriteRawTag(192, 2);
+        output.WriteUInt32(LightningStrikeCount1H);
+      }
+      if (HasLightningDistanceKm) {
+        output.WriteRawTag(205, 2);
+        output.WriteFloat(LightningDistanceKm);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1978,6 +2860,61 @@ namespace Meshtastic.Protobufs {
         size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SoilMoisture);
       }
       if (HasSoilTemperature) {
+        size += 2 + 4;
+      }
+      size += oneWireTemperature_.CalculateSize(_repeated_oneWireTemperature_codec);
+      if (HasAdcVoltageCh0) {
+        size += 2 + 4;
+      }
+      if (HasAdcVoltageCh1) {
+        size += 2 + 4;
+      }
+      if (HasAdcVoltageCh2) {
+        size += 2 + 4;
+      }
+      if (HasAdcVoltageCh3) {
+        size += 2 + 4;
+      }
+      if (HasAdcVoltageCh4) {
+        size += 2 + 4;
+      }
+      if (HasAdcVoltageCh5) {
+        size += 2 + 4;
+      }
+      if (HasAdcVoltageCh6) {
+        size += 2 + 4;
+      }
+      if (HasAdcVoltageCh7) {
+        size += 2 + 4;
+      }
+      if (HasOneWireTemperatureCh0) {
+        size += 2 + 4;
+      }
+      if (HasOneWireTemperatureCh1) {
+        size += 2 + 4;
+      }
+      if (HasOneWireTemperatureCh2) {
+        size += 2 + 4;
+      }
+      if (HasOneWireTemperatureCh3) {
+        size += 2 + 4;
+      }
+      if (HasOneWireTemperatureCh4) {
+        size += 2 + 4;
+      }
+      if (HasOneWireTemperatureCh5) {
+        size += 2 + 4;
+      }
+      if (HasOneWireTemperatureCh6) {
+        size += 2 + 4;
+      }
+      if (HasOneWireTemperatureCh7) {
+        size += 2 + 4;
+      }
+      if (HasLightningStrikeCount1H) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(LightningStrikeCount1H);
+      }
+      if (HasLightningDistanceKm) {
         size += 2 + 4;
       }
       if (_unknownFields != null) {
@@ -2057,6 +2994,61 @@ namespace Meshtastic.Protobufs {
       }
       if (other.HasSoilTemperature) {
         SoilTemperature = other.SoilTemperature;
+      }
+      oneWireTemperature_.Add(other.oneWireTemperature_);
+      if (other.HasAdcVoltageCh0) {
+        AdcVoltageCh0 = other.AdcVoltageCh0;
+      }
+      if (other.HasAdcVoltageCh1) {
+        AdcVoltageCh1 = other.AdcVoltageCh1;
+      }
+      if (other.HasAdcVoltageCh2) {
+        AdcVoltageCh2 = other.AdcVoltageCh2;
+      }
+      if (other.HasAdcVoltageCh3) {
+        AdcVoltageCh3 = other.AdcVoltageCh3;
+      }
+      if (other.HasAdcVoltageCh4) {
+        AdcVoltageCh4 = other.AdcVoltageCh4;
+      }
+      if (other.HasAdcVoltageCh5) {
+        AdcVoltageCh5 = other.AdcVoltageCh5;
+      }
+      if (other.HasAdcVoltageCh6) {
+        AdcVoltageCh6 = other.AdcVoltageCh6;
+      }
+      if (other.HasAdcVoltageCh7) {
+        AdcVoltageCh7 = other.AdcVoltageCh7;
+      }
+      if (other.HasOneWireTemperatureCh0) {
+        OneWireTemperatureCh0 = other.OneWireTemperatureCh0;
+      }
+      if (other.HasOneWireTemperatureCh1) {
+        OneWireTemperatureCh1 = other.OneWireTemperatureCh1;
+      }
+      if (other.HasOneWireTemperatureCh2) {
+        OneWireTemperatureCh2 = other.OneWireTemperatureCh2;
+      }
+      if (other.HasOneWireTemperatureCh3) {
+        OneWireTemperatureCh3 = other.OneWireTemperatureCh3;
+      }
+      if (other.HasOneWireTemperatureCh4) {
+        OneWireTemperatureCh4 = other.OneWireTemperatureCh4;
+      }
+      if (other.HasOneWireTemperatureCh5) {
+        OneWireTemperatureCh5 = other.OneWireTemperatureCh5;
+      }
+      if (other.HasOneWireTemperatureCh6) {
+        OneWireTemperatureCh6 = other.OneWireTemperatureCh6;
+      }
+      if (other.HasOneWireTemperatureCh7) {
+        OneWireTemperatureCh7 = other.OneWireTemperatureCh7;
+      }
+      if (other.HasLightningStrikeCount1H) {
+        LightningStrikeCount1H = other.LightningStrikeCount1H;
+      }
+      if (other.HasLightningDistanceKm) {
+        LightningDistanceKm = other.LightningDistanceKm;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -2163,6 +3155,83 @@ namespace Meshtastic.Protobufs {
           }
           case 181: {
             SoilTemperature = input.ReadFloat();
+            break;
+          }
+          case 186:
+          case 189: {
+            oneWireTemperature_.AddEntriesFrom(input, _repeated_oneWireTemperature_codec);
+            break;
+          }
+          case 197: {
+            AdcVoltageCh0 = input.ReadFloat();
+            break;
+          }
+          case 205: {
+            AdcVoltageCh1 = input.ReadFloat();
+            break;
+          }
+          case 213: {
+            AdcVoltageCh2 = input.ReadFloat();
+            break;
+          }
+          case 221: {
+            AdcVoltageCh3 = input.ReadFloat();
+            break;
+          }
+          case 229: {
+            AdcVoltageCh4 = input.ReadFloat();
+            break;
+          }
+          case 237: {
+            AdcVoltageCh5 = input.ReadFloat();
+            break;
+          }
+          case 245: {
+            AdcVoltageCh6 = input.ReadFloat();
+            break;
+          }
+          case 253: {
+            AdcVoltageCh7 = input.ReadFloat();
+            break;
+          }
+          case 261: {
+            OneWireTemperatureCh0 = input.ReadFloat();
+            break;
+          }
+          case 269: {
+            OneWireTemperatureCh1 = input.ReadFloat();
+            break;
+          }
+          case 277: {
+            OneWireTemperatureCh2 = input.ReadFloat();
+            break;
+          }
+          case 285: {
+            OneWireTemperatureCh3 = input.ReadFloat();
+            break;
+          }
+          case 293: {
+            OneWireTemperatureCh4 = input.ReadFloat();
+            break;
+          }
+          case 301: {
+            OneWireTemperatureCh5 = input.ReadFloat();
+            break;
+          }
+          case 309: {
+            OneWireTemperatureCh6 = input.ReadFloat();
+            break;
+          }
+          case 317: {
+            OneWireTemperatureCh7 = input.ReadFloat();
+            break;
+          }
+          case 320: {
+            LightningStrikeCount1H = input.ReadUInt32();
+            break;
+          }
+          case 333: {
+            LightningDistanceKm = input.ReadFloat();
             break;
           }
         }
@@ -2272,6 +3341,1094 @@ namespace Meshtastic.Protobufs {
             SoilTemperature = input.ReadFloat();
             break;
           }
+          case 186:
+          case 189: {
+            oneWireTemperature_.AddEntriesFrom(ref input, _repeated_oneWireTemperature_codec);
+            break;
+          }
+          case 197: {
+            AdcVoltageCh0 = input.ReadFloat();
+            break;
+          }
+          case 205: {
+            AdcVoltageCh1 = input.ReadFloat();
+            break;
+          }
+          case 213: {
+            AdcVoltageCh2 = input.ReadFloat();
+            break;
+          }
+          case 221: {
+            AdcVoltageCh3 = input.ReadFloat();
+            break;
+          }
+          case 229: {
+            AdcVoltageCh4 = input.ReadFloat();
+            break;
+          }
+          case 237: {
+            AdcVoltageCh5 = input.ReadFloat();
+            break;
+          }
+          case 245: {
+            AdcVoltageCh6 = input.ReadFloat();
+            break;
+          }
+          case 253: {
+            AdcVoltageCh7 = input.ReadFloat();
+            break;
+          }
+          case 261: {
+            OneWireTemperatureCh0 = input.ReadFloat();
+            break;
+          }
+          case 269: {
+            OneWireTemperatureCh1 = input.ReadFloat();
+            break;
+          }
+          case 277: {
+            OneWireTemperatureCh2 = input.ReadFloat();
+            break;
+          }
+          case 285: {
+            OneWireTemperatureCh3 = input.ReadFloat();
+            break;
+          }
+          case 293: {
+            OneWireTemperatureCh4 = input.ReadFloat();
+            break;
+          }
+          case 301: {
+            OneWireTemperatureCh5 = input.ReadFloat();
+            break;
+          }
+          case 309: {
+            OneWireTemperatureCh6 = input.ReadFloat();
+            break;
+          }
+          case 317: {
+            OneWireTemperatureCh7 = input.ReadFloat();
+            break;
+          }
+          case 320: {
+            LightningStrikeCount1H = input.ReadUInt32();
+            break;
+          }
+          case 333: {
+            LightningDistanceKm = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  ///
+  /// Soil and water probe metrics.
+  ///
+  /// Chemistry reported by soil probes (RS-485/SDI-12 NPK probes) and by
+  /// water-quality sondes. Split out of EnvironmentMetrics so that message stays
+  /// within the mesh payload budget.
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class SoilWaterMetrics : pb::IMessage<SoilWaterMetrics>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SoilWaterMetrics> _parser = new pb::MessageParser<SoilWaterMetrics>(() => new SoilWaterMetrics());
+    private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SoilWaterMetrics> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SoilWaterMetrics() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SoilWaterMetrics(SoilWaterMetrics other) : this() {
+      _hasBits0 = other._hasBits0;
+      soilPh_ = other.soilPh_;
+      ph_ = other.ph_;
+      electricalConductivity_ = other.electricalConductivity_;
+      salinity_ = other.salinity_;
+      nitrogen_ = other.nitrogen_;
+      phosphorus_ = other.phosphorus_;
+      potassium_ = other.potassium_;
+      dissolvedOxygen_ = other.dissolvedOxygen_;
+      orp_ = other.orp_;
+      chemicalOxygenDemand_ = other.chemicalOxygenDemand_;
+      turbidity_ = other.turbidity_;
+      nitrate_ = other.nitrate_;
+      ammonium_ = other.ammonium_;
+      biochemicalOxygenDemand_ = other.biochemicalOxygenDemand_;
+      solarIrradiance_ = other.solarIrradiance_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SoilWaterMetrics Clone() {
+      return new SoilWaterMetrics(this);
+    }
+
+    /// <summary>Field number for the "soil_ph" field.</summary>
+    public const int SoilPhFieldNumber = 1;
+    private readonly static float SoilPhDefaultValue = 0F;
+
+    private float soilPh_;
+    /// <summary>
+    ///
+    /// Soil pH, 0-14
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float SoilPh {
+      get { if ((_hasBits0 & 1) != 0) { return soilPh_; } else { return SoilPhDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        soilPh_ = value;
+      }
+    }
+    /// <summary>Gets whether the "soil_ph" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasSoilPh {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "soil_ph" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearSoilPh() {
+      _hasBits0 &= ~1;
+    }
+
+    /// <summary>Field number for the "ph" field.</summary>
+    public const int PhFieldNumber = 2;
+    private readonly static float PhDefaultValue = 0F;
+
+    private float ph_;
+    /// <summary>
+    ///
+    /// pH of water or other solution, 0-14
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Ph {
+      get { if ((_hasBits0 & 2) != 0) { return ph_; } else { return PhDefaultValue; } }
+      set {
+        _hasBits0 |= 2;
+        ph_ = value;
+      }
+    }
+    /// <summary>Gets whether the "ph" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPh {
+      get { return (_hasBits0 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "ph" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPh() {
+      _hasBits0 &= ~2;
+    }
+
+    /// <summary>Field number for the "electrical_conductivity" field.</summary>
+    public const int ElectricalConductivityFieldNumber = 3;
+    private readonly static float ElectricalConductivityDefaultValue = 0F;
+
+    private float electricalConductivity_;
+    /// <summary>
+    ///
+    /// Electrical conductivity in mS/cm
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float ElectricalConductivity {
+      get { if ((_hasBits0 & 4) != 0) { return electricalConductivity_; } else { return ElectricalConductivityDefaultValue; } }
+      set {
+        _hasBits0 |= 4;
+        electricalConductivity_ = value;
+      }
+    }
+    /// <summary>Gets whether the "electrical_conductivity" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasElectricalConductivity {
+      get { return (_hasBits0 & 4) != 0; }
+    }
+    /// <summary>Clears the value of the "electrical_conductivity" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearElectricalConductivity() {
+      _hasBits0 &= ~4;
+    }
+
+    /// <summary>Field number for the "salinity" field.</summary>
+    public const int SalinityFieldNumber = 4;
+    private readonly static float SalinityDefaultValue = 0F;
+
+    private float salinity_;
+    /// <summary>
+    ///
+    /// Salinity in mg/l
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Salinity {
+      get { if ((_hasBits0 & 8) != 0) { return salinity_; } else { return SalinityDefaultValue; } }
+      set {
+        _hasBits0 |= 8;
+        salinity_ = value;
+      }
+    }
+    /// <summary>Gets whether the "salinity" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasSalinity {
+      get { return (_hasBits0 & 8) != 0; }
+    }
+    /// <summary>Clears the value of the "salinity" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearSalinity() {
+      _hasBits0 &= ~8;
+    }
+
+    /// <summary>Field number for the "nitrogen" field.</summary>
+    public const int NitrogenFieldNumber = 5;
+    private readonly static float NitrogenDefaultValue = 0F;
+
+    private float nitrogen_;
+    /// <summary>
+    ///
+    /// Nitrogen concentration in mg/kg
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Nitrogen {
+      get { if ((_hasBits0 & 16) != 0) { return nitrogen_; } else { return NitrogenDefaultValue; } }
+      set {
+        _hasBits0 |= 16;
+        nitrogen_ = value;
+      }
+    }
+    /// <summary>Gets whether the "nitrogen" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasNitrogen {
+      get { return (_hasBits0 & 16) != 0; }
+    }
+    /// <summary>Clears the value of the "nitrogen" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearNitrogen() {
+      _hasBits0 &= ~16;
+    }
+
+    /// <summary>Field number for the "phosphorus" field.</summary>
+    public const int PhosphorusFieldNumber = 6;
+    private readonly static float PhosphorusDefaultValue = 0F;
+
+    private float phosphorus_;
+    /// <summary>
+    ///
+    /// Phosphorus concentration in mg/kg
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Phosphorus {
+      get { if ((_hasBits0 & 32) != 0) { return phosphorus_; } else { return PhosphorusDefaultValue; } }
+      set {
+        _hasBits0 |= 32;
+        phosphorus_ = value;
+      }
+    }
+    /// <summary>Gets whether the "phosphorus" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPhosphorus {
+      get { return (_hasBits0 & 32) != 0; }
+    }
+    /// <summary>Clears the value of the "phosphorus" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPhosphorus() {
+      _hasBits0 &= ~32;
+    }
+
+    /// <summary>Field number for the "potassium" field.</summary>
+    public const int PotassiumFieldNumber = 7;
+    private readonly static float PotassiumDefaultValue = 0F;
+
+    private float potassium_;
+    /// <summary>
+    ///
+    /// Potassium concentration in mg/kg
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Potassium {
+      get { if ((_hasBits0 & 64) != 0) { return potassium_; } else { return PotassiumDefaultValue; } }
+      set {
+        _hasBits0 |= 64;
+        potassium_ = value;
+      }
+    }
+    /// <summary>Gets whether the "potassium" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPotassium {
+      get { return (_hasBits0 & 64) != 0; }
+    }
+    /// <summary>Clears the value of the "potassium" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPotassium() {
+      _hasBits0 &= ~64;
+    }
+
+    /// <summary>Field number for the "dissolved_oxygen" field.</summary>
+    public const int DissolvedOxygenFieldNumber = 8;
+    private readonly static float DissolvedOxygenDefaultValue = 0F;
+
+    private float dissolvedOxygen_;
+    /// <summary>
+    ///
+    /// Dissolved oxygen in mg/l
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float DissolvedOxygen {
+      get { if ((_hasBits0 & 128) != 0) { return dissolvedOxygen_; } else { return DissolvedOxygenDefaultValue; } }
+      set {
+        _hasBits0 |= 128;
+        dissolvedOxygen_ = value;
+      }
+    }
+    /// <summary>Gets whether the "dissolved_oxygen" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasDissolvedOxygen {
+      get { return (_hasBits0 & 128) != 0; }
+    }
+    /// <summary>Clears the value of the "dissolved_oxygen" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearDissolvedOxygen() {
+      _hasBits0 &= ~128;
+    }
+
+    /// <summary>Field number for the "orp" field.</summary>
+    public const int OrpFieldNumber = 9;
+    private readonly static float OrpDefaultValue = 0F;
+
+    private float orp_;
+    /// <summary>
+    ///
+    /// Oxidation-reduction potential (ORP) in mV
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Orp {
+      get { if ((_hasBits0 & 256) != 0) { return orp_; } else { return OrpDefaultValue; } }
+      set {
+        _hasBits0 |= 256;
+        orp_ = value;
+      }
+    }
+    /// <summary>Gets whether the "orp" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasOrp {
+      get { return (_hasBits0 & 256) != 0; }
+    }
+    /// <summary>Clears the value of the "orp" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOrp() {
+      _hasBits0 &= ~256;
+    }
+
+    /// <summary>Field number for the "chemical_oxygen_demand" field.</summary>
+    public const int ChemicalOxygenDemandFieldNumber = 10;
+    private readonly static float ChemicalOxygenDemandDefaultValue = 0F;
+
+    private float chemicalOxygenDemand_;
+    /// <summary>
+    ///
+    /// Chemical oxygen demand in mg/l
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float ChemicalOxygenDemand {
+      get { if ((_hasBits0 & 512) != 0) { return chemicalOxygenDemand_; } else { return ChemicalOxygenDemandDefaultValue; } }
+      set {
+        _hasBits0 |= 512;
+        chemicalOxygenDemand_ = value;
+      }
+    }
+    /// <summary>Gets whether the "chemical_oxygen_demand" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasChemicalOxygenDemand {
+      get { return (_hasBits0 & 512) != 0; }
+    }
+    /// <summary>Clears the value of the "chemical_oxygen_demand" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearChemicalOxygenDemand() {
+      _hasBits0 &= ~512;
+    }
+
+    /// <summary>Field number for the "turbidity" field.</summary>
+    public const int TurbidityFieldNumber = 11;
+    private readonly static float TurbidityDefaultValue = 0F;
+
+    private float turbidity_;
+    /// <summary>
+    ///
+    /// Turbidity in NTU
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Turbidity {
+      get { if ((_hasBits0 & 1024) != 0) { return turbidity_; } else { return TurbidityDefaultValue; } }
+      set {
+        _hasBits0 |= 1024;
+        turbidity_ = value;
+      }
+    }
+    /// <summary>Gets whether the "turbidity" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasTurbidity {
+      get { return (_hasBits0 & 1024) != 0; }
+    }
+    /// <summary>Clears the value of the "turbidity" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearTurbidity() {
+      _hasBits0 &= ~1024;
+    }
+
+    /// <summary>Field number for the "nitrate" field.</summary>
+    public const int NitrateFieldNumber = 12;
+    private readonly static float NitrateDefaultValue = 0F;
+
+    private float nitrate_;
+    /// <summary>
+    ///
+    /// Nitrate concentration in ppm
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Nitrate {
+      get { if ((_hasBits0 & 2048) != 0) { return nitrate_; } else { return NitrateDefaultValue; } }
+      set {
+        _hasBits0 |= 2048;
+        nitrate_ = value;
+      }
+    }
+    /// <summary>Gets whether the "nitrate" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasNitrate {
+      get { return (_hasBits0 & 2048) != 0; }
+    }
+    /// <summary>Clears the value of the "nitrate" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearNitrate() {
+      _hasBits0 &= ~2048;
+    }
+
+    /// <summary>Field number for the "ammonium" field.</summary>
+    public const int AmmoniumFieldNumber = 13;
+    private readonly static float AmmoniumDefaultValue = 0F;
+
+    private float ammonium_;
+    /// <summary>
+    ///
+    /// Ammonium concentration in ppm
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Ammonium {
+      get { if ((_hasBits0 & 4096) != 0) { return ammonium_; } else { return AmmoniumDefaultValue; } }
+      set {
+        _hasBits0 |= 4096;
+        ammonium_ = value;
+      }
+    }
+    /// <summary>Gets whether the "ammonium" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasAmmonium {
+      get { return (_hasBits0 & 4096) != 0; }
+    }
+    /// <summary>Clears the value of the "ammonium" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearAmmonium() {
+      _hasBits0 &= ~4096;
+    }
+
+    /// <summary>Field number for the "biochemical_oxygen_demand" field.</summary>
+    public const int BiochemicalOxygenDemandFieldNumber = 14;
+    private readonly static float BiochemicalOxygenDemandDefaultValue = 0F;
+
+    private float biochemicalOxygenDemand_;
+    /// <summary>
+    ///
+    /// Biochemical oxygen demand in mg/l
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float BiochemicalOxygenDemand {
+      get { if ((_hasBits0 & 8192) != 0) { return biochemicalOxygenDemand_; } else { return BiochemicalOxygenDemandDefaultValue; } }
+      set {
+        _hasBits0 |= 8192;
+        biochemicalOxygenDemand_ = value;
+      }
+    }
+    /// <summary>Gets whether the "biochemical_oxygen_demand" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasBiochemicalOxygenDemand {
+      get { return (_hasBits0 & 8192) != 0; }
+    }
+    /// <summary>Clears the value of the "biochemical_oxygen_demand" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearBiochemicalOxygenDemand() {
+      _hasBits0 &= ~8192;
+    }
+
+    /// <summary>Field number for the "solar_irradiance" field.</summary>
+    public const int SolarIrradianceFieldNumber = 15;
+    private readonly static float SolarIrradianceDefaultValue = 0F;
+
+    private float solarIrradiance_;
+    /// <summary>
+    ///
+    /// Solar irradiance in W/m^2 (distinct from the radiation field's uR/h)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float SolarIrradiance {
+      get { if ((_hasBits0 & 16384) != 0) { return solarIrradiance_; } else { return SolarIrradianceDefaultValue; } }
+      set {
+        _hasBits0 |= 16384;
+        solarIrradiance_ = value;
+      }
+    }
+    /// <summary>Gets whether the "solar_irradiance" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasSolarIrradiance {
+      get { return (_hasBits0 & 16384) != 0; }
+    }
+    /// <summary>Clears the value of the "solar_irradiance" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearSolarIrradiance() {
+      _hasBits0 &= ~16384;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SoilWaterMetrics);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SoilWaterMetrics other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(SoilPh, other.SoilPh)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Ph, other.Ph)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(ElectricalConductivity, other.ElectricalConductivity)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Salinity, other.Salinity)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Nitrogen, other.Nitrogen)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Phosphorus, other.Phosphorus)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Potassium, other.Potassium)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(DissolvedOxygen, other.DissolvedOxygen)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Orp, other.Orp)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(ChemicalOxygenDemand, other.ChemicalOxygenDemand)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Turbidity, other.Turbidity)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Nitrate, other.Nitrate)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Ammonium, other.Ammonium)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(BiochemicalOxygenDemand, other.BiochemicalOxygenDemand)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(SolarIrradiance, other.SolarIrradiance)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (HasSoilPh) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SoilPh);
+      if (HasPh) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Ph);
+      if (HasElectricalConductivity) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(ElectricalConductivity);
+      if (HasSalinity) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Salinity);
+      if (HasNitrogen) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Nitrogen);
+      if (HasPhosphorus) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Phosphorus);
+      if (HasPotassium) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Potassium);
+      if (HasDissolvedOxygen) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(DissolvedOxygen);
+      if (HasOrp) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Orp);
+      if (HasChemicalOxygenDemand) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(ChemicalOxygenDemand);
+      if (HasTurbidity) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Turbidity);
+      if (HasNitrate) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Nitrate);
+      if (HasAmmonium) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Ammonium);
+      if (HasBiochemicalOxygenDemand) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(BiochemicalOxygenDemand);
+      if (HasSolarIrradiance) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SolarIrradiance);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (HasSoilPh) {
+        output.WriteRawTag(13);
+        output.WriteFloat(SoilPh);
+      }
+      if (HasPh) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Ph);
+      }
+      if (HasElectricalConductivity) {
+        output.WriteRawTag(29);
+        output.WriteFloat(ElectricalConductivity);
+      }
+      if (HasSalinity) {
+        output.WriteRawTag(37);
+        output.WriteFloat(Salinity);
+      }
+      if (HasNitrogen) {
+        output.WriteRawTag(45);
+        output.WriteFloat(Nitrogen);
+      }
+      if (HasPhosphorus) {
+        output.WriteRawTag(53);
+        output.WriteFloat(Phosphorus);
+      }
+      if (HasPotassium) {
+        output.WriteRawTag(61);
+        output.WriteFloat(Potassium);
+      }
+      if (HasDissolvedOxygen) {
+        output.WriteRawTag(69);
+        output.WriteFloat(DissolvedOxygen);
+      }
+      if (HasOrp) {
+        output.WriteRawTag(77);
+        output.WriteFloat(Orp);
+      }
+      if (HasChemicalOxygenDemand) {
+        output.WriteRawTag(85);
+        output.WriteFloat(ChemicalOxygenDemand);
+      }
+      if (HasTurbidity) {
+        output.WriteRawTag(93);
+        output.WriteFloat(Turbidity);
+      }
+      if (HasNitrate) {
+        output.WriteRawTag(101);
+        output.WriteFloat(Nitrate);
+      }
+      if (HasAmmonium) {
+        output.WriteRawTag(109);
+        output.WriteFloat(Ammonium);
+      }
+      if (HasBiochemicalOxygenDemand) {
+        output.WriteRawTag(117);
+        output.WriteFloat(BiochemicalOxygenDemand);
+      }
+      if (HasSolarIrradiance) {
+        output.WriteRawTag(125);
+        output.WriteFloat(SolarIrradiance);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (HasSoilPh) {
+        output.WriteRawTag(13);
+        output.WriteFloat(SoilPh);
+      }
+      if (HasPh) {
+        output.WriteRawTag(21);
+        output.WriteFloat(Ph);
+      }
+      if (HasElectricalConductivity) {
+        output.WriteRawTag(29);
+        output.WriteFloat(ElectricalConductivity);
+      }
+      if (HasSalinity) {
+        output.WriteRawTag(37);
+        output.WriteFloat(Salinity);
+      }
+      if (HasNitrogen) {
+        output.WriteRawTag(45);
+        output.WriteFloat(Nitrogen);
+      }
+      if (HasPhosphorus) {
+        output.WriteRawTag(53);
+        output.WriteFloat(Phosphorus);
+      }
+      if (HasPotassium) {
+        output.WriteRawTag(61);
+        output.WriteFloat(Potassium);
+      }
+      if (HasDissolvedOxygen) {
+        output.WriteRawTag(69);
+        output.WriteFloat(DissolvedOxygen);
+      }
+      if (HasOrp) {
+        output.WriteRawTag(77);
+        output.WriteFloat(Orp);
+      }
+      if (HasChemicalOxygenDemand) {
+        output.WriteRawTag(85);
+        output.WriteFloat(ChemicalOxygenDemand);
+      }
+      if (HasTurbidity) {
+        output.WriteRawTag(93);
+        output.WriteFloat(Turbidity);
+      }
+      if (HasNitrate) {
+        output.WriteRawTag(101);
+        output.WriteFloat(Nitrate);
+      }
+      if (HasAmmonium) {
+        output.WriteRawTag(109);
+        output.WriteFloat(Ammonium);
+      }
+      if (HasBiochemicalOxygenDemand) {
+        output.WriteRawTag(117);
+        output.WriteFloat(BiochemicalOxygenDemand);
+      }
+      if (HasSolarIrradiance) {
+        output.WriteRawTag(125);
+        output.WriteFloat(SolarIrradiance);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (HasSoilPh) {
+        size += 1 + 4;
+      }
+      if (HasPh) {
+        size += 1 + 4;
+      }
+      if (HasElectricalConductivity) {
+        size += 1 + 4;
+      }
+      if (HasSalinity) {
+        size += 1 + 4;
+      }
+      if (HasNitrogen) {
+        size += 1 + 4;
+      }
+      if (HasPhosphorus) {
+        size += 1 + 4;
+      }
+      if (HasPotassium) {
+        size += 1 + 4;
+      }
+      if (HasDissolvedOxygen) {
+        size += 1 + 4;
+      }
+      if (HasOrp) {
+        size += 1 + 4;
+      }
+      if (HasChemicalOxygenDemand) {
+        size += 1 + 4;
+      }
+      if (HasTurbidity) {
+        size += 1 + 4;
+      }
+      if (HasNitrate) {
+        size += 1 + 4;
+      }
+      if (HasAmmonium) {
+        size += 1 + 4;
+      }
+      if (HasBiochemicalOxygenDemand) {
+        size += 1 + 4;
+      }
+      if (HasSolarIrradiance) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SoilWaterMetrics other) {
+      if (other == null) {
+        return;
+      }
+      if (other.HasSoilPh) {
+        SoilPh = other.SoilPh;
+      }
+      if (other.HasPh) {
+        Ph = other.Ph;
+      }
+      if (other.HasElectricalConductivity) {
+        ElectricalConductivity = other.ElectricalConductivity;
+      }
+      if (other.HasSalinity) {
+        Salinity = other.Salinity;
+      }
+      if (other.HasNitrogen) {
+        Nitrogen = other.Nitrogen;
+      }
+      if (other.HasPhosphorus) {
+        Phosphorus = other.Phosphorus;
+      }
+      if (other.HasPotassium) {
+        Potassium = other.Potassium;
+      }
+      if (other.HasDissolvedOxygen) {
+        DissolvedOxygen = other.DissolvedOxygen;
+      }
+      if (other.HasOrp) {
+        Orp = other.Orp;
+      }
+      if (other.HasChemicalOxygenDemand) {
+        ChemicalOxygenDemand = other.ChemicalOxygenDemand;
+      }
+      if (other.HasTurbidity) {
+        Turbidity = other.Turbidity;
+      }
+      if (other.HasNitrate) {
+        Nitrate = other.Nitrate;
+      }
+      if (other.HasAmmonium) {
+        Ammonium = other.Ammonium;
+      }
+      if (other.HasBiochemicalOxygenDemand) {
+        BiochemicalOxygenDemand = other.BiochemicalOxygenDemand;
+      }
+      if (other.HasSolarIrradiance) {
+        SolarIrradiance = other.SolarIrradiance;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 13: {
+            SoilPh = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Ph = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            ElectricalConductivity = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            Salinity = input.ReadFloat();
+            break;
+          }
+          case 45: {
+            Nitrogen = input.ReadFloat();
+            break;
+          }
+          case 53: {
+            Phosphorus = input.ReadFloat();
+            break;
+          }
+          case 61: {
+            Potassium = input.ReadFloat();
+            break;
+          }
+          case 69: {
+            DissolvedOxygen = input.ReadFloat();
+            break;
+          }
+          case 77: {
+            Orp = input.ReadFloat();
+            break;
+          }
+          case 85: {
+            ChemicalOxygenDemand = input.ReadFloat();
+            break;
+          }
+          case 93: {
+            Turbidity = input.ReadFloat();
+            break;
+          }
+          case 101: {
+            Nitrate = input.ReadFloat();
+            break;
+          }
+          case 109: {
+            Ammonium = input.ReadFloat();
+            break;
+          }
+          case 117: {
+            BiochemicalOxygenDemand = input.ReadFloat();
+            break;
+          }
+          case 125: {
+            SolarIrradiance = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 13: {
+            SoilPh = input.ReadFloat();
+            break;
+          }
+          case 21: {
+            Ph = input.ReadFloat();
+            break;
+          }
+          case 29: {
+            ElectricalConductivity = input.ReadFloat();
+            break;
+          }
+          case 37: {
+            Salinity = input.ReadFloat();
+            break;
+          }
+          case 45: {
+            Nitrogen = input.ReadFloat();
+            break;
+          }
+          case 53: {
+            Phosphorus = input.ReadFloat();
+            break;
+          }
+          case 61: {
+            Potassium = input.ReadFloat();
+            break;
+          }
+          case 69: {
+            DissolvedOxygen = input.ReadFloat();
+            break;
+          }
+          case 77: {
+            Orp = input.ReadFloat();
+            break;
+          }
+          case 85: {
+            ChemicalOxygenDemand = input.ReadFloat();
+            break;
+          }
+          case 93: {
+            Turbidity = input.ReadFloat();
+            break;
+          }
+          case 101: {
+            Nitrate = input.ReadFloat();
+            break;
+          }
+          case 109: {
+            Ammonium = input.ReadFloat();
+            break;
+          }
+          case 117: {
+            BiochemicalOxygenDemand = input.ReadFloat();
+            break;
+          }
+          case 125: {
+            SolarIrradiance = input.ReadFloat();
+            break;
+          }
         }
       }
     }
@@ -2299,7 +4456,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2538,8 +4695,9 @@ namespace Meshtastic.Protobufs {
     private float ch4Voltage_;
     /// <summary>
     ///
-    /// Voltage (Ch4)
+    /// Voltage (Ch4) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch4Voltage {
@@ -2550,12 +4708,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch4_voltage" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh4Voltage {
       get { return (_hasBits0 & 64) != 0; }
     }
     /// <summary>Clears the value of the "ch4_voltage" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh4Voltage() {
@@ -2569,8 +4729,9 @@ namespace Meshtastic.Protobufs {
     private float ch4Current_;
     /// <summary>
     ///
-    /// Current (Ch4)
+    /// Current (Ch4) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch4Current {
@@ -2581,12 +4742,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch4_current" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh4Current {
       get { return (_hasBits0 & 128) != 0; }
     }
     /// <summary>Clears the value of the "ch4_current" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh4Current() {
@@ -2600,8 +4763,9 @@ namespace Meshtastic.Protobufs {
     private float ch5Voltage_;
     /// <summary>
     ///
-    /// Voltage (Ch5)
+    /// Voltage (Ch5) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch5Voltage {
@@ -2612,12 +4776,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch5_voltage" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh5Voltage {
       get { return (_hasBits0 & 256) != 0; }
     }
     /// <summary>Clears the value of the "ch5_voltage" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh5Voltage() {
@@ -2631,8 +4797,9 @@ namespace Meshtastic.Protobufs {
     private float ch5Current_;
     /// <summary>
     ///
-    /// Current (Ch5)
+    /// Current (Ch5) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch5Current {
@@ -2643,12 +4810,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch5_current" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh5Current {
       get { return (_hasBits0 & 512) != 0; }
     }
     /// <summary>Clears the value of the "ch5_current" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh5Current() {
@@ -2662,8 +4831,9 @@ namespace Meshtastic.Protobufs {
     private float ch6Voltage_;
     /// <summary>
     ///
-    /// Voltage (Ch6)
+    /// Voltage (Ch6) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch6Voltage {
@@ -2674,12 +4844,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch6_voltage" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh6Voltage {
       get { return (_hasBits0 & 1024) != 0; }
     }
     /// <summary>Clears the value of the "ch6_voltage" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh6Voltage() {
@@ -2693,8 +4865,9 @@ namespace Meshtastic.Protobufs {
     private float ch6Current_;
     /// <summary>
     ///
-    /// Current (Ch6)
+    /// Current (Ch6) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch6Current {
@@ -2705,12 +4878,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch6_current" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh6Current {
       get { return (_hasBits0 & 2048) != 0; }
     }
     /// <summary>Clears the value of the "ch6_current" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh6Current() {
@@ -2724,8 +4899,9 @@ namespace Meshtastic.Protobufs {
     private float ch7Voltage_;
     /// <summary>
     ///
-    /// Voltage (Ch7)
+    /// Voltage (Ch7) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch7Voltage {
@@ -2736,12 +4912,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch7_voltage" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh7Voltage {
       get { return (_hasBits0 & 4096) != 0; }
     }
     /// <summary>Clears the value of the "ch7_voltage" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh7Voltage() {
@@ -2755,8 +4933,9 @@ namespace Meshtastic.Protobufs {
     private float ch7Current_;
     /// <summary>
     ///
-    /// Current (Ch7)
+    /// Current (Ch7) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch7Current {
@@ -2767,12 +4946,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch7_current" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh7Current {
       get { return (_hasBits0 & 8192) != 0; }
     }
     /// <summary>Clears the value of the "ch7_current" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh7Current() {
@@ -2786,8 +4967,9 @@ namespace Meshtastic.Protobufs {
     private float ch8Voltage_;
     /// <summary>
     ///
-    /// Voltage (Ch8)
+    /// Voltage (Ch8) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch8Voltage {
@@ -2798,12 +4980,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch8_voltage" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh8Voltage {
       get { return (_hasBits0 & 16384) != 0; }
     }
     /// <summary>Clears the value of the "ch8_voltage" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh8Voltage() {
@@ -2817,8 +5001,9 @@ namespace Meshtastic.Protobufs {
     private float ch8Current_;
     /// <summary>
     ///
-    /// Current (Ch8)
+    /// Current (Ch8) - TODO Remove
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Ch8Current {
@@ -2829,12 +5014,14 @@ namespace Meshtastic.Protobufs {
       }
     }
     /// <summary>Gets whether the "ch8_current" field is set</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasCh8Current {
       get { return (_hasBits0 & 32768) != 0; }
     }
     /// <summary>Clears the value of the "ch8_current" field</summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearCh8Current() {
@@ -3362,7 +5549,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3408,6 +5595,7 @@ namespace Meshtastic.Protobufs {
       pmVocIdx_ = other.pmVocIdx_;
       pmNoxIdx_ = other.pmNoxIdx_;
       particlesTps_ = other.particlesTps_;
+      pmStatusFlags_ = other.pmStatusFlags_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -4192,6 +6380,40 @@ namespace Meshtastic.Protobufs {
       _hasBits0 &= ~16777216;
     }
 
+    /// <summary>Field number for the "pm_status_flags" field.</summary>
+    public const int PmStatusFlagsFieldNumber = 26;
+    private readonly static uint PmStatusFlagsDefaultValue = 0;
+
+    private uint pmStatusFlags_;
+    /// <summary>
+    ///
+    /// Raw PM sensor device status/error register bitmask, as defined by the sensor's own datasheet
+    /// (currently populated by the SEN6X family: bit 4 fan error, bit 6 RH&amp;T error, bit 7 gas/VOC-NOx
+    /// error, bit 9 CO2 error (SEN66), bit 10 HCHO error, bit 11 PM error, bit 12 CO2 error (SEN63C/SEN69C),
+    /// bit 21 fan speed warning)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PmStatusFlags {
+      get { if ((_hasBits0 & 33554432) != 0) { return pmStatusFlags_; } else { return PmStatusFlagsDefaultValue; } }
+      set {
+        _hasBits0 |= 33554432;
+        pmStatusFlags_ = value;
+      }
+    }
+    /// <summary>Gets whether the "pm_status_flags" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasPmStatusFlags {
+      get { return (_hasBits0 & 33554432) != 0; }
+    }
+    /// <summary>Clears the value of the "pm_status_flags" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPmStatusFlags() {
+      _hasBits0 &= ~33554432;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -4232,6 +6454,7 @@ namespace Meshtastic.Protobufs {
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PmVocIdx, other.PmVocIdx)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PmNoxIdx, other.PmNoxIdx)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(ParticlesTps, other.ParticlesTps)) return false;
+      if (PmStatusFlags != other.PmStatusFlags) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4264,6 +6487,7 @@ namespace Meshtastic.Protobufs {
       if (HasPmVocIdx) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PmVocIdx);
       if (HasPmNoxIdx) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PmNoxIdx);
       if (HasParticlesTps) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(ParticlesTps);
+      if (HasPmStatusFlags) hash ^= PmStatusFlags.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4382,6 +6606,10 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(205, 1);
         output.WriteFloat(ParticlesTps);
       }
+      if (HasPmStatusFlags) {
+        output.WriteRawTag(208, 1);
+        output.WriteUInt32(PmStatusFlags);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4492,6 +6720,10 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(205, 1);
         output.WriteFloat(ParticlesTps);
       }
+      if (HasPmStatusFlags) {
+        output.WriteRawTag(208, 1);
+        output.WriteUInt32(PmStatusFlags);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4576,6 +6808,9 @@ namespace Meshtastic.Protobufs {
       }
       if (HasParticlesTps) {
         size += 2 + 4;
+      }
+      if (HasPmStatusFlags) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(PmStatusFlags);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -4663,6 +6898,9 @@ namespace Meshtastic.Protobufs {
       }
       if (other.HasParticlesTps) {
         ParticlesTps = other.ParticlesTps;
+      }
+      if (other.HasPmStatusFlags) {
+        PmStatusFlags = other.PmStatusFlags;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -4781,6 +7019,10 @@ namespace Meshtastic.Protobufs {
           }
           case 205: {
             ParticlesTps = input.ReadFloat();
+            break;
+          }
+          case 208: {
+            PmStatusFlags = input.ReadUInt32();
             break;
           }
         }
@@ -4902,6 +7144,10 @@ namespace Meshtastic.Protobufs {
             ParticlesTps = input.ReadFloat();
             break;
           }
+          case 208: {
+            PmStatusFlags = input.ReadUInt32();
+            break;
+          }
         }
       }
     }
@@ -4928,7 +7174,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5710,7 +7956,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6163,7 +8409,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6498,7 +8744,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7078,7 +9324,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7123,6 +9369,9 @@ namespace Meshtastic.Protobufs {
           break;
         case VariantOneofCase.TrafficManagementStats:
           TrafficManagementStats = other.TrafficManagementStats.Clone();
+          break;
+        case VariantOneofCase.SoilWaterMetrics:
+          SoilWaterMetrics = other.SoilWaterMetrics.Clone();
           break;
       }
 
@@ -7279,6 +9528,22 @@ namespace Meshtastic.Protobufs {
       }
     }
 
+    /// <summary>Field number for the "soil_water_metrics" field.</summary>
+    public const int SoilWaterMetricsFieldNumber = 11;
+    /// <summary>
+    ///
+    /// Soil and water probe metrics
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.SoilWaterMetrics SoilWaterMetrics {
+      get { return variantCase_ == VariantOneofCase.SoilWaterMetrics ? (global::Meshtastic.Protobufs.SoilWaterMetrics) variant_ : null; }
+      set {
+        variant_ = value;
+        variantCase_ = value == null ? VariantOneofCase.None : VariantOneofCase.SoilWaterMetrics;
+      }
+    }
+
     private object variant_;
     /// <summary>Enum of possible cases for the "variant" oneof.</summary>
     public enum VariantOneofCase {
@@ -7291,6 +9556,7 @@ namespace Meshtastic.Protobufs {
       HealthMetrics = 7,
       HostMetrics = 8,
       TrafficManagementStats = 9,
+      SoilWaterMetrics = 11,
     }
     private VariantOneofCase variantCase_ = VariantOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7330,6 +9596,7 @@ namespace Meshtastic.Protobufs {
       if (!object.Equals(HealthMetrics, other.HealthMetrics)) return false;
       if (!object.Equals(HostMetrics, other.HostMetrics)) return false;
       if (!object.Equals(TrafficManagementStats, other.TrafficManagementStats)) return false;
+      if (!object.Equals(SoilWaterMetrics, other.SoilWaterMetrics)) return false;
       if (VariantCase != other.VariantCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -7347,6 +9614,7 @@ namespace Meshtastic.Protobufs {
       if (variantCase_ == VariantOneofCase.HealthMetrics) hash ^= HealthMetrics.GetHashCode();
       if (variantCase_ == VariantOneofCase.HostMetrics) hash ^= HostMetrics.GetHashCode();
       if (variantCase_ == VariantOneofCase.TrafficManagementStats) hash ^= TrafficManagementStats.GetHashCode();
+      if (variantCase_ == VariantOneofCase.SoilWaterMetrics) hash ^= SoilWaterMetrics.GetHashCode();
       hash ^= (int) variantCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -7402,6 +9670,10 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(74);
         output.WriteMessage(TrafficManagementStats);
       }
+      if (variantCase_ == VariantOneofCase.SoilWaterMetrics) {
+        output.WriteRawTag(90);
+        output.WriteMessage(SoilWaterMetrics);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -7448,6 +9720,10 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(74);
         output.WriteMessage(TrafficManagementStats);
       }
+      if (variantCase_ == VariantOneofCase.SoilWaterMetrics) {
+        output.WriteRawTag(90);
+        output.WriteMessage(SoilWaterMetrics);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -7484,6 +9760,9 @@ namespace Meshtastic.Protobufs {
       }
       if (variantCase_ == VariantOneofCase.TrafficManagementStats) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(TrafficManagementStats);
+      }
+      if (variantCase_ == VariantOneofCase.SoilWaterMetrics) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SoilWaterMetrics);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -7548,6 +9827,12 @@ namespace Meshtastic.Protobufs {
             TrafficManagementStats = new global::Meshtastic.Protobufs.TrafficManagementStats();
           }
           TrafficManagementStats.MergeFrom(other.TrafficManagementStats);
+          break;
+        case VariantOneofCase.SoilWaterMetrics:
+          if (SoilWaterMetrics == null) {
+            SoilWaterMetrics = new global::Meshtastic.Protobufs.SoilWaterMetrics();
+          }
+          SoilWaterMetrics.MergeFrom(other.SoilWaterMetrics);
           break;
       }
 
@@ -7646,6 +9931,15 @@ namespace Meshtastic.Protobufs {
             TrafficManagementStats = subBuilder;
             break;
           }
+          case 90: {
+            global::Meshtastic.Protobufs.SoilWaterMetrics subBuilder = new global::Meshtastic.Protobufs.SoilWaterMetrics();
+            if (variantCase_ == VariantOneofCase.SoilWaterMetrics) {
+              subBuilder.MergeFrom(SoilWaterMetrics);
+            }
+            input.ReadMessage(subBuilder);
+            SoilWaterMetrics = subBuilder;
+            break;
+          }
         }
       }
     #endif
@@ -7741,6 +10035,15 @@ namespace Meshtastic.Protobufs {
             TrafficManagementStats = subBuilder;
             break;
           }
+          case 90: {
+            global::Meshtastic.Protobufs.SoilWaterMetrics subBuilder = new global::Meshtastic.Protobufs.SoilWaterMetrics();
+            if (variantCase_ == VariantOneofCase.SoilWaterMetrics) {
+              subBuilder.MergeFrom(SoilWaterMetrics);
+            }
+            input.ReadMessage(subBuilder);
+            SoilWaterMetrics = subBuilder;
+            break;
+          }
         }
       }
     }
@@ -7767,7 +10070,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7997,7 +10300,214 @@ namespace Meshtastic.Protobufs {
 
   /// <summary>
   ///
-  /// SEN5X State, for saving to flash
+  /// AS3935 lightning sensor state, for saving to flash
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class AS3935State : pb::IMessage<AS3935State>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AS3935State> _parser = new pb::MessageParser<AS3935State>(() => new AS3935State());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AS3935State> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AS3935State() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AS3935State(AS3935State other) : this() {
+      tuningCapPf_ = other.tuningCapPf_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AS3935State Clone() {
+      return new AS3935State(this);
+    }
+
+    /// <summary>Field number for the "tuning_cap_pf" field.</summary>
+    public const int TuningCapPfFieldNumber = 1;
+    private uint tuningCapPf_;
+    /// <summary>
+    ///
+    /// Antenna tuning capacitance in pF, 0 to 120 in steps of 8. The chip does not retain
+    /// this across power loss, so it is stored here and re-applied on every boot.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TuningCapPf {
+      get { return tuningCapPf_; }
+      set {
+        tuningCapPf_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AS3935State);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AS3935State other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TuningCapPf != other.TuningCapPf) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TuningCapPf != 0) hash ^= TuningCapPf.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (TuningCapPf != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(TuningCapPf);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TuningCapPf != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(TuningCapPf);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (TuningCapPf != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TuningCapPf);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AS3935State other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TuningCapPf != 0) {
+        TuningCapPf = other.TuningCapPf;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            TuningCapPf = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            TuningCapPf = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  ///
+  /// SEN5X State, for saving to flash (to be merged with SEN6XState)
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class SEN5XState : pb::IMessage<SEN5XState>
@@ -8015,7 +10525,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8339,6 +10849,464 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void MergeFrom(SEN5XState other) {
+      if (other == null) {
+        return;
+      }
+      if (other.LastCleaningTime != 0) {
+        LastCleaningTime = other.LastCleaningTime;
+      }
+      if (other.LastCleaningValid != false) {
+        LastCleaningValid = other.LastCleaningValid;
+      }
+      if (other.OneShotMode != false) {
+        OneShotMode = other.OneShotMode;
+      }
+      if (other.HasVocStateTime) {
+        VocStateTime = other.VocStateTime;
+      }
+      if (other.HasVocStateValid) {
+        VocStateValid = other.VocStateValid;
+      }
+      if (other.HasVocStateArray) {
+        VocStateArray = other.VocStateArray;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            LastCleaningTime = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            LastCleaningValid = input.ReadBool();
+            break;
+          }
+          case 24: {
+            OneShotMode = input.ReadBool();
+            break;
+          }
+          case 32: {
+            VocStateTime = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            VocStateValid = input.ReadBool();
+            break;
+          }
+          case 49: {
+            VocStateArray = input.ReadFixed64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            LastCleaningTime = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            LastCleaningValid = input.ReadBool();
+            break;
+          }
+          case 24: {
+            OneShotMode = input.ReadBool();
+            break;
+          }
+          case 32: {
+            VocStateTime = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            VocStateValid = input.ReadBool();
+            break;
+          }
+          case 49: {
+            VocStateArray = input.ReadFixed64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  ///
+  /// SEN6X State, for saving to flash
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class SEN6XState : pb::IMessage<SEN6XState>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SEN6XState> _parser = new pb::MessageParser<SEN6XState>(() => new SEN6XState());
+    private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SEN6XState> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Meshtastic.Protobufs.TelemetryReflection.Descriptor.MessageTypes[13]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SEN6XState() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SEN6XState(SEN6XState other) : this() {
+      _hasBits0 = other._hasBits0;
+      lastCleaningTime_ = other.lastCleaningTime_;
+      lastCleaningValid_ = other.lastCleaningValid_;
+      oneShotMode_ = other.oneShotMode_;
+      vocStateTime_ = other.vocStateTime_;
+      vocStateValid_ = other.vocStateValid_;
+      vocStateArray_ = other.vocStateArray_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SEN6XState Clone() {
+      return new SEN6XState(this);
+    }
+
+    /// <summary>Field number for the "last_cleaning_time" field.</summary>
+    public const int LastCleaningTimeFieldNumber = 1;
+    private uint lastCleaningTime_;
+    /// <summary>
+    ///
+    /// Last cleaning time for SEN6X
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastCleaningTime {
+      get { return lastCleaningTime_; }
+      set {
+        lastCleaningTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_cleaning_valid" field.</summary>
+    public const int LastCleaningValidFieldNumber = 2;
+    private bool lastCleaningValid_;
+    /// <summary>
+    ///
+    /// Last cleaning time for SEN6X - valid flag
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool LastCleaningValid {
+      get { return lastCleaningValid_; }
+      set {
+        lastCleaningValid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "one_shot_mode" field.</summary>
+    public const int OneShotModeFieldNumber = 3;
+    private bool oneShotMode_;
+    /// <summary>
+    ///
+    /// Config flag for one-shot mode (see admin.proto)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool OneShotMode {
+      get { return oneShotMode_; }
+      set {
+        oneShotMode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "voc_state_time" field.</summary>
+    public const int VocStateTimeFieldNumber = 4;
+    private readonly static uint VocStateTimeDefaultValue = 0;
+
+    private uint vocStateTime_;
+    /// <summary>
+    ///
+    /// Last VOC state time, for models with a VOC sensor (SEN65, SEN66, SEN68, SEN69C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint VocStateTime {
+      get { if ((_hasBits0 & 1) != 0) { return vocStateTime_; } else { return VocStateTimeDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        vocStateTime_ = value;
+      }
+    }
+    /// <summary>Gets whether the "voc_state_time" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasVocStateTime {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "voc_state_time" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearVocStateTime() {
+      _hasBits0 &= ~1;
+    }
+
+    /// <summary>Field number for the "voc_state_valid" field.</summary>
+    public const int VocStateValidFieldNumber = 5;
+    private readonly static bool VocStateValidDefaultValue = false;
+
+    private bool vocStateValid_;
+    /// <summary>
+    ///
+    /// Last VOC state validity flag, for models with a VOC sensor (SEN65, SEN66, SEN68, SEN69C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool VocStateValid {
+      get { if ((_hasBits0 & 2) != 0) { return vocStateValid_; } else { return VocStateValidDefaultValue; } }
+      set {
+        _hasBits0 |= 2;
+        vocStateValid_ = value;
+      }
+    }
+    /// <summary>Gets whether the "voc_state_valid" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasVocStateValid {
+      get { return (_hasBits0 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "voc_state_valid" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearVocStateValid() {
+      _hasBits0 &= ~2;
+    }
+
+    /// <summary>Field number for the "voc_state_array" field.</summary>
+    public const int VocStateArrayFieldNumber = 6;
+    private readonly static ulong VocStateArrayDefaultValue = 0UL;
+
+    private ulong vocStateArray_;
+    /// <summary>
+    ///
+    /// VOC state array (8x uint8t), for models with a VOC sensor (SEN65, SEN66, SEN68, SEN69C)
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong VocStateArray {
+      get { if ((_hasBits0 & 4) != 0) { return vocStateArray_; } else { return VocStateArrayDefaultValue; } }
+      set {
+        _hasBits0 |= 4;
+        vocStateArray_ = value;
+      }
+    }
+    /// <summary>Gets whether the "voc_state_array" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasVocStateArray {
+      get { return (_hasBits0 & 4) != 0; }
+    }
+    /// <summary>Clears the value of the "voc_state_array" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearVocStateArray() {
+      _hasBits0 &= ~4;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SEN6XState);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SEN6XState other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (LastCleaningTime != other.LastCleaningTime) return false;
+      if (LastCleaningValid != other.LastCleaningValid) return false;
+      if (OneShotMode != other.OneShotMode) return false;
+      if (VocStateTime != other.VocStateTime) return false;
+      if (VocStateValid != other.VocStateValid) return false;
+      if (VocStateArray != other.VocStateArray) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (LastCleaningTime != 0) hash ^= LastCleaningTime.GetHashCode();
+      if (LastCleaningValid != false) hash ^= LastCleaningValid.GetHashCode();
+      if (OneShotMode != false) hash ^= OneShotMode.GetHashCode();
+      if (HasVocStateTime) hash ^= VocStateTime.GetHashCode();
+      if (HasVocStateValid) hash ^= VocStateValid.GetHashCode();
+      if (HasVocStateArray) hash ^= VocStateArray.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (LastCleaningTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(LastCleaningTime);
+      }
+      if (LastCleaningValid != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(LastCleaningValid);
+      }
+      if (OneShotMode != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(OneShotMode);
+      }
+      if (HasVocStateTime) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(VocStateTime);
+      }
+      if (HasVocStateValid) {
+        output.WriteRawTag(40);
+        output.WriteBool(VocStateValid);
+      }
+      if (HasVocStateArray) {
+        output.WriteRawTag(49);
+        output.WriteFixed64(VocStateArray);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LastCleaningTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(LastCleaningTime);
+      }
+      if (LastCleaningValid != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(LastCleaningValid);
+      }
+      if (OneShotMode != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(OneShotMode);
+      }
+      if (HasVocStateTime) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(VocStateTime);
+      }
+      if (HasVocStateValid) {
+        output.WriteRawTag(40);
+        output.WriteBool(VocStateValid);
+      }
+      if (HasVocStateArray) {
+        output.WriteRawTag(49);
+        output.WriteFixed64(VocStateArray);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (LastCleaningTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastCleaningTime);
+      }
+      if (LastCleaningValid != false) {
+        size += 1 + 1;
+      }
+      if (OneShotMode != false) {
+        size += 1 + 1;
+      }
+      if (HasVocStateTime) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(VocStateTime);
+      }
+      if (HasVocStateValid) {
+        size += 1 + 1;
+      }
+      if (HasVocStateArray) {
+        size += 1 + 8;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SEN6XState other) {
       if (other == null) {
         return;
       }
