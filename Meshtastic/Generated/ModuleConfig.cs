@@ -25,153 +25,369 @@ namespace Meshtastic.Protobufs {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Ch5tZXNodGFzdGljL21vZHVsZV9jb25maWcucHJvdG8SCm1lc2h0YXN0aWMa",
-            "FW1lc2h0YXN0aWMvYXRhay5wcm90byKPLQoMTW9kdWxlQ29uZmlnEjMKBG1x",
-            "dHQYASABKAsyIy5tZXNodGFzdGljLk1vZHVsZUNvbmZpZy5NUVRUQ29uZmln",
-            "SAASNwoGc2VyaWFsGAIgASgLMiUubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcu",
-            "U2VyaWFsQ29uZmlnSAASVAoVZXh0ZXJuYWxfbm90aWZpY2F0aW9uGAMgASgL",
-            "MjMubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcuRXh0ZXJuYWxOb3RpZmljYXRp",
-            "b25Db25maWdIABJECg1zdG9yZV9mb3J3YXJkGAQgASgLMisubWVzaHRhc3Rp",
-            "Yy5Nb2R1bGVDb25maWcuU3RvcmVGb3J3YXJkQ29uZmlnSAASPgoKcmFuZ2Vf",
-            "dGVzdBgFIAEoCzIoLm1lc2h0YXN0aWMuTW9kdWxlQ29uZmlnLlJhbmdlVGVz",
-            "dENvbmZpZ0gAEj0KCXRlbGVtZXRyeRgGIAEoCzIoLm1lc2h0YXN0aWMuTW9k",
-            "dWxlQ29uZmlnLlRlbGVtZXRyeUNvbmZpZ0gAEkYKDmNhbm5lZF9tZXNzYWdl",
-            "GAcgASgLMiwubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcuQ2FubmVkTWVzc2Fn",
-            "ZUNvbmZpZ0gAEjUKBWF1ZGlvGAggASgLMiQubWVzaHRhc3RpYy5Nb2R1bGVD",
-            "b25maWcuQXVkaW9Db25maWdIABJICg9yZW1vdGVfaGFyZHdhcmUYCSABKAsy",
-            "LS5tZXNodGFzdGljLk1vZHVsZUNvbmZpZy5SZW1vdGVIYXJkd2FyZUNvbmZp",
-            "Z0gAEkQKDW5laWdoYm9yX2luZm8YCiABKAsyKy5tZXNodGFzdGljLk1vZHVs",
-            "ZUNvbmZpZy5OZWlnaGJvckluZm9Db25maWdIABJKChBhbWJpZW50X2xpZ2h0",
-            "aW5nGAsgASgLMi4ubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcuQW1iaWVudExp",
-            "Z2h0aW5nQ29uZmlnSAASSgoQZGV0ZWN0aW9uX3NlbnNvchgMIAEoCzIuLm1l",
-            "c2h0YXN0aWMuTW9kdWxlQ29uZmlnLkRldGVjdGlvblNlbnNvckNvbmZpZ0gA",
-            "Ej8KCnBheGNvdW50ZXIYDSABKAsyKS5tZXNodGFzdGljLk1vZHVsZUNvbmZp",
-            "Zy5QYXhjb3VudGVyQ29uZmlnSAASRQoNc3RhdHVzbWVzc2FnZRgOIAEoCzIs",
-            "Lm1lc2h0YXN0aWMuTW9kdWxlQ29uZmlnLlN0YXR1c01lc3NhZ2VDb25maWdI",
-            "ABJOChJ0cmFmZmljX21hbmFnZW1lbnQYDyABKAsyMC5tZXNodGFzdGljLk1v",
-            "ZHVsZUNvbmZpZy5UcmFmZmljTWFuYWdlbWVudENvbmZpZ0gAEjEKA3RhaxgQ",
-            "IAEoCzIiLm1lc2h0YXN0aWMuTW9kdWxlQ29uZmlnLlRBS0NvbmZpZ0gAGrAC",
-            "CgpNUVRUQ29uZmlnEg8KB2VuYWJsZWQYASABKAgSDwoHYWRkcmVzcxgCIAEo",
-            "CRIQCgh1c2VybmFtZRgDIAEoCRIQCghwYXNzd29yZBgEIAEoCRIaChJlbmNy",
-            "eXB0aW9uX2VuYWJsZWQYBSABKAgSFAoManNvbl9lbmFibGVkGAYgASgIEhMK",
-            "C3Rsc19lbmFibGVkGAcgASgIEgwKBHJvb3QYCCABKAkSHwoXcHJveHlfdG9f",
-            "Y2xpZW50X2VuYWJsZWQYCSABKAgSHQoVbWFwX3JlcG9ydGluZ19lbmFibGVk",
-            "GAogASgIEkcKE21hcF9yZXBvcnRfc2V0dGluZ3MYCyABKAsyKi5tZXNodGFz",
-            "dGljLk1vZHVsZUNvbmZpZy5NYXBSZXBvcnRTZXR0aW5ncxpuChFNYXBSZXBv",
-            "cnRTZXR0aW5ncxIdChVwdWJsaXNoX2ludGVydmFsX3NlY3MYASABKA0SGgoS",
-            "cG9zaXRpb25fcHJlY2lzaW9uGAIgASgNEh4KFnNob3VsZF9yZXBvcnRfbG9j",
-            "YXRpb24YAyABKAgaggEKFFJlbW90ZUhhcmR3YXJlQ29uZmlnEg8KB2VuYWJs",
-            "ZWQYASABKAgSIgoaYWxsb3dfdW5kZWZpbmVkX3Bpbl9hY2Nlc3MYAiABKAgS",
-            "NQoOYXZhaWxhYmxlX3BpbnMYAyADKAsyHS5tZXNodGFzdGljLlJlbW90ZUhh",
-            "cmR3YXJlUGluGloKEk5laWdoYm9ySW5mb0NvbmZpZxIPCgdlbmFibGVkGAEg",
-            "ASgIEhcKD3VwZGF0ZV9pbnRlcnZhbBgCIAEoDRIaChJ0cmFuc21pdF9vdmVy",
-            "X2xvcmEYAyABKAgalwMKFURldGVjdGlvblNlbnNvckNvbmZpZxIPCgdlbmFi",
-            "bGVkGAEgASgIEh4KFm1pbmltdW1fYnJvYWRjYXN0X3NlY3MYAiABKA0SHAoU",
-            "c3RhdGVfYnJvYWRjYXN0X3NlY3MYAyABKA0SEQoJc2VuZF9iZWxsGAQgASgI",
-            "EgwKBG5hbWUYBSABKAkSEwoLbW9uaXRvcl9waW4YBiABKA0SWgoWZGV0ZWN0",
-            "aW9uX3RyaWdnZXJfdHlwZRgHIAEoDjI6Lm1lc2h0YXN0aWMuTW9kdWxlQ29u",
-            "ZmlnLkRldGVjdGlvblNlbnNvckNvbmZpZy5UcmlnZ2VyVHlwZRISCgp1c2Vf",
-            "cHVsbHVwGAggASgIIogBCgtUcmlnZ2VyVHlwZRINCglMT0dJQ19MT1cQABIO",
-            "CgpMT0dJQ19ISUdIEAESEAoMRkFMTElOR19FREdFEAISDwoLUklTSU5HX0VE",
-            "R0UQAxIaChZFSVRIRVJfRURHRV9BQ1RJVkVfTE9XEAQSGwoXRUlUSEVSX0VE",
-            "R0VfQUNUSVZFX0hJR0gQBRrkAgoLQXVkaW9Db25maWcSFgoOY29kZWMyX2Vu",
-            "YWJsZWQYASABKAgSDwoHcHR0X3BpbhgCIAEoDRJACgdiaXRyYXRlGAMgASgO",
-            "Mi8ubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcuQXVkaW9Db25maWcuQXVkaW9f",
-            "QmF1ZBIOCgZpMnNfd3MYBCABKA0SDgoGaTJzX3NkGAUgASgNEg8KB2kyc19k",
-            "aW4YBiABKA0SDwoHaTJzX3NjaxgHIAEoDSKnAQoKQXVkaW9fQmF1ZBISCg5D",
-            "T0RFQzJfREVGQVVMVBAAEg8KC0NPREVDMl8zMjAwEAESDwoLQ09ERUMyXzI0",
-            "MDAQAhIPCgtDT0RFQzJfMTYwMBADEg8KC0NPREVDMl8xNDAwEAQSDwoLQ09E",
-            "RUMyXzEzMDAQBRIPCgtDT0RFQzJfMTIwMBAGEg4KCkNPREVDMl83MDAQBxIP",
-            "CgtDT0RFQzJfNzAwQhAIGnYKEFBheGNvdW50ZXJDb25maWcSDwoHZW5hYmxl",
-            "ZBgBIAEoCBIiChpwYXhjb3VudGVyX3VwZGF0ZV9pbnRlcnZhbBgCIAEoDRIW",
-            "Cg53aWZpX3RocmVzaG9sZBgDIAEoBRIVCg1ibGVfdGhyZXNob2xkGAQgASgF",
-            "GtMDChdUcmFmZmljTWFuYWdlbWVudENvbmZpZxIPCgdlbmFibGVkGAEgASgI",
-            "Eh4KFnBvc2l0aW9uX2RlZHVwX2VuYWJsZWQYAiABKAgSHwoXcG9zaXRpb25f",
-            "cHJlY2lzaW9uX2JpdHMYAyABKA0SIgoacG9zaXRpb25fbWluX2ludGVydmFs",
-            "X3NlY3MYBCABKA0SIAoYbm9kZWluZm9fZGlyZWN0X3Jlc3BvbnNlGAUgASgI",
-            "EikKIW5vZGVpbmZvX2RpcmVjdF9yZXNwb25zZV9tYXhfaG9wcxgGIAEoDRIa",
-            "ChJyYXRlX2xpbWl0X2VuYWJsZWQYByABKAgSHgoWcmF0ZV9saW1pdF93aW5k",
-            "b3dfc2VjcxgIIAEoDRIeChZyYXRlX2xpbWl0X21heF9wYWNrZXRzGAkgASgN",
-            "EhwKFGRyb3BfdW5rbm93bl9lbmFibGVkGAogASgIEiAKGHVua25vd25fcGFj",
-            "a2V0X3RocmVzaG9sZBgLIAEoDRIdChVleGhhdXN0X2hvcF90ZWxlbWV0cnkY",
-            "DCABKAgSHAoUZXhoYXVzdF9ob3BfcG9zaXRpb24YDSABKAgSHAoUcm91dGVy",
-            "X3ByZXNlcnZlX2hvcHMYDiABKAgaowUKDFNlcmlhbENvbmZpZxIPCgdlbmFi",
-            "bGVkGAEgASgIEgwKBGVjaG8YAiABKAgSCwoDcnhkGAMgASgNEgsKA3R4ZBgE",
-            "IAEoDRI/CgRiYXVkGAUgASgOMjEubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcu",
-            "U2VyaWFsQ29uZmlnLlNlcmlhbF9CYXVkEg8KB3RpbWVvdXQYBiABKA0SPwoE",
-            "bW9kZRgHIAEoDjIxLm1lc2h0YXN0aWMuTW9kdWxlQ29uZmlnLlNlcmlhbENv",
-            "bmZpZy5TZXJpYWxfTW9kZRIkChxvdmVycmlkZV9jb25zb2xlX3NlcmlhbF9w",
-            "b3J0GAggASgIIooCCgtTZXJpYWxfQmF1ZBIQCgxCQVVEX0RFRkFVTFQQABIM",
-            "CghCQVVEXzExMBABEgwKCEJBVURfMzAwEAISDAoIQkFVRF82MDAQAxINCglC",
-            "QVVEXzEyMDAQBBINCglCQVVEXzI0MDAQBRINCglCQVVEXzQ4MDAQBhINCglC",
-            "QVVEXzk2MDAQBxIOCgpCQVVEXzE5MjAwEAgSDgoKQkFVRF8zODQwMBAJEg4K",
-            "CkJBVURfNTc2MDAQChIPCgtCQVVEXzExNTIwMBALEg8KC0JBVURfMjMwNDAw",
-            "EAwSDwoLQkFVRF80NjA4MDAQDRIPCgtCQVVEXzU3NjAwMBAOEg8KC0JBVURf",
-            "OTIxNjAwEA8ikwEKC1NlcmlhbF9Nb2RlEgsKB0RFRkFVTFQQABIKCgZTSU1Q",
-            "TEUQARIJCgVQUk9UTxACEgsKB1RFWFRNU0cQAxIICgROTUVBEAQSCwoHQ0FM",
-            "VE9QTxAFEggKBFdTODUQBhINCglWRV9ESVJFQ1QQBxINCglNU19DT05GSUcQ",
-            "CBIHCgNMT0cQCRILCgdMT0dURVhUEAoa6QIKGkV4dGVybmFsTm90aWZpY2F0",
-            "aW9uQ29uZmlnEg8KB2VuYWJsZWQYASABKAgSEQoJb3V0cHV0X21zGAIgASgN",
-            "Eg4KBm91dHB1dBgDIAEoDRIUCgxvdXRwdXRfdmlicmEYCCABKA0SFQoNb3V0",
-            "cHV0X2J1enplchgJIAEoDRIOCgZhY3RpdmUYBCABKAgSFQoNYWxlcnRfbWVz",
-            "c2FnZRgFIAEoCBIbChNhbGVydF9tZXNzYWdlX3ZpYnJhGAogASgIEhwKFGFs",
-            "ZXJ0X21lc3NhZ2VfYnV6emVyGAsgASgIEhIKCmFsZXJ0X2JlbGwYBiABKAgS",
-            "GAoQYWxlcnRfYmVsbF92aWJyYRgMIAEoCBIZChFhbGVydF9iZWxsX2J1enpl",
-            "chgNIAEoCBIPCgd1c2VfcHdtGAcgASgIEhMKC25hZ190aW1lb3V0GA4gASgN",
-            "EhkKEXVzZV9pMnNfYXNfYnV6emVyGA8gASgIGpcBChJTdG9yZUZvcndhcmRD",
-            "b25maWcSDwoHZW5hYmxlZBgBIAEoCBIRCgloZWFydGJlYXQYAiABKAgSDwoH",
-            "cmVjb3JkcxgDIAEoDRIaChJoaXN0b3J5X3JldHVybl9tYXgYBCABKA0SHQoV",
-            "aGlzdG9yeV9yZXR1cm5fd2luZG93GAUgASgNEhEKCWlzX3NlcnZlchgGIAEo",
-            "CBpZCg9SYW5nZVRlc3RDb25maWcSDwoHZW5hYmxlZBgBIAEoCBIOCgZzZW5k",
-            "ZXIYAiABKA0SDAoEc2F2ZRgDIAEoCBIXCg9jbGVhcl9vbl9yZWJvb3QYBCAB",
-            "KAgajwQKD1RlbGVtZXRyeUNvbmZpZxIeChZkZXZpY2VfdXBkYXRlX2ludGVy",
-            "dmFsGAEgASgNEiMKG2Vudmlyb25tZW50X3VwZGF0ZV9pbnRlcnZhbBgCIAEo",
-            "DRInCh9lbnZpcm9ubWVudF9tZWFzdXJlbWVudF9lbmFibGVkGAMgASgIEiIK",
-            "GmVudmlyb25tZW50X3NjcmVlbl9lbmFibGVkGAQgASgIEiYKHmVudmlyb25t",
-            "ZW50X2Rpc3BsYXlfZmFocmVuaGVpdBgFIAEoCBIbChNhaXJfcXVhbGl0eV9l",
-            "bmFibGVkGAYgASgIEhwKFGFpcl9xdWFsaXR5X2ludGVydmFsGAcgASgNEiEK",
-            "GXBvd2VyX21lYXN1cmVtZW50X2VuYWJsZWQYCCABKAgSHQoVcG93ZXJfdXBk",
-            "YXRlX2ludGVydmFsGAkgASgNEhwKFHBvd2VyX3NjcmVlbl9lbmFibGVkGAog",
-            "ASgIEiIKGmhlYWx0aF9tZWFzdXJlbWVudF9lbmFibGVkGAsgASgIEh4KFmhl",
-            "YWx0aF91cGRhdGVfaW50ZXJ2YWwYDCABKA0SHQoVaGVhbHRoX3NjcmVlbl9l",
-            "bmFibGVkGA0gASgIEiAKGGRldmljZV90ZWxlbWV0cnlfZW5hYmxlZBgOIAEo",
-            "CBIiChphaXJfcXVhbGl0eV9zY3JlZW5fZW5hYmxlZBgPIAEoCBreBAoTQ2Fu",
-            "bmVkTWVzc2FnZUNvbmZpZxIXCg9yb3RhcnkxX2VuYWJsZWQYASABKAgSGQoR",
-            "aW5wdXRicm9rZXJfcGluX2EYAiABKA0SGQoRaW5wdXRicm9rZXJfcGluX2IY",
-            "AyABKA0SHQoVaW5wdXRicm9rZXJfcGluX3ByZXNzGAQgASgNElkKFGlucHV0",
-            "YnJva2VyX2V2ZW50X2N3GAUgASgOMjsubWVzaHRhc3RpYy5Nb2R1bGVDb25m",
-            "aWcuQ2FubmVkTWVzc2FnZUNvbmZpZy5JbnB1dEV2ZW50Q2hhchJaChVpbnB1",
-            "dGJyb2tlcl9ldmVudF9jY3cYBiABKA4yOy5tZXNodGFzdGljLk1vZHVsZUNv",
-            "bmZpZy5DYW5uZWRNZXNzYWdlQ29uZmlnLklucHV0RXZlbnRDaGFyElwKF2lu",
-            "cHV0YnJva2VyX2V2ZW50X3ByZXNzGAcgASgOMjsubWVzaHRhc3RpYy5Nb2R1",
-            "bGVDb25maWcuQ2FubmVkTWVzc2FnZUNvbmZpZy5JbnB1dEV2ZW50Q2hhchIX",
-            "Cg91cGRvd24xX2VuYWJsZWQYCCABKAgSEwoHZW5hYmxlZBgJIAEoCEICGAES",
-            "HgoSYWxsb3dfaW5wdXRfc291cmNlGAogASgJQgIYARIRCglzZW5kX2JlbGwY",
-            "CyABKAgiYwoOSW5wdXRFdmVudENoYXISCAoETk9ORRAAEgYKAlVQEBESCAoE",
-            "RE9XThASEggKBExFRlQQExIJCgVSSUdIVBAUEgoKBlNFTEVDVBAKEggKBEJB",
-            "Q0sQGxIKCgZDQU5DRUwQGBplChVBbWJpZW50TGlnaHRpbmdDb25maWcSEQoJ",
-            "bGVkX3N0YXRlGAEgASgIEg8KB2N1cnJlbnQYAiABKA0SCwoDcmVkGAMgASgN",
-            "Eg0KBWdyZWVuGAQgASgNEgwKBGJsdWUYBSABKA0aKgoTU3RhdHVzTWVzc2Fn",
-            "ZUNvbmZpZxITCgtub2RlX3N0YXR1cxgBIAEoCRpRCglUQUtDb25maWcSHgoE",
-            "dGVhbRgBIAEoDjIQLm1lc2h0YXN0aWMuVGVhbRIkCgRyb2xlGAIgASgOMhYu",
-            "bWVzaHRhc3RpYy5NZW1iZXJSb2xlQhEKD3BheWxvYWRfdmFyaWFudCJkChFS",
-            "ZW1vdGVIYXJkd2FyZVBpbhIQCghncGlvX3BpbhgBIAEoDRIMCgRuYW1lGAIg",
-            "ASgJEi8KBHR5cGUYAyABKA4yIS5tZXNodGFzdGljLlJlbW90ZUhhcmR3YXJl",
-            "UGluVHlwZSpJChVSZW1vdGVIYXJkd2FyZVBpblR5cGUSCwoHVU5LTk9XThAA",
-            "EhAKDERJR0lUQUxfUkVBRBABEhEKDURJR0lUQUxfV1JJVEUQAkJoChRvcmcu",
-            "bWVzaHRhc3RpYy5wcm90b0ISTW9kdWxlQ29uZmlnUHJvdG9zWiJnaXRodWIu",
-            "Y29tL21lc2h0YXN0aWMvZ28vZ2VuZXJhdGVkqgIUTWVzaHRhc3RpYy5Qcm90",
-            "b2J1ZnO6AgBiBnByb3RvMw=="));
+            "FW1lc2h0YXN0aWMvYXRhay5wcm90bxoYbWVzaHRhc3RpYy9jaGFubmVsLnBy",
+            "b3RvGhdtZXNodGFzdGljL2NvbmZpZy5wcm90bxofbWVzaHRhc3RpYy9maWVs",
+            "ZF9tZXRhZGF0YS5wcm90byKteAoMTW9kdWxlQ29uZmlnEjMKBG1xdHQYASAB",
+            "KAsyIy5tZXNodGFzdGljLk1vZHVsZUNvbmZpZy5NUVRUQ29uZmlnSAASNwoG",
+            "c2VyaWFsGAIgASgLMiUubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcuU2VyaWFs",
+            "Q29uZmlnSAASVAoVZXh0ZXJuYWxfbm90aWZpY2F0aW9uGAMgASgLMjMubWVz",
+            "aHRhc3RpYy5Nb2R1bGVDb25maWcuRXh0ZXJuYWxOb3RpZmljYXRpb25Db25m",
+            "aWdIABJECg1zdG9yZV9mb3J3YXJkGAQgASgLMisubWVzaHRhc3RpYy5Nb2R1",
+            "bGVDb25maWcuU3RvcmVGb3J3YXJkQ29uZmlnSAASPgoKcmFuZ2VfdGVzdBgF",
+            "IAEoCzIoLm1lc2h0YXN0aWMuTW9kdWxlQ29uZmlnLlJhbmdlVGVzdENvbmZp",
+            "Z0gAEj0KCXRlbGVtZXRyeRgGIAEoCzIoLm1lc2h0YXN0aWMuTW9kdWxlQ29u",
+            "ZmlnLlRlbGVtZXRyeUNvbmZpZ0gAEkYKDmNhbm5lZF9tZXNzYWdlGAcgASgL",
+            "MiwubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcuQ2FubmVkTWVzc2FnZUNvbmZp",
+            "Z0gAEjUKBWF1ZGlvGAggASgLMiQubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcu",
+            "QXVkaW9Db25maWdIABJICg9yZW1vdGVfaGFyZHdhcmUYCSABKAsyLS5tZXNo",
+            "dGFzdGljLk1vZHVsZUNvbmZpZy5SZW1vdGVIYXJkd2FyZUNvbmZpZ0gAEkQK",
+            "DW5laWdoYm9yX2luZm8YCiABKAsyKy5tZXNodGFzdGljLk1vZHVsZUNvbmZp",
+            "Zy5OZWlnaGJvckluZm9Db25maWdIABJKChBhbWJpZW50X2xpZ2h0aW5nGAsg",
+            "ASgLMi4ubWVzaHRhc3RpYy5Nb2R1bGVDb25maWcuQW1iaWVudExpZ2h0aW5n",
+            "Q29uZmlnSAASSgoQZGV0ZWN0aW9uX3NlbnNvchgMIAEoCzIuLm1lc2h0YXN0",
+            "aWMuTW9kdWxlQ29uZmlnLkRldGVjdGlvblNlbnNvckNvbmZpZ0gAEj8KCnBh",
+            "eGNvdW50ZXIYDSABKAsyKS5tZXNodGFzdGljLk1vZHVsZUNvbmZpZy5QYXhj",
+            "b3VudGVyQ29uZmlnSAASUwoNc3RhdHVzbWVzc2FnZRgOIAEoCzIsLm1lc2h0",
+            "YXN0aWMuTW9kdWxlQ29uZmlnLlN0YXR1c01lc3NhZ2VDb25maWdCDMrzGAhS",
+            "BjIuNy4yMEgAElsKEnRyYWZmaWNfbWFuYWdlbWVudBgPIAEoCzIwLm1lc2h0",
+            "YXN0aWMuTW9kdWxlQ29uZmlnLlRyYWZmaWNNYW5hZ2VtZW50Q29uZmlnQgvK",
+            "8xgHUgUyLjguMEgAEj4KA3RhaxgQIAEoCzIiLm1lc2h0YXN0aWMuTW9kdWxl",
+            "Q29uZmlnLlRBS0NvbmZpZ0ILyvMYB1IFMi44LjBIABJNCgttZXNoX2JlYWNv",
+            "bhgRIAEoCzIpLm1lc2h0YXN0aWMuTW9kdWxlQ29uZmlnLk1lc2hCZWFjb25D",
+            "b25maWdCC8rzGAdSBTIuOC4wSAAa4gcKCk1RVFRDb25maWcSOAoHZW5hYmxl",
+            "ZBgBIAEoCEInyvMYIzoMTVFUVCBFbmFibGVkQhNFbmFibGUgTVFUVCBnYXRl",
+            "d2F5EjMKB2FkZHJlc3MYAiABKAlCIsrzGB46B0FkZHJlc3NCE01RVFQgc2Vy",
+            "dmVyIGFkZHJlc3MSLwoIdXNlcm5hbWUYAyABKAlCHcrzGBk6CFVzZXJuYW1l",
+            "Qg1NUVRUIHVzZXJuYW1lEi8KCHBhc3N3b3JkGAQgASgJQh3K8xgZOghQYXNz",
+            "d29yZEINTVFUVCBwYXNzd29yZBJUChJlbmNyeXB0aW9uX2VuYWJsZWQYBSAB",
+            "KAhCOMrzGDQ6EkVuY3J5cHRpb24gRW5hYmxlZEIeU2VuZCBlbmNyeXB0ZWQg",
+            "cGFja2V0cyB0byBNUVRUEiMKDGpzb25fZW5hYmxlZBgGIAEoCEINGAHK8xgH",
+            "WgUyLjguMBJeCgt0bHNfZW5hYmxlZBgHIAEoCEJJyvMYRToLVExTIEVuYWJs",
+            "ZWRCNlRMUyBpcyByZXF1aXJlZCBmb3IgdGhlIHB1YmxpYyBNZXNodGFzdGlj",
+            "IE1RVFQgc2VydmVyLhIvCgRyb290GAggASgJQiHK8xgdOgpSb290IFRvcGlj",
+            "Qg9NUVRUIHJvb3QgdG9waWMSewoXcHJveHlfdG9fY2xpZW50X2VuYWJsZWQY",
+            "CSABKAhCWsrzGFY6EU1RVFQgQ2xpZW50IFByb3h5QkFVdGlsaXplcyB0aGUg",
+            "bmV0d29yayBjb25uZWN0aW9uIG9uIHlvdXIgcGhvbmUgdG8gY29ubmVjdCB0",
+            "byBNUVRULhKwAgoVbWFwX3JlcG9ydGluZ19lbmFibGVkGAogASgIQpACyvMY",
+            "iwI6DU1hcCBSZXBvcnRpbmdC+QFZb3VyIG5vZGUgd2lsbCBwZXJpb2RpY2Fs",
+            "bHkgc2VuZCBhbiB1bmVuY3J5cHRlZCBtYXAgcmVwb3J0IHBhY2tldCB0byB0",
+            "aGUgY29uZmlndXJlZCBNUVRUIHNlcnZlciwgdGhpcyBpbmNsdWRlcyBpZCwg",
+            "c2hvcnQgYW5kIGxvbmcgbmFtZSwgYXBwcm94aW1hdGUgbG9jYXRpb24sIGhh",
+            "cmR3YXJlIG1vZGVsLCByb2xlLCBmaXJtd2FyZSB2ZXJzaW9uLCBMb1JhIHJl",
+            "Z2lvbiwgbW9kZW0gcHJlc2V0IGFuZCBwcmltYXJ5IGNoYW5uZWwgbmFtZS4S",
+            "RwoTbWFwX3JlcG9ydF9zZXR0aW5ncxgLIAEoCzIqLm1lc2h0YXN0aWMuTW9k",
+            "dWxlQ29uZmlnLk1hcFJlcG9ydFNldHRpbmdzGssCChFNYXBSZXBvcnRTZXR0",
+            "aW5ncxJiChVwdWJsaXNoX2ludGVydmFsX3NlY3MYASABKA1CQ8rzGD8qAXM6",
+            "FE1hcCBQdWJsaXNoIEludGVydmFsQiRIb3cgb2Z0ZW4gYSBtYXAgcmVwb3J0",
+            "IGlzIHB1Ymxpc2hlZC4SGgoScG9zaXRpb25fcHJlY2lzaW9uGAIgASgNErUB",
+            "ChZzaG91bGRfcmVwb3J0X2xvY2F0aW9uGAMgASgIQpQByvMYjwE6D1JlcG9y",
+            "dCBMb2NhdGlvbkJ1SSBoYXZlIHJlYWQgYW5kIHVuZGVyc3RhbmQgdGhlIGFi",
+            "b3ZlLiBJIHZvbHVudGFyaWx5IGNvbnNlbnQgdG8gdGhlIHVuZW5jcnlwdGVk",
+            "IHRyYW5zbWlzc2lvbiBvZiBteSBub2RlIGRhdGEgdmlhIE1RVFQuUgUyLjYu",
+            "OBqCAQoUUmVtb3RlSGFyZHdhcmVDb25maWcSDwoHZW5hYmxlZBgBIAEoCBIi",
+            "ChphbGxvd191bmRlZmluZWRfcGluX2FjY2VzcxgCIAEoCBI1Cg5hdmFpbGFi",
+            "bGVfcGlucxgDIAMoCzIdLm1lc2h0YXN0aWMuUmVtb3RlSGFyZHdhcmVQaW4a",
+            "4QMKEk5laWdoYm9ySW5mb0NvbmZpZxKyAQoHZW5hYmxlZBgBIAEoCEKgAcrz",
+            "GJsBOhVOZWlnaGJvciBJbmZvIEVuYWJsZWRCgQFFbmFibGUgbmVpZ2hib3Ig",
+            "aW5mbyBicm9hZGNhc3RpbmcuIFBlcmlvZGljYWxseSBzZW5kcyBpbmZvcm1h",
+            "dGlvbiBhYm91dCBkaXJlY3RseS1oZWFyZCBuZWlnaGJvcnMgdG8gaGVscCB2",
+            "aXN1YWxpemUgbWVzaCB0b3BvbG9neS4SWAoPdXBkYXRlX2ludGVydmFsGAIg",
+            "ASgNQj/K8xg7KgFzOg9VcGRhdGUgSW50ZXJ2YWxCJUhvdyBvZnRlbiB0byBi",
+            "cm9hZGNhc3QgbmVpZ2hib3IgaW5mby4SuwEKEnRyYW5zbWl0X292ZXJfbG9y",
+            "YRgDIAEoCEKeAcrzGJkBOhJUcmFuc21pdCBvdmVyIExvUmFCggFXaGV0aGVy",
+            "IHRvIHRyYW5zbWl0IG5laWdoYm9yIGluZm8gb3ZlciBMb1JhIGluIGFkZGl0",
+            "aW9uIHRvIE1RVFQgYW5kIFBob25lQVBJLiBOb3QgYXZhaWxhYmxlIG9uIGNo",
+            "YW5uZWxzIHdpdGggZGVmYXVsdCBrZXkgYW5kIG5hbWUuGvIKChVEZXRlY3Rp",
+            "b25TZW5zb3JDb25maWcSgwIKB2VuYWJsZWQYASABKAhC8QHK8xjsAToYRGV0",
+            "ZWN0aW9uIFNlbnNvciBFbmFibGVkQs8BRW5hYmxlcyB0aGUgZGV0ZWN0aW9u",
+            "IHNlbnNvciBtb2R1bGUsIGl0IG5lZWRzIHRvIGJlIGVuYWJsZWQgb24gYm90",
+            "aCB0aGUgbm9kZSB3aXRoIHRoZSBzZW5zb3IsIGFuZCBhbnkgbm9kZXMgdGhh",
+            "dCB5b3Ugd2FudCB0byByZWNlaXZlIGRldGVjdGlvbiBzZW5zb3IgdGV4dCBt",
+            "ZXNzYWdlcyBvciB2aWV3IHRoZSBkZXRlY3Rpb24gc2Vuc29yIGxvZyBhbmQg",
+            "Y2hhcnQuEn4KFm1pbmltdW1fYnJvYWRjYXN0X3NlY3MYAiABKA1CXsrzGFoq",
+            "AXM6KU1pbmltdW0gdGltZSBiZXR3ZWVuIGRldGVjdGlvbiBicm9hZGNhc3Rz",
+            "QipNaW5pbXVtIHRpbWUgYmV0d2VlbiBkZXRlY3Rpb24gYnJvYWRjYXN0cy4S",
+            "oQEKFHN0YXRlX2Jyb2FkY2FzdF9zZWNzGAMgASgNQoIByvMYfioBczoYU3Rh",
+            "dGUgQnJvYWRjYXN0IEludGVydmFsQl9Ib3cgb2Z0ZW4gdG8gc2VuZCB0aGUg",
+            "ZGV0ZWN0aW9uIHNlbnNvciBzdGF0ZSB0byB0aGUgbWVzaCwgd2hldGhlciBv",
+            "ciBub3QgYW55dGhpbmcgd2FzIGRldGVjdGVkLhJ8CglzZW5kX2JlbGwYBCAB",
+            "KAhCacrzGGU6CVNlbmQgQmVsbEJYU2VuZCBBU0NJSSBiZWxsIHdpdGggYWxl",
+            "cnQgbWVzc2FnZS4gVXNlZnVsIGZvciB0cmlnZ2VyaW5nIGV4dGVybmFsIG5v",
+            "dGlmaWNhdGlvbiBvbiBiZWxsLhI3CgRuYW1lGAUgASgJQinK8xglOgROYW1l",
+            "Qh1TZW5zb3IgbmFtZSBmb3IgbWVzaCBtZXNzYWdlcxJTCgttb25pdG9yX3Bp",
+            "bhgGIAEoDUI+yvMYOjoTR1BJTyBQaW4gdG8gbW9uaXRvckIjR1BJTyBwaW4g",
+            "d2F0Y2hlZCBmb3Igc3RhdGUgY2hhbmdlcy4ShAEKFmRldGVjdGlvbl90cmln",
+            "Z2VyX3R5cGUYByABKA4yOi5tZXNodGFzdGljLk1vZHVsZUNvbmZpZy5EZXRl",
+            "Y3Rpb25TZW5zb3JDb25maWcuVHJpZ2dlclR5cGVCKMrzGCQ6C1RyaWdnZXJU",
+            "eXBlQhVUeXBlIG9mIHRyaWdnZXIgZXZlbnQSowEKCnVzZV9wdWxsdXAYCCAB",
+            "KAhCjgHK8xiJAToUVXNlcyBwdWxsdXAgcmVzaXN0b3JCcVdoZXRoZXIgb3Ig",
+            "bm90IHVzZSBJTlBVVF9QVUxMVVAgbW9kZSBmb3IgR1BJTyBwaW4uIE9ubHkg",
+            "YXBwbGljYWJsZSBpZiB0aGUgYm9hcmQgdXNlcyBwdWxsLXVwIHJlc2lzdG9y",
+            "cyBvbiB0aGUgcGluIvUBCgtUcmlnZ2VyVHlwZRIYCglMT0dJQ19MT1cQABoJ",
+            "yvMYBToDTG93EhoKCkxPR0lDX0hJR0gQARoKyvMYBjoESGlnaBIkCgxGQUxM",
+            "SU5HX0VER0UQAhoSyvMYDjoMRmFsbGluZyBFZGdlEiIKC1JJU0lOR19FREdF",
+            "EAMaEcrzGA06C1Jpc2luZyBFZGdlEjEKFkVJVEhFUl9FREdFX0FDVElWRV9M",
+            "T1cQBBoVyvMYEToPRWl0aGVyIEVkZ2UgTG93EjMKF0VJVEhFUl9FREdFX0FD",
+            "VElWRV9ISUdIEAUaFsrzGBI6EEVpdGhlciBFZGdlIEhpZ2ga8gYKC0F1ZGlv",
+            "Q29uZmlnEnoKDmNvZGVjMl9lbmFibGVkGAEgASgIQmLK8xheOg5Db2RlYzIg",
+            "RW5hYmxlZEJMRW5hYmxlIENvZGVjMiBhdWRpbyBlbmNvZGluZy9kZWNvZGlu",
+            "ZyBmb3Igdm9pY2UgY29tbXVuaWNhdGlvbiBvdmVyIHRoZSBtZXNoLhI9Cgdw",
+            "dHRfcGluGAIgASgNQizK8xgoOgdQVFQgUGluQh1QdXNoLXRvLXRhbGsgR1BJ",
+            "TyBwaW4gbnVtYmVyLhLKAQoHYml0cmF0ZRgDIAEoDjIvLm1lc2h0YXN0aWMu",
+            "TW9kdWxlQ29uZmlnLkF1ZGlvQ29uZmlnLkF1ZGlvX0JhdWRChwHK8xiCAToH",
+            "Qml0cmF0ZUJ3VGhlIENvZGVjMiBiaXRyYXRlIHRvIHVzZS4gVGhlIHNhbXBs",
+            "ZSByYXRlIGlzIGFsd2F5cyA4IGtIei4gTG93ZXIgYml0cmF0ZXMgdXNlIGxl",
+            "c3MgYmFuZHdpZHRoIGJ1dCByZWR1Y2UgYXVkaW8gcXVhbGl0eS4SHAoGaTJz",
+            "X3dzGAQgASgNQgzK8xgIOgZJMlMgV1MSHAoGaTJzX3NkGAUgASgNQgzK8xgI",
+            "OgZJMlMgU0QSHgoHaTJzX2RpbhgGIAEoDUINyvMYCToHSTJTIERJThIeCgdp",
+            "MnNfc2NrGAcgASgNQg3K8xgJOgdJMlMgU0NLIt4CCgpBdWRpb19CYXVkEiEK",
+            "DkNPREVDMl9ERUZBVUxUEAAaDcrzGAk6B0RlZmF1bHQSHwoLQ09ERUMyXzMy",
+            "MDAQARoOyvMYCjoIMzIwMCBicHMSHwoLQ09ERUMyXzI0MDAQAhoOyvMYCjoI",
+            "MjQwMCBicHMSHwoLQ09ERUMyXzE2MDAQAxoOyvMYCjoIMTYwMCBicHMSHwoL",
+            "Q09ERUMyXzE0MDAQBBoOyvMYCjoIMTQwMCBicHMSHwoLQ09ERUMyXzEzMDAQ",
+            "BRoOyvMYCjoIMTMwMCBicHMSHwoLQ09ERUMyXzEyMDAQBhoOyvMYCjoIMTIw",
+            "MCBicHMSEgoKQ09ERUMyXzcwMBAHGgIIARITCgtDT0RFQzJfNzAwQhAIGgII",
+            "ARIfCgtDT0RFQzJfNzAwQxAJGg7K8xgKOgg3MDBDIGJwcxIdCgpDT0RFQzJf",
+            "NDUwEAoaDcrzGAk6BzQ1MCBicHMaqQQKEFBheGNvdW50ZXJDb25maWcS1QEK",
+            "B2VuYWJsZWQYASABKAhCwwHK8xi+AToTUEFYIENvdW50ZXIgRW5hYmxlZEKm",
+            "AVdoZW4gZW5hYmxlZCB0aGUgUEFYIENvdW50ZXIgbW9kdWxlIGNvdW50cyB0",
+            "aGUgbnVtYmVyIG9mIHBlb3BsZSBwYXNzaW5nIGJ5IHVzaW5nIFdpRmkgYW5k",
+            "IEJsdWV0b290aC4gQm90aCBXaUZJIGFuZCBCbHVldG9vdGggbXVzdCBiZSBk",
+            "aXNhYmxlZCBmb3IgUEFYIGNvdW50ZXIgdG8gd29yay4SgwEKGnBheGNvdW50",
+            "ZXJfdXBkYXRlX2ludGVydmFsGAIgASgNQl/K8xhbKgFzOg9VcGRhdGUgSW50",
+            "ZXJ2YWxCRUhvdyBvZnRlbiB3ZSBjYW4gc2VuZCBhIG1lc3NhZ2UgdG8gdGhl",
+            "IG1lc2ggd2hlbiBwZW9wbGUgYXJlIGRldGVjdGVkLhJcCg53aWZpX3RocmVz",
+            "aG9sZBgDIAEoBUJEyvMYQCoDZEJtOg5XaUZpIFRocmVzaG9sZEIpUlNTSSB0",
+            "aHJlc2hvbGQgZm9yIGNvdW50aW5nIFdpRmkgZGV2aWNlcy4SWQoNYmxlX3Ro",
+            "cmVzaG9sZBgEIAEoBUJCyvMYPioDZEJtOg1CTEUgVGhyZXNob2xkQihSU1NJ",
+            "IHRocmVzaG9sZCBmb3IgY291bnRpbmcgQkxFIGRldmljZXMuGuIGChdUcmFm",
+            "ZmljTWFuYWdlbWVudENvbmZpZxKLAQoacG9zaXRpb25fbWluX2ludGVydmFs",
+            "X3NlY3MYBCABKA1CZ8rzGGMqAXM6GU1pbmltdW0gUG9zaXRpb24gSW50ZXJ2",
+            "YWxCQ1Bvc2l0aW9ucyBmcm9tIHRoZSBzYW1lIG5vZGUgYXJyaXZpbmcgc29v",
+            "bmVyIHRoYW4gdGhpcyBhcmUgZHJvcHBlZC4SeAohbm9kZWluZm9fZGlyZWN0",
+            "X3Jlc3BvbnNlX21heF9ob3BzGAYgASgNQk3K8xhJOhhEaXJlY3QgTm9kZUlu",
+            "Zm8gTWF4IEhvcHNCLU9ubHkgYW5zd2VyIHJlcXVlc3RvcnMgd2l0aGluIHRo",
+            "aXMgbWFueSBob3BzLhJlChZyYXRlX2xpbWl0X3dpbmRvd19zZWNzGAggASgN",
+            "QkXK8xhBKgFzOhFSYXRlIExpbWl0IFdpbmRvd0IpVGhlIHRpbWUgd2luZG93",
+            "IHBhY2tldHMgYXJlIGNvdW50ZWQgb3Zlci4SbAoWcmF0ZV9saW1pdF9tYXhf",
+            "cGFja2V0cxgJIAEoDUJMyvMYSDoWUmF0ZSBMaW1pdCBNYXggUGFja2V0c0Iu",
+            "VGhlIG1vc3QgcGFja2V0cyBvbmUgbm9kZSBtYXkgc2VuZCBwZXIgd2luZG93",
+            "LhJzChh1bmtub3duX3BhY2tldF90aHJlc2hvbGQYCyABKA1CUcrzGE06GFVu",
+            "a25vd24gUGFja2V0IFRocmVzaG9sZEIxSG93IG1hbnkgcGVyIHdpbmRvdyBi",
+            "ZWZvcmUgdGhlIHNlbmRlciBpcyBkcm9wcGVkLkoECAEQAkoECAIQA0oECAMQ",
+            "BEoECAUQBkoECAcQCEoECAoQC0oECAwQDUoECA0QDkoECA4QD1IHZW5hYmxl",
+            "ZFIWcG9zaXRpb25fZGVkdXBfZW5hYmxlZFIXcG9zaXRpb25fcHJlY2lzaW9u",
+            "X2JpdHNSGG5vZGVpbmZvX2RpcmVjdF9yZXNwb25zZVIScmF0ZV9saW1pdF9l",
+            "bmFibGVkUhRkcm9wX3Vua25vd25fZW5hYmxlZFIVZXhoYXVzdF9ob3BfdGVs",
+            "ZW1ldHJ5UhRleGhhdXN0X2hvcF9wb3NpdGlvblIUcm91dGVyX3ByZXNlcnZl",
+            "X2hvcHManAsKDFNlcmlhbENvbmZpZxI7CgdlbmFibGVkGAEgASgIQirK8xgm",
+            "Og5TZXJpYWwgRW5hYmxlZEIURW5hYmxlIHNlcmlhbCBtb2R1bGUSWgoEZWNo",
+            "bxgCIAEoCEJMyvMYSDoERWNob0JASWYgc2V0LCBhbnkgcGFja2V0cyB5b3Ug",
+            "c2VuZCB3aWxsIGJlIGVjaG9lZCBiYWNrIHRvIHlvdXIgZGV2aWNlLhI9CgNy",
+            "eGQYAyABKA1CMMrzGCw6G1JlY2VpdmUgZGF0YSAocnhkKSBHUElPIHBpbkIN",
+            "UlggcGluIG51bWJlchI+CgN0eGQYBCABKA1CMcrzGC06HFRyYW5zbWl0IGRh",
+            "dGEgKHR4ZCkgR1BJTyBwaW5CDVRYIHBpbiBudW1iZXISXQoEYmF1ZBgFIAEo",
+            "DjIxLm1lc2h0YXN0aWMuTW9kdWxlQ29uZmlnLlNlcmlhbENvbmZpZy5TZXJp",
+            "YWxfQmF1ZEIcyvMYGDoEQmF1ZEIQU2VyaWFsIGJhdWQgcmF0ZRJiCgd0aW1l",
+            "b3V0GAYgASgNQlHK8xhNOgdUaW1lb3V0QkJUaGUgYW1vdW50IG9mIHRpbWUg",
+            "dG8gd2FpdCBiZWZvcmUgd2UgY29uc2lkZXIgeW91ciBwYWNrZXQgYXMgZG9u",
+            "ZS4SaQoEbW9kZRgHIAEoDjIxLm1lc2h0YXN0aWMuTW9kdWxlQ29uZmlnLlNl",
+            "cmlhbENvbmZpZy5TZXJpYWxfTW9kZUIoyvMYJDoETW9kZUIcU2VyaWFsIG1v",
+            "ZHVsZSBvcGVyYXRpb24gbW9kZRIkChxvdmVycmlkZV9jb25zb2xlX3Nlcmlh",
+            "bF9wb3J0GAggASgIIqIECgtTZXJpYWxfQmF1ZBIfCgxCQVVEX0RFRkFVTFQQ",
+            "ABoNyvMYCToHRGVmYXVsdBIcCghCQVVEXzExMBABGg7K8xgKOggxMTAgQmF1",
+            "ZBIcCghCQVVEXzMwMBACGg7K8xgKOggzMDAgQmF1ZBIcCghCQVVEXzYwMBAD",
+            "Gg7K8xgKOgg2MDAgQmF1ZBIeCglCQVVEXzEyMDAQBBoPyvMYCzoJMTIwMCBC",
+            "YXVkEh4KCUJBVURfMjQwMBAFGg/K8xgLOgkyNDAwIEJhdWQSHgoJQkFVRF80",
+            "ODAwEAYaD8rzGAs6CTQ4MDAgQmF1ZBIeCglCQVVEXzk2MDAQBxoPyvMYCzoJ",
+            "OTYwMCBCYXVkEiAKCkJBVURfMTkyMDAQCBoQyvMYDDoKMTkyMDAgQmF1ZBIg",
+            "CgpCQVVEXzM4NDAwEAkaEMrzGAw6CjM4NDAwIEJhdWQSIAoKQkFVRF81NzYw",
+            "MBAKGhDK8xgMOgo1NzYwMCBCYXVkEiIKC0JBVURfMTE1MjAwEAsaEcrzGA06",
+            "CzExNTIwMCBCYXVkEiIKC0JBVURfMjMwNDAwEAwaEcrzGA06CzIzMDQwMCBC",
+            "YXVkEiIKC0JBVURfNDYwODAwEA0aEcrzGA06CzQ2MDgwMCBCYXVkEiIKC0JB",
+            "VURfNTc2MDAwEA4aEcrzGA06CzU3NjAwMCBCYXVkEiIKC0JBVURfOTIxNjAw",
+            "EA8aEcrzGA06CzkyMTYwMCBCYXVkIvoBCgtTZXJpYWxfTW9kZRIaCgdERUZB",
+            "VUxUEAAaDcrzGAk6B0RlZmF1bHQSGAoGU0lNUExFEAEaDMrzGAg6BlNpbXBs",
+            "ZRIaCgVQUk9UTxACGg/K8xgLOglQcm90b2J1ZnMSHwoHVEVYVE1TRxADGhLK",
+            "8xgOOgxUZXh0IE1lc3NhZ2USHgoETk1FQRAEGhTK8xgQOg5OTUVBIFBvc2l0",
+            "aW9ucxIaCgdDQUxUT1BPEAUaDcrzGAk6B0NBTFRPUE8SCAoEV1M4NRAGEg0K",
+            "CVZFX0RJUkVDVBAHEg0KCU1TX0NPTkZJRxAIEgcKA0xPRxAJEgsKB0xPR1RF",
+            "WFQQChqfDQoaRXh0ZXJuYWxOb3RpZmljYXRpb25Db25maWcSUwoHZW5hYmxl",
+            "ZBgBIAEoCEJCyvMYPjodRXh0ZXJuYWwgTm90aWZpY2F0aW9uIEVuYWJsZWRC",
+            "HUVuYWJsZSBleHRlcm5hbCBub3RpZmljYXRpb25zEmAKCW91dHB1dF9tcxgC",
+            "IAEoDUJNyvMYSSoCbXM6FEdQSU8gT3V0cHV0IER1cmF0aW9uQi1JbiBHUElP",
+            "IG1vZGUsIGhvdyBsb25nIHRvIGtlZXAgdGhlIG91dHB1dCBvbi4ScwoGb3V0",
+            "cHV0GAMgASgNQmPK8xhfOg9PdXRwdXQgcGluIEdQSU9CTEdQSU8gcGluIGRy",
+            "aXZlbiBvbiBub3RpZmljYXRpb24uIERlZmF1bHRzIHRvIHRoZSBib2FyZCdz",
+            "IEVYVF9OT1RJRllfT1VUIHBpbi4STQoMb3V0cHV0X3ZpYnJhGAggASgNQjfK",
+            "8xgzOhVPdXRwdXQgcGluIHZpYnJhIEdQSU9CGlZpYnJhdGlvbiBtb3RvciBv",
+            "dXRwdXQgcGluEkYKDW91dHB1dF9idXp6ZXIYCSABKA1CL8rzGCs6Fk91dHB1",
+            "dCBwaW4gYnV6emVyIEdQSU9CEUJ1enplciBvdXRwdXQgcGluEnEKBmFjdGl2",
+            "ZRgEIAEoCEJhyvMYXToGQWN0aXZlQlNJZiBlbmFibGVkLCB0aGUgJ291dHB1",
+            "dCcgUGluIHdpbGwgYmUgcHVsbGVkIGFjdGl2ZSBoaWdoLCBkaXNhYmxlZCBt",
+            "ZWFucyBhY3RpdmUgbG93LhJWCg1hbGVydF9tZXNzYWdlGAUgASgIQj/K8xg7",
+            "Oh5BbGVydCB3aGVuIHJlY2VpdmluZyBhIG1lc3NhZ2VCGUFsZXJ0IG9uIGlu",
+            "Y29taW5nIG1lc3NhZ2USZQoTYWxlcnRfbWVzc2FnZV92aWJyYRgKIAEoCEJI",
+            "yvMYRDoRVmlicmEgTW90b3IgQWxlcnRCL0FsZXJ0IEdQSU8gdmlicmEgbW90",
+            "b3Igd2hlbiByZWNlaXZpbmcgYSBtZXNzYWdlEmgKFGFsZXJ0X21lc3NhZ2Vf",
+            "YnV6emVyGAsgASgIQkrK8xhGOipBbGVydCBHUElPIGJ1enplciB3aGVuIHJl",
+            "Y2VpdmluZyBhIG1lc3NhZ2VCGEJ1enogb24gaW5jb21pbmcgbWVzc2FnZRJO",
+            "CgphbGVydF9iZWxsGAYgASgIQjrK8xg2OhtBbGVydCB3aGVuIHJlY2Vpdmlu",
+            "ZyBhIGJlbGxCF0FsZXJ0IG9uIGJlbGwgY2hhcmFjdGVyEmcKEGFsZXJ0X2Jl",
+            "bGxfdmlicmEYDCABKAhCTcrzGEk6LEFsZXJ0IEdQSU8gdmlicmEgbW90b3Ig",
+            "d2hlbiByZWNlaXZpbmcgYSBiZWxsQhlWaWJyYXRlIG9uIGJlbGwgY2hhcmFj",
+            "dGVyEmAKEWFsZXJ0X2JlbGxfYnV6emVyGA0gASgIQkXK8xhBOidBbGVydCBH",
+            "UElPIGJ1enplciB3aGVuIHJlY2VpdmluZyBhIGJlbGxCFkJ1enogb24gYmVs",
+            "bCBjaGFyYWN0ZXIS7gEKB3VzZV9wd20YByABKAhC3AHK8xjXAToOVXNlIFBX",
+            "TSBCdXp6ZXJCxAFVc2UgYSBQV00gb3V0cHV0IChsaWtlIHRoZSBSQUsgQnV6",
+            "emVyKSBmb3IgdHVuZXMgaW5zdGVhZCBvZiBhbiBvbi9vZmYgb3V0cHV0LiBU",
+            "aGlzIHdpbGwgaWdub3JlIHRoZSBvdXRwdXQsIG91dHB1dCBkdXJhdGlvbiBh",
+            "bmQgYWN0aXZlIHNldHRpbmdzIGFuZCB1c2UgdGhlIGRldmljZSBjb25maWcg",
+            "YnV6emVyIEdQSU8gb3B0aW9uIGluc3RlYWQuEksKC25hZ190aW1lb3V0GA4g",
+            "ASgNQjbK8xgyKgFzOgtOYWcgVGltZW91dEIgSG93IGxvbmcgdGhlIG5vdGlm",
+            "aWNhdGlvbiBsYXN0cy4SyAEKEXVzZV9pMnNfYXNfYnV6emVyGA8gASgIQqwB",
+            "yvMYpwE6EVVzZSBJMlMgQXMgQnV6emVyQpEBRW5hYmxlcyBkZXZpY2VzIHdp",
+            "dGggbmF0aXZlIEkyUyBhdWRpbyBvdXRwdXQgdG8gdXNlIHRoZSBSVFRUTCBv",
+            "dmVyIHNwZWFrZXIgbGlrZSBhIGJ1enplci4gVC1XYXRjaCBTMyBhbmQgVC1E",
+            "ZWNrIGZvciBleGFtcGxlIGhhdmUgdGhpcyBjYXBhYmlsaXR5LhrhAwoSU3Rv",
+            "cmVGb3J3YXJkQ29uZmlnElcKB2VuYWJsZWQYASABKAhCRsrzGEI6GVN0b3Jl",
+            "IGFuZCBGb3J3YXJkIEVuYWJsZWRCJUVuYWJsZXMgdGhlIHN0b3JlIGFuZCBm",
+            "b3J3YXJkIG1vZHVsZS4SXQoJaGVhcnRiZWF0GAIgASgIQkrK8xhGOg5TZW5k",
+            "IEhlYXJ0YmVhdEI0U2VuZCBhIGhlYXJ0YmVhdCB0byBhZHZlcnRpc2UgdGhl",
+            "IHNlcnZlcidzIHByZXNlbmNlLhIoCgdyZWNvcmRzGAMgASgNQhfK8xgTOhFO",
+            "dW1iZXIgb2YgcmVjb3JkcxI0ChJoaXN0b3J5X3JldHVybl9tYXgYBCABKA1C",
+            "GMrzGBQ6Ekhpc3RvcnkgUmV0dXJuIE1heBI6ChVoaXN0b3J5X3JldHVybl93",
+            "aW5kb3cYBSABKA1CG8rzGBc6FUhpc3RvcnkgUmV0dXJuIFdpbmRvdxJ3Cglp",
+            "c19zZXJ2ZXIYBiABKAhCZMrzGGA6BlNlcnZlckJWRW5hYmxlIHRoaXMgZGV2",
+            "aWNlIGFzIGEgU3RvcmUgYW5kIEZvcndhcmQgc2VydmVyLiBSZXF1aXJlcyBh",
+            "biBFU1AzMiBkZXZpY2Ugd2l0aCBQU1JBTS4a+gIKD1JhbmdlVGVzdENvbmZp",
+            "ZxJDCgdlbmFibGVkGAEgASgIQjLK8xguOhJSYW5nZSBUZXN0IEVuYWJsZWRC",
+            "GEVuYWJsZSByYW5nZSB0ZXN0IG1vZHVsZRJxCgZzZW5kZXIYAiABKA1CYcrz",
+            "GF0qAXM6D1NlbmRlciBJbnRlcnZhbEJHVGhpcyBkZXZpY2Ugd2lsbCBzZW5k",
+            "IG91dCByYW5nZSB0ZXN0IG1lc3NhZ2VzIG9uIHRoZSBzZWxlY3RlZCBpbnRl",
+            "cnZhbC4ShwEKBHNhdmUYAyABKAhCecrzGHU6BFNhdmVCbVNhdmVzIGEgQ1NW",
+            "IHdpdGggdGhlIHJhbmdlIHRlc3QgbWVzc2FnZSBkZXRhaWxzLCBjdXJyZW50",
+            "bHkgb25seSBhdmFpbGFibGUgb24gRVNQMzIgZGV2aWNlcyB3aXRoIGEgd2Vi",
+            "IHNlcnZlci4SJQoPY2xlYXJfb25fcmVib290GAQgASgIQgzK8xgIUgYyLjcu",
+            "MTEalwsKD1RlbGVtZXRyeUNvbmZpZxJyChZkZXZpY2VfdXBkYXRlX2ludGVy",
+            "dmFsGAEgASgNQlLK8xhOKgFzOhdEZXZpY2UgTWV0cmljcyBJbnRlcnZhbEIw",
+            "SG93IG9mdGVuIGRldmljZSBtZXRyaWNzIGFyZSBzZW50IG92ZXIgdGhlIG1l",
+            "c2guEoEBChtlbnZpcm9ubWVudF91cGRhdGVfaW50ZXJ2YWwYAiABKA1CXMrz",
+            "GFgqAXM6HEVudmlyb25tZW50IE1ldHJpY3MgSW50ZXJ2YWxCNUhvdyBvZnRl",
+            "biBlbnZpcm9ubWVudCBtZXRyaWNzIGFyZSBzZW50IG92ZXIgdGhlIG1lc2gu",
+            "EmwKH2Vudmlyb25tZW50X21lYXN1cmVtZW50X2VuYWJsZWQYAyABKAhCQ8rz",
+            "GD86G0Vudmlyb25tZW50IE1ldHJpY3MgRW5hYmxlZEIgQ29sbGVjdCBlbnZp",
+            "cm9ubWVudCBtZWFzdXJlbWVudHMSawoaZW52aXJvbm1lbnRfc2NyZWVuX2Vu",
+            "YWJsZWQYBCABKAhCR8rzGEM6FVNob3cgb24gZGV2aWNlIHNjcmVlbkIqRGlz",
+            "cGxheSBlbnZpcm9ubWVudCBtZWFzdXJlbWVudHMgb24gZGV2aWNlEmMKHmVu",
+            "dmlyb25tZW50X2Rpc3BsYXlfZmFocmVuaGVpdBgFIAEoCEI7yvMYNzoSRGlz",
+            "cGxheSBGYWhyZW5oZWl0QiFEaXNwbGF5IGVudmlyb25tZW50IGluIEZhaHJl",
+            "bmhlaXQSWwoTYWlyX3F1YWxpdHlfZW5hYmxlZBgGIAEoCEI+yvMYOjobQWly",
+            "IFF1YWxpdHkgTWV0cmljcyBFbmFibGVkQhtDb2xsZWN0IGFpciBxdWFsaXR5",
+            "IG1ldHJpY3MSegoUYWlyX3F1YWxpdHlfaW50ZXJ2YWwYByABKA1CXMrzGFgq",
+            "AXM6HEFpciBRdWFsaXR5IE1ldHJpY3MgSW50ZXJ2YWxCNUhvdyBvZnRlbiBh",
+            "aXIgcXVhbGl0eSBtZXRyaWNzIGFyZSBzZW50IG92ZXIgdGhlIG1lc2guElkK",
+            "GXBvd2VyX21lYXN1cmVtZW50X2VuYWJsZWQYCCABKAhCNsrzGDI6GVBvd2Vy",
+            "IE1lYXN1cmVtZW50IEVuYWJsZWRCFUNvbGxlY3QgcG93ZXIgbWV0cmljcxJv",
+            "ChVwb3dlcl91cGRhdGVfaW50ZXJ2YWwYCSABKA1CUMrzGEwqAXM6FlBvd2Vy",
+            "IE1ldHJpY3MgSW50ZXJ2YWxCL0hvdyBvZnRlbiBwb3dlciBtZXRyaWNzIGFy",
+            "ZSBzZW50IG92ZXIgdGhlIG1lc2guElEKFHBvd2VyX3NjcmVlbl9lbmFibGVk",
+            "GAogASgIQjPK8xgvOgxQb3dlciBTY3JlZW5CH0Rpc3BsYXkgcG93ZXIgbWV0",
+            "cmljcyBvbiBkZXZpY2USIgoaaGVhbHRoX21lYXN1cmVtZW50X2VuYWJsZWQY",
+            "CyABKAgSHgoWaGVhbHRoX3VwZGF0ZV9pbnRlcnZhbBgMIAEoDRIdChVoZWFs",
+            "dGhfc2NyZWVuX2VuYWJsZWQYDSABKAgSvgEKGGRldmljZV90ZWxlbWV0cnlf",
+            "ZW5hYmxlZBgOIAEoCEKbAcrzGJYBOhhCcm9hZGNhc3QgRGV2aWNlIE1ldHJp",
+            "Y3NCckVuYWJsZSBicm9hZGNhc3RpbmcgZGV2aWNlIG1ldHJpY3MgdG8gdGhl",
+            "IG1lc2ggbmV0d29yay4gV2hlbiBkaXNhYmxlZCwgbWV0cmljcyBhcmUgb25s",
+            "eSBzZW50IHRvIGNvbm5lY3RlZCBjbGllbnRzLlIGMi43LjEzEjAKGmFpcl9x",
+            "dWFsaXR5X3NjcmVlbl9lbmFibGVkGA8gASgIQgzK8xgIUgYyLjcuMTga0AkK",
+            "E0Nhbm5lZE1lc3NhZ2VDb25maWcSPgoPcm90YXJ5MV9lbmFibGVkGAEgASgI",
+            "QiXK8xghOghSb3RhcnkgMUIVRW5hYmxlIHJvdGFyeSBlbmNvZGVyEksKEWlu",
+            "cHV0YnJva2VyX3Bpbl9hGAIgASgNQjDK8xgsOgVQaW4gQUIjR1BJTyBwaW4g",
+            "Zm9yIHJvdGFyeSBlbmNvZGVyIEEgcG9ydC4SSwoRaW5wdXRicm9rZXJfcGlu",
+            "X2IYAyABKA1CMMrzGCw6BVBpbiBCQiNHUElPIHBpbiBmb3Igcm90YXJ5IGVu",
+            "Y29kZXIgQiBwb3J0LhJXChVpbnB1dGJyb2tlcl9waW5fcHJlc3MYBCABKA1C",
+            "OMrzGDQ6CVByZXNzIFBpbkInR1BJTyBwaW4gZm9yIHJvdGFyeSBlbmNvZGVy",
+            "IFByZXNzIHBvcnQuEpsBChRpbnB1dGJyb2tlcl9ldmVudF9jdxgFIAEoDjI7",
+            "Lm1lc2h0YXN0aWMuTW9kdWxlQ29uZmlnLkNhbm5lZE1lc3NhZ2VDb25maWcu",
+            "SW5wdXRFdmVudENoYXJCQMrzGDw6FkNsb2Nrd2lzZSBSb3RhcnkgRXZlbnRC",
+            "IklucHV0IGV2ZW50IGZvciBjbG9ja3dpc2Ugcm90YXRpb24SrAEKFWlucHV0",
+            "YnJva2VyX2V2ZW50X2NjdxgGIAEoDjI7Lm1lc2h0YXN0aWMuTW9kdWxlQ29u",
+            "ZmlnLkNhbm5lZE1lc3NhZ2VDb25maWcuSW5wdXRFdmVudENoYXJCUMrzGEw6",
+            "HkNvdW50ZXIgQ2xvY2t3aXNlIFJvdGFyeSBFdmVudEIqSW5wdXQgZXZlbnQg",
+            "Zm9yIGNvdW50ZXItY2xvY2t3aXNlIHJvdGF0aW9uEpYBChdpbnB1dGJyb2tl",
+            "cl9ldmVudF9wcmVzcxgHIAEoDjI7Lm1lc2h0YXN0aWMuTW9kdWxlQ29uZmln",
+            "LkNhbm5lZE1lc3NhZ2VDb25maWcuSW5wdXRFdmVudENoYXJCOMrzGDQ6E0Vu",
+            "Y29kZXIgUHJlc3MgRXZlbnRCHUlucHV0IGV2ZW50IGZvciBlbmNvZGVyIHBy",
+            "ZXNzEkUKD3VwZG93bjFfZW5hYmxlZBgIIAEoCEIsyvMYKDoJVXAgRG93biAx",
+            "QhtFbmFibGUgdXAvZG93bi9zZWxlY3QgaW5wdXQSHgoHZW5hYmxlZBgJIAEo",
+            "CEINGAHK8xgHWgUyLjcuMBIpChJhbGxvd19pbnB1dF9zb3VyY2UYCiABKAlC",
+            "DRgByvMYB1oFMi43LjASRQoJc2VuZF9iZWxsGAsgASgIQjLK8xguOglTZW5k",
+            "IEJlbGxCIVNlbmQgYmVsbCBjaGFyYWN0ZXIgd2l0aCBtZXNzYWdlcyLGAQoO",
+            "SW5wdXRFdmVudENoYXISFAoETk9ORRAAGgrK8xgGOgROb25lEhAKAlVQEBEa",
+            "CMrzGAQ6AlVwEhQKBERPV04QEhoKyvMYBjoERG93bhIUCgRMRUZUEBMaCsrz",
+            "GAY6BExlZnQSFgoFUklHSFQQFBoLyvMYBzoFUmlnaHQSGAoGU0VMRUNUEAoa",
+            "DMrzGAg6BlNlbGVjdBIUCgRCQUNLEBsaCsrzGAY6BEJhY2sSGAoGQ0FOQ0VM",
+            "EBgaDMrzGAg6BkNhbmNlbBrRBAoVQW1iaWVudExpZ2h0aW5nQ29uZmlnEkEK",
+            "CWxlZF9zdGF0ZRgBIAEoCEIuyvMYKjoJTEVEIFN0YXRlQh1UaGUgc3RhdGUg",
+            "b2YgdGhlIExFRCAob24vb2ZmKRJ0CgdjdXJyZW50GAIgASgNQmPK8xhfGQAA",
+            "AAAAAAAAIQAAAAAAAD9AOgdDdXJyZW50QiFEcml2ZSBjdXJyZW50IGZvciB0",
+            "aGUgTEVEIG91dHB1dC5KH2xlZHxicmlnaHRuZXNzfGFtYmllbnR8bGlnaHRp",
+            "bmcSewoDcmVkGAMgASgNQm7K8xhqGQAAAAAAAAAAIQAAAAAA4G9AOgNSZWRC",
+            "KlRoZSByZWQgbGV2ZWwgb2YgdGhlIGFtYmllbnQgbGlnaHRpbmcgTEVELkol",
+            "Y29sb3J8Y29sb3VyfHJnYnxsZWR8YW1iaWVudHxsaWdodGluZxKBAQoFZ3Jl",
+            "ZW4YBCABKA1CcsrzGG4ZAAAAAAAAAAAhAAAAAADgb0A6BUdyZWVuQixUaGUg",
+            "Z3JlZW4gbGV2ZWwgb2YgdGhlIGFtYmllbnQgbGlnaHRpbmcgTEVELkolY29s",
+            "b3J8Y29sb3VyfHJnYnxsZWR8YW1iaWVudHxsaWdodGluZxJ+CgRibHVlGAUg",
+            "ASgNQnDK8xhsGQAAAAAAAAAAIQAAAAAA4G9AOgRCbHVlQitUaGUgYmx1ZSBs",
+            "ZXZlbCBvZiB0aGUgYW1iaWVudCBsaWdodGluZyBMRUQuSiVjb2xvcnxjb2xv",
+            "dXJ8cmdifGxlZHxhbWJpZW50fGxpZ2h0aW5nGioKE1N0YXR1c01lc3NhZ2VD",
+            "b25maWcSEwoLbm9kZV9zdGF0dXMYASABKAkapAgKEE1lc2hCZWFjb25Db25m",
+            "aWcSDQoFZmxhZ3MYASABKA0SKwoeYnJvYWRjYXN0X29mZmVyX2ZyZXF1ZW5j",
+            "eV9zbG90GAIgASgNSACIAQESRwoRYnJvYWRjYXN0X21lc3NhZ2UYBCABKAlC",
+            "LMrzGCg6B01lc3NhZ2VCHU1lc3NhZ2UgZm9yIGJlYWNvbiBicm9hZGNhc3Rz",
+            "EjwKF2Jyb2FkY2FzdF9vZmZlcl9jaGFubmVsGAUgASgLMhsubWVzaHRhc3Rp",
+            "Yy5DaGFubmVsU2V0dGluZ3MSSAoWYnJvYWRjYXN0X29mZmVyX3JlZ2lvbhgG",
+            "IAEoDjIoLm1lc2h0YXN0aWMuQ29uZmlnLkxvUmFDb25maWcuUmVnaW9uQ29k",
+            "ZRJOChZicm9hZGNhc3Rfb2ZmZXJfcHJlc2V0GAcgASgOMikubWVzaHRhc3Rp",
+            "Yy5Db25maWcuTG9SYUNvbmZpZy5Nb2RlbVByZXNldEgBiAEBElQKF2Jyb2Fk",
+            "Y2FzdF9pbnRlcnZhbF9zZWNzGAsgASgNQjPK8xgvKgFzOghJbnRlcnZhbEIg",
+            "SG93IG9mdGVuIGEgYmVhY29uIGlzIGJyb2FkY2FzdC4SVAoRYnJvYWRjYXN0",
+            "X3RhcmdldHMYDSADKAsyOS5tZXNodGFzdGljLk1vZHVsZUNvbmZpZy5NZXNo",
+            "QmVhY29uQ29uZmlnLkJyb2FkY2FzdFRhcmdldBr0AQoPQnJvYWRjYXN0VGFy",
+            "Z2V0Ej4KBnByZXNldBgBIAEoDjIpLm1lc2h0YXN0aWMuQ29uZmlnLkxvUmFD",
+            "b25maWcuTW9kZW1QcmVzZXRIAIgBARI4CgZyZWdpb24YAiABKA4yKC5tZXNo",
+            "dGFzdGljLkNvbmZpZy5Mb1JhQ29uZmlnLlJlZ2lvbkNvZGUSGgoNY2hhbm5l",
+            "bF9pbmRleBgEIAEoDUgBiAEBEhsKDmZyZXF1ZW5jeV9zbG90GAUgASgNSAKI",
+            "AQFCCQoHX3ByZXNldEIQCg5fY2hhbm5lbF9pbmRleEIRCg9fZnJlcXVlbmN5",
+            "X3Nsb3QiYgoFRmxhZ3MSDQoJRkxBR19OT05FEAASFwoTRkxBR19MSVNURU5f",
+            "RU5BQkxFRBABEhoKFkZMQUdfQlJPQURDQVNUX0VOQUJMRUQQAhIVChFGTEFH",
+            "X0xFR0FDWV9TUExJVBAEQiEKH19icm9hZGNhc3Rfb2ZmZXJfZnJlcXVlbmN5",
+            "X3Nsb3RCGQoXX2Jyb2FkY2FzdF9vZmZlcl9wcmVzZXRKBAgDEARKBAgIEAlK",
+            "BAgJEApKBAgKEAtSFmJyb2FkY2FzdF9zZW5kX2FzX25vZGVSFGJyb2FkY2Fz",
+            "dF9vbl9jaGFubmVsUhNicm9hZGNhc3Rfb25fcmVnaW9uUhNicm9hZGNhc3Rf",
+            "b25fcHJlc2V0GooBCglUQUtDb25maWcSOgoEdGVhbRgBIAEoDjIQLm1lc2h0",
+            "YXN0aWMuVGVhbUIayvMYFjoEVGVhbUIOVEFLIHRlYW0gY29sb3ISQQoEcm9s",
+            "ZRgCIAEoDjIWLm1lc2h0YXN0aWMuTWVtYmVyUm9sZUIbyvMYFzoEUm9sZUIP",
+            "VEFLIG1lbWJlciByb2xlQhEKD3BheWxvYWRfdmFyaWFudCJkChFSZW1vdGVI",
+            "YXJkd2FyZVBpbhIQCghncGlvX3BpbhgBIAEoDRIMCgRuYW1lGAIgASgJEi8K",
+            "BHR5cGUYAyABKA4yIS5tZXNodGFzdGljLlJlbW90ZUhhcmR3YXJlUGluVHlw",
+            "ZSpJChVSZW1vdGVIYXJkd2FyZVBpblR5cGUSCwoHVU5LTk9XThAAEhAKDERJ",
+            "R0lUQUxfUkVBRBABEhEKDURJR0lUQUxfV1JJVEUQAkJoChRvcmcubWVzaHRh",
+            "c3RpYy5wcm90b0ISTW9kdWxlQ29uZmlnUHJvdG9zWiJnaXRodWIuY29tL21l",
+            "c2h0YXN0aWMvZ28vZ2VuZXJhdGVkqgIUTWVzaHRhc3RpYy5Qcm90b2J1ZnO6",
+            "AgBiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Meshtastic.Protobufs.AtakReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Meshtastic.Protobufs.AtakReflection.Descriptor, global::Meshtastic.Protobufs.ChannelReflection.Descriptor, global::Meshtastic.Protobufs.ConfigReflection.Descriptor, global::Meshtastic.Protobufs.FieldMetadataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Meshtastic.Protobufs.RemoteHardwarePinType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig), global::Meshtastic.Protobufs.ModuleConfig.Parser, new[]{ "Mqtt", "Serial", "ExternalNotification", "StoreForward", "RangeTest", "Telemetry", "CannedMessage", "Audio", "RemoteHardware", "NeighborInfo", "AmbientLighting", "DetectionSensor", "Paxcounter", "Statusmessage", "TrafficManagement", "Tak" }, new[]{ "PayloadVariant" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.MQTTConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.MQTTConfig.Parser, new[]{ "Enabled", "Address", "Username", "Password", "EncryptionEnabled", "JsonEnabled", "TlsEnabled", "Root", "ProxyToClientEnabled", "MapReportingEnabled", "MapReportSettings" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig), global::Meshtastic.Protobufs.ModuleConfig.Parser, new[]{ "Mqtt", "Serial", "ExternalNotification", "StoreForward", "RangeTest", "Telemetry", "CannedMessage", "Audio", "RemoteHardware", "NeighborInfo", "AmbientLighting", "DetectionSensor", "Paxcounter", "Statusmessage", "TrafficManagement", "Tak", "MeshBeacon" }, new[]{ "PayloadVariant" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.MQTTConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.MQTTConfig.Parser, new[]{ "Enabled", "Address", "Username", "Password", "EncryptionEnabled", "JsonEnabled", "TlsEnabled", "Root", "ProxyToClientEnabled", "MapReportingEnabled", "MapReportSettings" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.MapReportSettings), global::Meshtastic.Protobufs.ModuleConfig.Types.MapReportSettings.Parser, new[]{ "PublishIntervalSecs", "PositionPrecision", "ShouldReportLocation" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.RemoteHardwareConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.RemoteHardwareConfig.Parser, new[]{ "Enabled", "AllowUndefinedPinAccess", "AvailablePins" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.NeighborInfoConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.NeighborInfoConfig.Parser, new[]{ "Enabled", "UpdateInterval", "TransmitOverLora" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.DetectionSensorConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.DetectionSensorConfig.Parser, new[]{ "Enabled", "MinimumBroadcastSecs", "StateBroadcastSecs", "SendBell", "Name", "MonitorPin", "DetectionTriggerType", "UsePullup" }, null, new[]{ typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.DetectionSensorConfig.Types.TriggerType) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.AudioConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.AudioConfig.Parser, new[]{ "Codec2Enabled", "PttPin", "Bitrate", "I2SWs", "I2SSd", "I2SDin", "I2SSck" }, null, new[]{ typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.AudioConfig.Types.Audio_Baud) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.PaxcounterConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.PaxcounterConfig.Parser, new[]{ "Enabled", "PaxcounterUpdateInterval", "WifiThreshold", "BleThreshold" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.TrafficManagementConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.TrafficManagementConfig.Parser, new[]{ "Enabled", "PositionDedupEnabled", "PositionPrecisionBits", "PositionMinIntervalSecs", "NodeinfoDirectResponse", "NodeinfoDirectResponseMaxHops", "RateLimitEnabled", "RateLimitWindowSecs", "RateLimitMaxPackets", "DropUnknownEnabled", "UnknownPacketThreshold", "ExhaustHopTelemetry", "ExhaustHopPosition", "RouterPreserveHops" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.TrafficManagementConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.TrafficManagementConfig.Parser, new[]{ "PositionMinIntervalSecs", "NodeinfoDirectResponseMaxHops", "RateLimitWindowSecs", "RateLimitMaxPackets", "UnknownPacketThreshold" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.SerialConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.SerialConfig.Parser, new[]{ "Enabled", "Echo", "Rxd", "Txd", "Baud", "Timeout", "Mode", "OverrideConsoleSerialPort" }, null, new[]{ typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.SerialConfig.Types.Serial_Baud), typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.SerialConfig.Types.Serial_Mode) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.ExternalNotificationConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.ExternalNotificationConfig.Parser, new[]{ "Enabled", "OutputMs", "Output", "OutputVibra", "OutputBuzzer", "Active", "AlertMessage", "AlertMessageVibra", "AlertMessageBuzzer", "AlertBell", "AlertBellVibra", "AlertBellBuzzer", "UsePwm", "NagTimeout", "UseI2SAsBuzzer" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.StoreForwardConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.StoreForwardConfig.Parser, new[]{ "Enabled", "Heartbeat", "Records", "HistoryReturnMax", "HistoryReturnWindow", "IsServer" }, null, null, null, null),
@@ -180,6 +396,7 @@ namespace Meshtastic.Protobufs {
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.CannedMessageConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.CannedMessageConfig.Parser, new[]{ "Rotary1Enabled", "InputbrokerPinA", "InputbrokerPinB", "InputbrokerPinPress", "InputbrokerEventCw", "InputbrokerEventCcw", "InputbrokerEventPress", "Updown1Enabled", "Enabled", "AllowInputSource", "SendBell" }, null, new[]{ typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.CannedMessageConfig.Types.InputEventChar) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.AmbientLightingConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.AmbientLightingConfig.Parser, new[]{ "LedState", "Current", "Red", "Green", "Blue" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.StatusMessageConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.StatusMessageConfig.Parser, new[]{ "NodeStatus" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Parser, new[]{ "Flags", "BroadcastOfferFrequencySlot", "BroadcastMessage", "BroadcastOfferChannel", "BroadcastOfferRegion", "BroadcastOfferPreset", "BroadcastIntervalSecs", "BroadcastTargets" }, new[]{ "BroadcastOfferFrequencySlot", "BroadcastOfferPreset" }, new[]{ typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Types.Flags) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Types.BroadcastTarget), global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Types.BroadcastTarget.Parser, new[]{ "Preset", "Region", "ChannelIndex", "FrequencySlot" }, new[]{ "Preset", "ChannelIndex", "FrequencySlot" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleConfig.Types.TAKConfig), global::Meshtastic.Protobufs.ModuleConfig.Types.TAKConfig.Parser, new[]{ "Team", "Role" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.RemoteHardwarePin), global::Meshtastic.Protobufs.RemoteHardwarePin.Parser, new[]{ "GpioPin", "Name", "Type" }, null, null, null, null)
           }));
@@ -296,6 +513,9 @@ namespace Meshtastic.Protobufs {
           break;
         case PayloadVariantOneofCase.Tak:
           Tak = other.Tak.Clone();
+          break;
+        case PayloadVariantOneofCase.MeshBeacon:
+          MeshBeacon = other.MeshBeacon.Clone();
           break;
       }
 
@@ -564,6 +784,22 @@ namespace Meshtastic.Protobufs {
       }
     }
 
+    /// <summary>Field number for the "mesh_beacon" field.</summary>
+    public const int MeshBeaconFieldNumber = 17;
+    /// <summary>
+    ///
+    /// MeshBeacon module config
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig MeshBeacon {
+      get { return payloadVariantCase_ == PayloadVariantOneofCase.MeshBeacon ? (global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig) payloadVariant_ : null; }
+      set {
+        payloadVariant_ = value;
+        payloadVariantCase_ = value == null ? PayloadVariantOneofCase.None : PayloadVariantOneofCase.MeshBeacon;
+      }
+    }
+
     private object payloadVariant_;
     /// <summary>Enum of possible cases for the "payload_variant" oneof.</summary>
     public enum PayloadVariantOneofCase {
@@ -584,6 +820,7 @@ namespace Meshtastic.Protobufs {
       Statusmessage = 14,
       TrafficManagement = 15,
       Tak = 16,
+      MeshBeacon = 17,
     }
     private PayloadVariantOneofCase payloadVariantCase_ = PayloadVariantOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -630,6 +867,7 @@ namespace Meshtastic.Protobufs {
       if (!object.Equals(Statusmessage, other.Statusmessage)) return false;
       if (!object.Equals(TrafficManagement, other.TrafficManagement)) return false;
       if (!object.Equals(Tak, other.Tak)) return false;
+      if (!object.Equals(MeshBeacon, other.MeshBeacon)) return false;
       if (PayloadVariantCase != other.PayloadVariantCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -654,6 +892,7 @@ namespace Meshtastic.Protobufs {
       if (payloadVariantCase_ == PayloadVariantOneofCase.Statusmessage) hash ^= Statusmessage.GetHashCode();
       if (payloadVariantCase_ == PayloadVariantOneofCase.TrafficManagement) hash ^= TrafficManagement.GetHashCode();
       if (payloadVariantCase_ == PayloadVariantOneofCase.Tak) hash ^= Tak.GetHashCode();
+      if (payloadVariantCase_ == PayloadVariantOneofCase.MeshBeacon) hash ^= MeshBeacon.GetHashCode();
       hash ^= (int) payloadVariantCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -737,6 +976,10 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(130, 1);
         output.WriteMessage(Tak);
       }
+      if (payloadVariantCase_ == PayloadVariantOneofCase.MeshBeacon) {
+        output.WriteRawTag(138, 1);
+        output.WriteMessage(MeshBeacon);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -811,6 +1054,10 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(130, 1);
         output.WriteMessage(Tak);
       }
+      if (payloadVariantCase_ == PayloadVariantOneofCase.MeshBeacon) {
+        output.WriteRawTag(138, 1);
+        output.WriteMessage(MeshBeacon);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -868,6 +1115,9 @@ namespace Meshtastic.Protobufs {
       }
       if (payloadVariantCase_ == PayloadVariantOneofCase.Tak) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(Tak);
+      }
+      if (payloadVariantCase_ == PayloadVariantOneofCase.MeshBeacon) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MeshBeacon);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -977,6 +1227,12 @@ namespace Meshtastic.Protobufs {
             Tak = new global::Meshtastic.Protobufs.ModuleConfig.Types.TAKConfig();
           }
           Tak.MergeFrom(other.Tak);
+          break;
+        case PayloadVariantOneofCase.MeshBeacon:
+          if (MeshBeacon == null) {
+            MeshBeacon = new global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig();
+          }
+          MeshBeacon.MergeFrom(other.MeshBeacon);
           break;
       }
 
@@ -1143,6 +1399,15 @@ namespace Meshtastic.Protobufs {
             Tak = subBuilder;
             break;
           }
+          case 138: {
+            global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig subBuilder = new global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig();
+            if (payloadVariantCase_ == PayloadVariantOneofCase.MeshBeacon) {
+              subBuilder.MergeFrom(MeshBeacon);
+            }
+            input.ReadMessage(subBuilder);
+            MeshBeacon = subBuilder;
+            break;
+          }
         }
       }
     #endif
@@ -1304,6 +1569,15 @@ namespace Meshtastic.Protobufs {
             }
             input.ReadMessage(subBuilder);
             Tak = subBuilder;
+            break;
+          }
+          case 138: {
+            global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig subBuilder = new global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig();
+            if (payloadVariantCase_ == PayloadVariantOneofCase.MeshBeacon) {
+              subBuilder.MergeFrom(MeshBeacon);
+            }
+            input.ReadMessage(subBuilder);
+            MeshBeacon = subBuilder;
             break;
           }
         }
@@ -1469,8 +1743,9 @@ namespace Meshtastic.Protobufs {
         private bool jsonEnabled_;
         /// <summary>
         ///
-        /// Whether to send / consume json packets on MQTT
+        /// Deprecated: JSON packet support on MQTT was removed, and this field is ignored.
         /// </summary>
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool JsonEnabled {
@@ -3436,7 +3711,7 @@ namespace Meshtastic.Protobufs {
         private global::Meshtastic.Protobufs.ModuleConfig.Types.AudioConfig.Types.Audio_Baud bitrate_ = global::Meshtastic.Protobufs.ModuleConfig.Types.AudioConfig.Types.Audio_Baud.Codec2Default;
         /// <summary>
         ///
-        /// The audio sample rate to use for codec2
+        /// The codec2 bitrate to encode at. Sample rate is always 8 kHz.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3811,8 +4086,25 @@ namespace Meshtastic.Protobufs {
             [pbr::OriginalName("CODEC2_1400")] Codec21400 = 4,
             [pbr::OriginalName("CODEC2_1300")] Codec21300 = 5,
             [pbr::OriginalName("CODEC2_1200")] Codec21200 = 6,
+            /// <summary>
+            ///
+            /// Removed from libcodec2 upstream. A device configured to one of these
+            /// falls back to CODEC2_700C.
+            /// </summary>
+            [global::System.ObsoleteAttribute]
             [pbr::OriginalName("CODEC2_700")] Codec2700 = 7,
+            [global::System.ObsoleteAttribute]
             [pbr::OriginalName("CODEC2_700B")] Codec2700B = 8,
+            /// <summary>
+            ///
+            /// Replaces CODEC2_700. Default for new configurations.
+            /// </summary>
+            [pbr::OriginalName("CODEC2_700C")] Codec2700C = 9,
+            /// <summary>
+            ///
+            /// Lowest rate, and the only one usable on slower modem presets.
+            /// </summary>
+            [pbr::OriginalName("CODEC2_450")] Codec2450 = 10,
           }
 
         }
@@ -4148,7 +4440,10 @@ namespace Meshtastic.Protobufs {
       /// <summary>
       ///
       /// Config for the Traffic Management module.
-      /// Provides packet inspection and traffic shaping to help reduce channel utilization
+      /// Provides packet inspection and traffic shaping to help reduce channel utilization.
+      /// Every field uses the proto3 zero value to mean "disabled"; there is no
+      /// "use the firmware default" sentinel. Firmware installs its own defaults when it
+      /// first creates this config, and a client that writes 0 turns that feature off.
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class TrafficManagementConfig : pb::IMessage<TrafficManagementConfig>
@@ -4185,20 +4480,11 @@ namespace Meshtastic.Protobufs {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public TrafficManagementConfig(TrafficManagementConfig other) : this() {
-          enabled_ = other.enabled_;
-          positionDedupEnabled_ = other.positionDedupEnabled_;
-          positionPrecisionBits_ = other.positionPrecisionBits_;
           positionMinIntervalSecs_ = other.positionMinIntervalSecs_;
-          nodeinfoDirectResponse_ = other.nodeinfoDirectResponse_;
           nodeinfoDirectResponseMaxHops_ = other.nodeinfoDirectResponseMaxHops_;
-          rateLimitEnabled_ = other.rateLimitEnabled_;
           rateLimitWindowSecs_ = other.rateLimitWindowSecs_;
           rateLimitMaxPackets_ = other.rateLimitMaxPackets_;
-          dropUnknownEnabled_ = other.dropUnknownEnabled_;
           unknownPacketThreshold_ = other.unknownPacketThreshold_;
-          exhaustHopTelemetry_ = other.exhaustHopTelemetry_;
-          exhaustHopPosition_ = other.exhaustHopPosition_;
-          routerPreserveHops_ = other.routerPreserveHops_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -4208,60 +4494,14 @@ namespace Meshtastic.Protobufs {
           return new TrafficManagementConfig(this);
         }
 
-        /// <summary>Field number for the "enabled" field.</summary>
-        public const int EnabledFieldNumber = 1;
-        private bool enabled_;
-        /// <summary>
-        ///
-        /// Master enable for traffic management module
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Enabled {
-          get { return enabled_; }
-          set {
-            enabled_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "position_dedup_enabled" field.</summary>
-        public const int PositionDedupEnabledFieldNumber = 2;
-        private bool positionDedupEnabled_;
-        /// <summary>
-        ///
-        /// Enable position deduplication to drop redundant position broadcasts
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool PositionDedupEnabled {
-          get { return positionDedupEnabled_; }
-          set {
-            positionDedupEnabled_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "position_precision_bits" field.</summary>
-        public const int PositionPrecisionBitsFieldNumber = 3;
-        private uint positionPrecisionBits_;
-        /// <summary>
-        ///
-        /// Number of bits of precision for position deduplication (0-32)
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public uint PositionPrecisionBits {
-          get { return positionPrecisionBits_; }
-          set {
-            positionPrecisionBits_ = value;
-          }
-        }
-
         /// <summary>Field number for the "position_min_interval_secs" field.</summary>
         public const int PositionMinIntervalSecsFieldNumber = 4;
         private uint positionMinIntervalSecs_;
         /// <summary>
         ///
-        /// Minimum interval in seconds between position updates from the same node
+        /// Minimum interval in seconds between position updates from the same node.
+        /// A non-zero value implicitly enables the suppression window; 0 disables it.
+        /// Firmware default: 21600 (6 hours), installed when this config is first created.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4272,28 +4512,14 @@ namespace Meshtastic.Protobufs {
           }
         }
 
-        /// <summary>Field number for the "nodeinfo_direct_response" field.</summary>
-        public const int NodeinfoDirectResponseFieldNumber = 5;
-        private bool nodeinfoDirectResponse_;
-        /// <summary>
-        ///
-        /// Enable direct response to NodeInfo requests from local cache
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool NodeinfoDirectResponse {
-          get { return nodeinfoDirectResponse_; }
-          set {
-            nodeinfoDirectResponse_ = value;
-          }
-        }
-
         /// <summary>Field number for the "nodeinfo_direct_response_max_hops" field.</summary>
         public const int NodeinfoDirectResponseMaxHopsFieldNumber = 6;
         private uint nodeinfoDirectResponseMaxHops_;
         /// <summary>
         ///
-        /// Minimum hop distance from requestor before responding to NodeInfo requests
+        /// Maximum hop distance from the requestor at which direct NodeInfo responses
+        /// are served from the local cache. A non-zero value implicitly enables direct
+        /// response; 0 disables it.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4304,28 +4530,13 @@ namespace Meshtastic.Protobufs {
           }
         }
 
-        /// <summary>Field number for the "rate_limit_enabled" field.</summary>
-        public const int RateLimitEnabledFieldNumber = 7;
-        private bool rateLimitEnabled_;
-        /// <summary>
-        ///
-        /// Enable per-node rate limiting to throttle chatty nodes
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool RateLimitEnabled {
-          get { return rateLimitEnabled_; }
-          set {
-            rateLimitEnabled_ = value;
-          }
-        }
-
         /// <summary>Field number for the "rate_limit_window_secs" field.</summary>
         public const int RateLimitWindowSecsFieldNumber = 8;
         private uint rateLimitWindowSecs_;
         /// <summary>
         ///
-        /// Time window in seconds for rate limiting calculations
+        /// Time window in seconds for per-node rate limiting.
+        /// A non-zero value implicitly enables rate limiting; 0 disables it.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4341,7 +4552,8 @@ namespace Meshtastic.Protobufs {
         private uint rateLimitMaxPackets_;
         /// <summary>
         ///
-        /// Maximum packets allowed per node within the rate limit window
+        /// Maximum packets allowed per node within the rate limit window.
+        /// A non-zero value implicitly enables rate limiting; 0 disables it.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4352,28 +4564,14 @@ namespace Meshtastic.Protobufs {
           }
         }
 
-        /// <summary>Field number for the "drop_unknown_enabled" field.</summary>
-        public const int DropUnknownEnabledFieldNumber = 10;
-        private bool dropUnknownEnabled_;
-        /// <summary>
-        ///
-        /// Enable dropping of unknown/undecryptable packets per rate_limit_window_secs
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool DropUnknownEnabled {
-          get { return dropUnknownEnabled_; }
-          set {
-            dropUnknownEnabled_ = value;
-          }
-        }
-
         /// <summary>Field number for the "unknown_packet_threshold" field.</summary>
         public const int UnknownPacketThresholdFieldNumber = 11;
         private uint unknownPacketThreshold_;
         /// <summary>
         ///
-        /// Number of unknown packets before dropping from a node
+        /// Maximum unknown/undecryptable packets per rate window before the source
+        /// is dropped. A non-zero value implicitly enables unknown-packet filtering;
+        /// 0 disables it.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4381,54 +4579,6 @@ namespace Meshtastic.Protobufs {
           get { return unknownPacketThreshold_; }
           set {
             unknownPacketThreshold_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "exhaust_hop_telemetry" field.</summary>
-        public const int ExhaustHopTelemetryFieldNumber = 12;
-        private bool exhaustHopTelemetry_;
-        /// <summary>
-        ///
-        /// Set hop_limit to 0 for relayed telemetry broadcasts (own packets unaffected)
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool ExhaustHopTelemetry {
-          get { return exhaustHopTelemetry_; }
-          set {
-            exhaustHopTelemetry_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "exhaust_hop_position" field.</summary>
-        public const int ExhaustHopPositionFieldNumber = 13;
-        private bool exhaustHopPosition_;
-        /// <summary>
-        ///
-        /// Set hop_limit to 0 for relayed position broadcasts (own packets unaffected)
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool ExhaustHopPosition {
-          get { return exhaustHopPosition_; }
-          set {
-            exhaustHopPosition_ = value;
-          }
-        }
-
-        /// <summary>Field number for the "router_preserve_hops" field.</summary>
-        public const int RouterPreserveHopsFieldNumber = 14;
-        private bool routerPreserveHops_;
-        /// <summary>
-        ///
-        /// Preserve hop_limit for router-to-router traffic
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool RouterPreserveHops {
-          get { return routerPreserveHops_; }
-          set {
-            routerPreserveHops_ = value;
           }
         }
 
@@ -4447,20 +4597,11 @@ namespace Meshtastic.Protobufs {
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (Enabled != other.Enabled) return false;
-          if (PositionDedupEnabled != other.PositionDedupEnabled) return false;
-          if (PositionPrecisionBits != other.PositionPrecisionBits) return false;
           if (PositionMinIntervalSecs != other.PositionMinIntervalSecs) return false;
-          if (NodeinfoDirectResponse != other.NodeinfoDirectResponse) return false;
           if (NodeinfoDirectResponseMaxHops != other.NodeinfoDirectResponseMaxHops) return false;
-          if (RateLimitEnabled != other.RateLimitEnabled) return false;
           if (RateLimitWindowSecs != other.RateLimitWindowSecs) return false;
           if (RateLimitMaxPackets != other.RateLimitMaxPackets) return false;
-          if (DropUnknownEnabled != other.DropUnknownEnabled) return false;
           if (UnknownPacketThreshold != other.UnknownPacketThreshold) return false;
-          if (ExhaustHopTelemetry != other.ExhaustHopTelemetry) return false;
-          if (ExhaustHopPosition != other.ExhaustHopPosition) return false;
-          if (RouterPreserveHops != other.RouterPreserveHops) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -4468,20 +4609,11 @@ namespace Meshtastic.Protobufs {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (Enabled != false) hash ^= Enabled.GetHashCode();
-          if (PositionDedupEnabled != false) hash ^= PositionDedupEnabled.GetHashCode();
-          if (PositionPrecisionBits != 0) hash ^= PositionPrecisionBits.GetHashCode();
           if (PositionMinIntervalSecs != 0) hash ^= PositionMinIntervalSecs.GetHashCode();
-          if (NodeinfoDirectResponse != false) hash ^= NodeinfoDirectResponse.GetHashCode();
           if (NodeinfoDirectResponseMaxHops != 0) hash ^= NodeinfoDirectResponseMaxHops.GetHashCode();
-          if (RateLimitEnabled != false) hash ^= RateLimitEnabled.GetHashCode();
           if (RateLimitWindowSecs != 0) hash ^= RateLimitWindowSecs.GetHashCode();
           if (RateLimitMaxPackets != 0) hash ^= RateLimitMaxPackets.GetHashCode();
-          if (DropUnknownEnabled != false) hash ^= DropUnknownEnabled.GetHashCode();
           if (UnknownPacketThreshold != 0) hash ^= UnknownPacketThreshold.GetHashCode();
-          if (ExhaustHopTelemetry != false) hash ^= ExhaustHopTelemetry.GetHashCode();
-          if (ExhaustHopPosition != false) hash ^= ExhaustHopPosition.GetHashCode();
-          if (RouterPreserveHops != false) hash ^= RouterPreserveHops.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -4500,33 +4632,13 @@ namespace Meshtastic.Protobufs {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (Enabled != false) {
-            output.WriteRawTag(8);
-            output.WriteBool(Enabled);
-          }
-          if (PositionDedupEnabled != false) {
-            output.WriteRawTag(16);
-            output.WriteBool(PositionDedupEnabled);
-          }
-          if (PositionPrecisionBits != 0) {
-            output.WriteRawTag(24);
-            output.WriteUInt32(PositionPrecisionBits);
-          }
           if (PositionMinIntervalSecs != 0) {
             output.WriteRawTag(32);
             output.WriteUInt32(PositionMinIntervalSecs);
           }
-          if (NodeinfoDirectResponse != false) {
-            output.WriteRawTag(40);
-            output.WriteBool(NodeinfoDirectResponse);
-          }
           if (NodeinfoDirectResponseMaxHops != 0) {
             output.WriteRawTag(48);
             output.WriteUInt32(NodeinfoDirectResponseMaxHops);
-          }
-          if (RateLimitEnabled != false) {
-            output.WriteRawTag(56);
-            output.WriteBool(RateLimitEnabled);
           }
           if (RateLimitWindowSecs != 0) {
             output.WriteRawTag(64);
@@ -4536,25 +4648,9 @@ namespace Meshtastic.Protobufs {
             output.WriteRawTag(72);
             output.WriteUInt32(RateLimitMaxPackets);
           }
-          if (DropUnknownEnabled != false) {
-            output.WriteRawTag(80);
-            output.WriteBool(DropUnknownEnabled);
-          }
           if (UnknownPacketThreshold != 0) {
             output.WriteRawTag(88);
             output.WriteUInt32(UnknownPacketThreshold);
-          }
-          if (ExhaustHopTelemetry != false) {
-            output.WriteRawTag(96);
-            output.WriteBool(ExhaustHopTelemetry);
-          }
-          if (ExhaustHopPosition != false) {
-            output.WriteRawTag(104);
-            output.WriteBool(ExhaustHopPosition);
-          }
-          if (RouterPreserveHops != false) {
-            output.WriteRawTag(112);
-            output.WriteBool(RouterPreserveHops);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -4566,33 +4662,13 @@ namespace Meshtastic.Protobufs {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Enabled != false) {
-            output.WriteRawTag(8);
-            output.WriteBool(Enabled);
-          }
-          if (PositionDedupEnabled != false) {
-            output.WriteRawTag(16);
-            output.WriteBool(PositionDedupEnabled);
-          }
-          if (PositionPrecisionBits != 0) {
-            output.WriteRawTag(24);
-            output.WriteUInt32(PositionPrecisionBits);
-          }
           if (PositionMinIntervalSecs != 0) {
             output.WriteRawTag(32);
             output.WriteUInt32(PositionMinIntervalSecs);
           }
-          if (NodeinfoDirectResponse != false) {
-            output.WriteRawTag(40);
-            output.WriteBool(NodeinfoDirectResponse);
-          }
           if (NodeinfoDirectResponseMaxHops != 0) {
             output.WriteRawTag(48);
             output.WriteUInt32(NodeinfoDirectResponseMaxHops);
-          }
-          if (RateLimitEnabled != false) {
-            output.WriteRawTag(56);
-            output.WriteBool(RateLimitEnabled);
           }
           if (RateLimitWindowSecs != 0) {
             output.WriteRawTag(64);
@@ -4602,25 +4678,9 @@ namespace Meshtastic.Protobufs {
             output.WriteRawTag(72);
             output.WriteUInt32(RateLimitMaxPackets);
           }
-          if (DropUnknownEnabled != false) {
-            output.WriteRawTag(80);
-            output.WriteBool(DropUnknownEnabled);
-          }
           if (UnknownPacketThreshold != 0) {
             output.WriteRawTag(88);
             output.WriteUInt32(UnknownPacketThreshold);
-          }
-          if (ExhaustHopTelemetry != false) {
-            output.WriteRawTag(96);
-            output.WriteBool(ExhaustHopTelemetry);
-          }
-          if (ExhaustHopPosition != false) {
-            output.WriteRawTag(104);
-            output.WriteBool(ExhaustHopPosition);
-          }
-          if (RouterPreserveHops != false) {
-            output.WriteRawTag(112);
-            output.WriteBool(RouterPreserveHops);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -4632,26 +4692,11 @@ namespace Meshtastic.Protobufs {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (Enabled != false) {
-            size += 1 + 1;
-          }
-          if (PositionDedupEnabled != false) {
-            size += 1 + 1;
-          }
-          if (PositionPrecisionBits != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PositionPrecisionBits);
-          }
           if (PositionMinIntervalSecs != 0) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PositionMinIntervalSecs);
           }
-          if (NodeinfoDirectResponse != false) {
-            size += 1 + 1;
-          }
           if (NodeinfoDirectResponseMaxHops != 0) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NodeinfoDirectResponseMaxHops);
-          }
-          if (RateLimitEnabled != false) {
-            size += 1 + 1;
           }
           if (RateLimitWindowSecs != 0) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RateLimitWindowSecs);
@@ -4659,20 +4704,8 @@ namespace Meshtastic.Protobufs {
           if (RateLimitMaxPackets != 0) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RateLimitMaxPackets);
           }
-          if (DropUnknownEnabled != false) {
-            size += 1 + 1;
-          }
           if (UnknownPacketThreshold != 0) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UnknownPacketThreshold);
-          }
-          if (ExhaustHopTelemetry != false) {
-            size += 1 + 1;
-          }
-          if (ExhaustHopPosition != false) {
-            size += 1 + 1;
-          }
-          if (RouterPreserveHops != false) {
-            size += 1 + 1;
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -4686,26 +4719,11 @@ namespace Meshtastic.Protobufs {
           if (other == null) {
             return;
           }
-          if (other.Enabled != false) {
-            Enabled = other.Enabled;
-          }
-          if (other.PositionDedupEnabled != false) {
-            PositionDedupEnabled = other.PositionDedupEnabled;
-          }
-          if (other.PositionPrecisionBits != 0) {
-            PositionPrecisionBits = other.PositionPrecisionBits;
-          }
           if (other.PositionMinIntervalSecs != 0) {
             PositionMinIntervalSecs = other.PositionMinIntervalSecs;
           }
-          if (other.NodeinfoDirectResponse != false) {
-            NodeinfoDirectResponse = other.NodeinfoDirectResponse;
-          }
           if (other.NodeinfoDirectResponseMaxHops != 0) {
             NodeinfoDirectResponseMaxHops = other.NodeinfoDirectResponseMaxHops;
-          }
-          if (other.RateLimitEnabled != false) {
-            RateLimitEnabled = other.RateLimitEnabled;
           }
           if (other.RateLimitWindowSecs != 0) {
             RateLimitWindowSecs = other.RateLimitWindowSecs;
@@ -4713,20 +4731,8 @@ namespace Meshtastic.Protobufs {
           if (other.RateLimitMaxPackets != 0) {
             RateLimitMaxPackets = other.RateLimitMaxPackets;
           }
-          if (other.DropUnknownEnabled != false) {
-            DropUnknownEnabled = other.DropUnknownEnabled;
-          }
           if (other.UnknownPacketThreshold != 0) {
             UnknownPacketThreshold = other.UnknownPacketThreshold;
-          }
-          if (other.ExhaustHopTelemetry != false) {
-            ExhaustHopTelemetry = other.ExhaustHopTelemetry;
-          }
-          if (other.ExhaustHopPosition != false) {
-            ExhaustHopPosition = other.ExhaustHopPosition;
-          }
-          if (other.RouterPreserveHops != false) {
-            RouterPreserveHops = other.RouterPreserveHops;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -4747,32 +4753,12 @@ namespace Meshtastic.Protobufs {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
-              case 8: {
-                Enabled = input.ReadBool();
-                break;
-              }
-              case 16: {
-                PositionDedupEnabled = input.ReadBool();
-                break;
-              }
-              case 24: {
-                PositionPrecisionBits = input.ReadUInt32();
-                break;
-              }
               case 32: {
                 PositionMinIntervalSecs = input.ReadUInt32();
                 break;
               }
-              case 40: {
-                NodeinfoDirectResponse = input.ReadBool();
-                break;
-              }
               case 48: {
                 NodeinfoDirectResponseMaxHops = input.ReadUInt32();
-                break;
-              }
-              case 56: {
-                RateLimitEnabled = input.ReadBool();
                 break;
               }
               case 64: {
@@ -4783,24 +4769,8 @@ namespace Meshtastic.Protobufs {
                 RateLimitMaxPackets = input.ReadUInt32();
                 break;
               }
-              case 80: {
-                DropUnknownEnabled = input.ReadBool();
-                break;
-              }
               case 88: {
                 UnknownPacketThreshold = input.ReadUInt32();
-                break;
-              }
-              case 96: {
-                ExhaustHopTelemetry = input.ReadBool();
-                break;
-              }
-              case 104: {
-                ExhaustHopPosition = input.ReadBool();
-                break;
-              }
-              case 112: {
-                RouterPreserveHops = input.ReadBool();
                 break;
               }
             }
@@ -4822,32 +4792,12 @@ namespace Meshtastic.Protobufs {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
-              case 8: {
-                Enabled = input.ReadBool();
-                break;
-              }
-              case 16: {
-                PositionDedupEnabled = input.ReadBool();
-                break;
-              }
-              case 24: {
-                PositionPrecisionBits = input.ReadUInt32();
-                break;
-              }
               case 32: {
                 PositionMinIntervalSecs = input.ReadUInt32();
                 break;
               }
-              case 40: {
-                NodeinfoDirectResponse = input.ReadBool();
-                break;
-              }
               case 48: {
                 NodeinfoDirectResponseMaxHops = input.ReadUInt32();
-                break;
-              }
-              case 56: {
-                RateLimitEnabled = input.ReadBool();
                 break;
               }
               case 64: {
@@ -4858,24 +4808,8 @@ namespace Meshtastic.Protobufs {
                 RateLimitMaxPackets = input.ReadUInt32();
                 break;
               }
-              case 80: {
-                DropUnknownEnabled = input.ReadBool();
-                break;
-              }
               case 88: {
                 UnknownPacketThreshold = input.ReadUInt32();
-                break;
-              }
-              case 96: {
-                ExhaustHopTelemetry = input.ReadBool();
-                break;
-              }
-              case 104: {
-                ExhaustHopPosition = input.ReadBool();
-                break;
-              }
-              case 112: {
-                RouterPreserveHops = input.ReadBool();
                 break;
               }
             }
@@ -9020,6 +8954,966 @@ namespace Meshtastic.Protobufs {
 
       /// <summary>
       ///
+      /// MeshBeacon module config
+      /// </summary>
+      [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+      public sealed partial class MeshBeaconConfig : pb::IMessage<MeshBeaconConfig>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<MeshBeaconConfig> _parser = new pb::MessageParser<MeshBeaconConfig>(() => new MeshBeaconConfig());
+        private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<MeshBeaconConfig> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Meshtastic.Protobufs.ModuleConfig.Descriptor.NestedTypes[16]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public MeshBeaconConfig() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public MeshBeaconConfig(MeshBeaconConfig other) : this() {
+          _hasBits0 = other._hasBits0;
+          flags_ = other.flags_;
+          broadcastOfferFrequencySlot_ = other.broadcastOfferFrequencySlot_;
+          broadcastMessage_ = other.broadcastMessage_;
+          broadcastOfferChannel_ = other.broadcastOfferChannel_ != null ? other.broadcastOfferChannel_.Clone() : null;
+          broadcastOfferRegion_ = other.broadcastOfferRegion_;
+          broadcastOfferPreset_ = other.broadcastOfferPreset_;
+          broadcastIntervalSecs_ = other.broadcastIntervalSecs_;
+          broadcastTargets_ = other.broadcastTargets_.Clone();
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public MeshBeaconConfig Clone() {
+          return new MeshBeaconConfig(this);
+        }
+
+        /// <summary>Field number for the "flags" field.</summary>
+        public const int FlagsFieldNumber = 1;
+        private uint flags_;
+        /// <summary>
+        ///
+        /// Bitwise-OR of Flags values (listen / broadcast / legacy-split toggles).
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint Flags {
+          get { return flags_; }
+          set {
+            flags_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "broadcast_offer_frequency_slot" field.</summary>
+        public const int BroadcastOfferFrequencySlotFieldNumber = 2;
+        private readonly static uint BroadcastOfferFrequencySlotDefaultValue = 0;
+
+        private uint broadcastOfferFrequencySlot_;
+        /// <summary>
+        ///
+        /// Frequency slot to advertise, 1-based, matching Config.LoRaConfig.channel_num.
+        /// Unset means the receiver derives it from the advertised region, channel name and
+        /// preset, which covers a region that mandates a slot and a mesh on the default hash.
+        /// Set it only where the mesh deliberately pins a non-default slot. Do not send 0.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint BroadcastOfferFrequencySlot {
+          get { if ((_hasBits0 & 1) != 0) { return broadcastOfferFrequencySlot_; } else { return BroadcastOfferFrequencySlotDefaultValue; } }
+          set {
+            _hasBits0 |= 1;
+            broadcastOfferFrequencySlot_ = value;
+          }
+        }
+        /// <summary>Gets whether the "broadcast_offer_frequency_slot" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasBroadcastOfferFrequencySlot {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "broadcast_offer_frequency_slot" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearBroadcastOfferFrequencySlot() {
+          _hasBits0 &= ~1;
+        }
+
+        /// <summary>Field number for the "broadcast_message" field.</summary>
+        public const int BroadcastMessageFieldNumber = 4;
+        private string broadcastMessage_ = "";
+        /// <summary>
+        ///
+        /// Message to include in each beacon broadcast.
+        /// Every beacon copy carries this on the air, so it is the largest single cost in both
+        /// this config and the packet it produces. Held to 60 bytes for that reason. The nanopb
+        /// max_size is 61 because it counts the terminator, which is what leaves a client a
+        /// round 60.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string BroadcastMessage {
+          get { return broadcastMessage_; }
+          set {
+            broadcastMessage_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "broadcast_offer_channel" field.</summary>
+        public const int BroadcastOfferChannelFieldNumber = 5;
+        private global::Meshtastic.Protobufs.ChannelSettings broadcastOfferChannel_;
+        /// <summary>
+        ///
+        /// Optional channel (name + PSK) to advertise in the MeshBeacon offer_channel field.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Meshtastic.Protobufs.ChannelSettings BroadcastOfferChannel {
+          get { return broadcastOfferChannel_; }
+          set {
+            broadcastOfferChannel_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "broadcast_offer_region" field.</summary>
+        public const int BroadcastOfferRegionFieldNumber = 6;
+        private global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode broadcastOfferRegion_ = global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset;
+        /// <summary>
+        ///
+        /// Optional region to advertise in the MeshBeacon offer_region field.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode BroadcastOfferRegion {
+          get { return broadcastOfferRegion_; }
+          set {
+            broadcastOfferRegion_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "broadcast_offer_preset" field.</summary>
+        public const int BroadcastOfferPresetFieldNumber = 7;
+        private readonly static global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset BroadcastOfferPresetDefaultValue = global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset.LongFast;
+
+        private global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset broadcastOfferPreset_;
+        /// <summary>
+        ///
+        /// Optional modem preset to advertise in the MeshBeacon offer_preset field.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset BroadcastOfferPreset {
+          get { if ((_hasBits0 & 2) != 0) { return broadcastOfferPreset_; } else { return BroadcastOfferPresetDefaultValue; } }
+          set {
+            _hasBits0 |= 2;
+            broadcastOfferPreset_ = value;
+          }
+        }
+        /// <summary>Gets whether the "broadcast_offer_preset" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasBroadcastOfferPreset {
+          get { return (_hasBits0 & 2) != 0; }
+        }
+        /// <summary>Clears the value of the "broadcast_offer_preset" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearBroadcastOfferPreset() {
+          _hasBits0 &= ~2;
+        }
+
+        /// <summary>Field number for the "broadcast_interval_secs" field.</summary>
+        public const int BroadcastIntervalSecsFieldNumber = 11;
+        private uint broadcastIntervalSecs_;
+        /// <summary>
+        ///
+        /// How often to broadcast, in seconds. Min 3600 (1 h), default 3600.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint BroadcastIntervalSecs {
+          get { return broadcastIntervalSecs_; }
+          set {
+            broadcastIntervalSecs_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "broadcast_targets" field.</summary>
+        public const int BroadcastTargetsFieldNumber = 13;
+        private static readonly pb::FieldCodec<global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Types.BroadcastTarget> _repeated_broadcastTargets_codec
+            = pb::FieldCodec.ForMessage(106, global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Types.BroadcastTarget.Parser);
+        private readonly pbc::RepeatedField<global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Types.BroadcastTarget> broadcastTargets_ = new pbc::RepeatedField<global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Types.BroadcastTarget>();
+        /// <summary>
+        ///
+        /// Broadcast destination list.
+        /// The broadcaster sends one beacon copy per distinct destination, in sequence, temporarily
+        /// switching the radio to that entry's preset/region/channel for each.
+        /// When empty, a single beacon is sent on the node's running preset and region over the
+        /// primary channel.
+        /// Entries that resolve to the same effective preset, region and channel are deduplicated, so
+        /// a duplicate entry does not produce a second transmission.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public pbc::RepeatedField<global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Types.BroadcastTarget> BroadcastTargets {
+          get { return broadcastTargets_; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as MeshBeaconConfig);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(MeshBeaconConfig other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Flags != other.Flags) return false;
+          if (BroadcastOfferFrequencySlot != other.BroadcastOfferFrequencySlot) return false;
+          if (BroadcastMessage != other.BroadcastMessage) return false;
+          if (!object.Equals(BroadcastOfferChannel, other.BroadcastOfferChannel)) return false;
+          if (BroadcastOfferRegion != other.BroadcastOfferRegion) return false;
+          if (BroadcastOfferPreset != other.BroadcastOfferPreset) return false;
+          if (BroadcastIntervalSecs != other.BroadcastIntervalSecs) return false;
+          if(!broadcastTargets_.Equals(other.broadcastTargets_)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Flags != 0) hash ^= Flags.GetHashCode();
+          if (HasBroadcastOfferFrequencySlot) hash ^= BroadcastOfferFrequencySlot.GetHashCode();
+          if (BroadcastMessage.Length != 0) hash ^= BroadcastMessage.GetHashCode();
+          if (broadcastOfferChannel_ != null) hash ^= BroadcastOfferChannel.GetHashCode();
+          if (BroadcastOfferRegion != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) hash ^= BroadcastOfferRegion.GetHashCode();
+          if (HasBroadcastOfferPreset) hash ^= BroadcastOfferPreset.GetHashCode();
+          if (BroadcastIntervalSecs != 0) hash ^= BroadcastIntervalSecs.GetHashCode();
+          hash ^= broadcastTargets_.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Flags != 0) {
+            output.WriteRawTag(8);
+            output.WriteUInt32(Flags);
+          }
+          if (HasBroadcastOfferFrequencySlot) {
+            output.WriteRawTag(16);
+            output.WriteUInt32(BroadcastOfferFrequencySlot);
+          }
+          if (BroadcastMessage.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(BroadcastMessage);
+          }
+          if (broadcastOfferChannel_ != null) {
+            output.WriteRawTag(42);
+            output.WriteMessage(BroadcastOfferChannel);
+          }
+          if (BroadcastOfferRegion != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) {
+            output.WriteRawTag(48);
+            output.WriteEnum((int) BroadcastOfferRegion);
+          }
+          if (HasBroadcastOfferPreset) {
+            output.WriteRawTag(56);
+            output.WriteEnum((int) BroadcastOfferPreset);
+          }
+          if (BroadcastIntervalSecs != 0) {
+            output.WriteRawTag(88);
+            output.WriteUInt32(BroadcastIntervalSecs);
+          }
+          broadcastTargets_.WriteTo(output, _repeated_broadcastTargets_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Flags != 0) {
+            output.WriteRawTag(8);
+            output.WriteUInt32(Flags);
+          }
+          if (HasBroadcastOfferFrequencySlot) {
+            output.WriteRawTag(16);
+            output.WriteUInt32(BroadcastOfferFrequencySlot);
+          }
+          if (BroadcastMessage.Length != 0) {
+            output.WriteRawTag(34);
+            output.WriteString(BroadcastMessage);
+          }
+          if (broadcastOfferChannel_ != null) {
+            output.WriteRawTag(42);
+            output.WriteMessage(BroadcastOfferChannel);
+          }
+          if (BroadcastOfferRegion != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) {
+            output.WriteRawTag(48);
+            output.WriteEnum((int) BroadcastOfferRegion);
+          }
+          if (HasBroadcastOfferPreset) {
+            output.WriteRawTag(56);
+            output.WriteEnum((int) BroadcastOfferPreset);
+          }
+          if (BroadcastIntervalSecs != 0) {
+            output.WriteRawTag(88);
+            output.WriteUInt32(BroadcastIntervalSecs);
+          }
+          broadcastTargets_.WriteTo(ref output, _repeated_broadcastTargets_codec);
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Flags != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Flags);
+          }
+          if (HasBroadcastOfferFrequencySlot) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BroadcastOfferFrequencySlot);
+          }
+          if (BroadcastMessage.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(BroadcastMessage);
+          }
+          if (broadcastOfferChannel_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(BroadcastOfferChannel);
+          }
+          if (BroadcastOfferRegion != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BroadcastOfferRegion);
+          }
+          if (HasBroadcastOfferPreset) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BroadcastOfferPreset);
+          }
+          if (BroadcastIntervalSecs != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BroadcastIntervalSecs);
+          }
+          size += broadcastTargets_.CalculateSize(_repeated_broadcastTargets_codec);
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(MeshBeaconConfig other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Flags != 0) {
+            Flags = other.Flags;
+          }
+          if (other.HasBroadcastOfferFrequencySlot) {
+            BroadcastOfferFrequencySlot = other.BroadcastOfferFrequencySlot;
+          }
+          if (other.BroadcastMessage.Length != 0) {
+            BroadcastMessage = other.BroadcastMessage;
+          }
+          if (other.broadcastOfferChannel_ != null) {
+            if (broadcastOfferChannel_ == null) {
+              BroadcastOfferChannel = new global::Meshtastic.Protobufs.ChannelSettings();
+            }
+            BroadcastOfferChannel.MergeFrom(other.BroadcastOfferChannel);
+          }
+          if (other.BroadcastOfferRegion != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) {
+            BroadcastOfferRegion = other.BroadcastOfferRegion;
+          }
+          if (other.HasBroadcastOfferPreset) {
+            BroadcastOfferPreset = other.BroadcastOfferPreset;
+          }
+          if (other.BroadcastIntervalSecs != 0) {
+            BroadcastIntervalSecs = other.BroadcastIntervalSecs;
+          }
+          broadcastTargets_.Add(other.broadcastTargets_);
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                Flags = input.ReadUInt32();
+                break;
+              }
+              case 16: {
+                BroadcastOfferFrequencySlot = input.ReadUInt32();
+                break;
+              }
+              case 34: {
+                BroadcastMessage = input.ReadString();
+                break;
+              }
+              case 42: {
+                if (broadcastOfferChannel_ == null) {
+                  BroadcastOfferChannel = new global::Meshtastic.Protobufs.ChannelSettings();
+                }
+                input.ReadMessage(BroadcastOfferChannel);
+                break;
+              }
+              case 48: {
+                BroadcastOfferRegion = (global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode) input.ReadEnum();
+                break;
+              }
+              case 56: {
+                BroadcastOfferPreset = (global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset) input.ReadEnum();
+                break;
+              }
+              case 88: {
+                BroadcastIntervalSecs = input.ReadUInt32();
+                break;
+              }
+              case 106: {
+                broadcastTargets_.AddEntriesFrom(input, _repeated_broadcastTargets_codec);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+          if ((tag & 7) == 4) {
+            // Abort on any end group tag.
+            return;
+          }
+          switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                Flags = input.ReadUInt32();
+                break;
+              }
+              case 16: {
+                BroadcastOfferFrequencySlot = input.ReadUInt32();
+                break;
+              }
+              case 34: {
+                BroadcastMessage = input.ReadString();
+                break;
+              }
+              case 42: {
+                if (broadcastOfferChannel_ == null) {
+                  BroadcastOfferChannel = new global::Meshtastic.Protobufs.ChannelSettings();
+                }
+                input.ReadMessage(BroadcastOfferChannel);
+                break;
+              }
+              case 48: {
+                BroadcastOfferRegion = (global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode) input.ReadEnum();
+                break;
+              }
+              case 56: {
+                BroadcastOfferPreset = (global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset) input.ReadEnum();
+                break;
+              }
+              case 88: {
+                BroadcastIntervalSecs = input.ReadUInt32();
+                break;
+              }
+              case 106: {
+                broadcastTargets_.AddEntriesFrom(ref input, _repeated_broadcastTargets_codec);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+        #region Nested types
+        /// <summary>Container for nested types declared in the MeshBeaconConfig message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static partial class Types {
+          /// <summary>
+          ///
+          /// Boolean options for the beacon module, packed into the `flags` bitfield below.
+          /// OR the FLAG_* values together; a flag is on when its bit is set.
+          /// </summary>
+          public enum Flags {
+            /// <summary>
+            ///
+            /// No options enabled.
+            /// </summary>
+            [pbr::OriginalName("FLAG_NONE")] FlagNone = 0,
+            /// <summary>
+            ///
+            /// Enable receiving MESH_BEACON_APP packets from other nodes.
+            /// The text portion is delivered to the local message inbox.
+            /// Offered channel/preset are stored for the client app to act on.
+            /// </summary>
+            [pbr::OriginalName("FLAG_LISTEN_ENABLED")] FlagListenEnabled = 1,
+            /// <summary>
+            ///
+            /// Enable periodically broadcasting MESH_BEACON_APP packets from this node.
+            /// </summary>
+            [pbr::OriginalName("FLAG_BROADCAST_ENABLED")] FlagBroadcastEnabled = 2,
+            /// <summary>
+            ///
+            /// When both text and offer content are present, split the beacon into a separate
+            /// MESH_BEACON_APP (offer only) and TEXT_MESSAGE_APP (text only) packet, so firmware
+            /// that only decodes TEXT_MESSAGE_APP still receives the human-readable text.
+            /// </summary>
+            [pbr::OriginalName("FLAG_LEGACY_SPLIT")] FlagLegacySplit = 4,
+          }
+
+          /// <summary>
+          ///
+          /// One entry in the broadcast destination list.
+          /// Each entry names one set of radio settings to send a beacon copy on.
+          /// </summary>
+          [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+          public sealed partial class BroadcastTarget : pb::IMessage<BroadcastTarget>
+          #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              , pb::IBufferMessage
+          #endif
+          {
+            private static readonly pb::MessageParser<BroadcastTarget> _parser = new pb::MessageParser<BroadcastTarget>(() => new BroadcastTarget());
+            private pb::UnknownFieldSet _unknownFields;
+            private int _hasBits0;
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public static pb::MessageParser<BroadcastTarget> Parser { get { return _parser; } }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public static pbr::MessageDescriptor Descriptor {
+              get { return global::Meshtastic.Protobufs.ModuleConfig.Types.MeshBeaconConfig.Descriptor.NestedTypes[0]; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            pbr::MessageDescriptor pb::IMessage.Descriptor {
+              get { return Descriptor; }
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public BroadcastTarget() {
+              OnConstruction();
+            }
+
+            partial void OnConstruction();
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public BroadcastTarget(BroadcastTarget other) : this() {
+              _hasBits0 = other._hasBits0;
+              preset_ = other.preset_;
+              region_ = other.region_;
+              channelIndex_ = other.channelIndex_;
+              frequencySlot_ = other.frequencySlot_;
+              _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public BroadcastTarget Clone() {
+              return new BroadcastTarget(this);
+            }
+
+            /// <summary>Field number for the "preset" field.</summary>
+            public const int PresetFieldNumber = 1;
+            private readonly static global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset PresetDefaultValue = global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset.LongFast;
+
+            private global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset preset_;
+            /// <summary>
+            ///
+            /// Modem preset to use for this target.
+            /// Falls back to the running config preset if unset.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset Preset {
+              get { if ((_hasBits0 & 1) != 0) { return preset_; } else { return PresetDefaultValue; } }
+              set {
+                _hasBits0 |= 1;
+                preset_ = value;
+              }
+            }
+            /// <summary>Gets whether the "preset" field is set</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool HasPreset {
+              get { return (_hasBits0 & 1) != 0; }
+            }
+            /// <summary>Clears the value of the "preset" field</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void ClearPreset() {
+              _hasBits0 &= ~1;
+            }
+
+            /// <summary>Field number for the "region" field.</summary>
+            public const int RegionFieldNumber = 2;
+            private global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode region_ = global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset;
+            /// <summary>
+            ///
+            /// Region to use for this target. UNSET means use the running config region.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode Region {
+              get { return region_; }
+              set {
+                region_ = value;
+              }
+            }
+
+            /// <summary>Field number for the "channel_index" field.</summary>
+            public const int ChannelIndexFieldNumber = 4;
+            private readonly static uint ChannelIndexDefaultValue = 0;
+
+            private uint channelIndex_;
+            /// <summary>
+            ///
+            /// Index into the device's channel table (0..MAX_NUM_CHANNELS-1) of the channel to
+            /// transmit this target's beacon on. The referenced channel must already be configured
+            /// on the node (its key is needed to encrypt). If unset, the default channel for the
+            /// preset is used.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public uint ChannelIndex {
+              get { if ((_hasBits0 & 2) != 0) { return channelIndex_; } else { return ChannelIndexDefaultValue; } }
+              set {
+                _hasBits0 |= 2;
+                channelIndex_ = value;
+              }
+            }
+            /// <summary>Gets whether the "channel_index" field is set</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool HasChannelIndex {
+              get { return (_hasBits0 & 2) != 0; }
+            }
+            /// <summary>Clears the value of the "channel_index" field</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void ClearChannelIndex() {
+              _hasBits0 &= ~2;
+            }
+
+            /// <summary>Field number for the "frequency_slot" field.</summary>
+            public const int FrequencySlotFieldNumber = 5;
+            private readonly static uint FrequencySlotDefaultValue = 0;
+
+            private uint frequencySlot_;
+            /// <summary>
+            ///
+            /// Frequency slot to transmit this target's beacon on, 1-based, matching
+            /// Config.LoRaConfig.channel_num. Unset means derive it the way any node on this
+            /// channel would: the region's override slot if it has one, otherwise the hash of the
+            /// target channel's name. Do not send 0 - it is the same as unset.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public uint FrequencySlot {
+              get { if ((_hasBits0 & 4) != 0) { return frequencySlot_; } else { return FrequencySlotDefaultValue; } }
+              set {
+                _hasBits0 |= 4;
+                frequencySlot_ = value;
+              }
+            }
+            /// <summary>Gets whether the "frequency_slot" field is set</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool HasFrequencySlot {
+              get { return (_hasBits0 & 4) != 0; }
+            }
+            /// <summary>Clears the value of the "frequency_slot" field</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void ClearFrequencySlot() {
+              _hasBits0 &= ~4;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override bool Equals(object other) {
+              return Equals(other as BroadcastTarget);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool Equals(BroadcastTarget other) {
+              if (ReferenceEquals(other, null)) {
+                return false;
+              }
+              if (ReferenceEquals(other, this)) {
+                return true;
+              }
+              if (Preset != other.Preset) return false;
+              if (Region != other.Region) return false;
+              if (ChannelIndex != other.ChannelIndex) return false;
+              if (FrequencySlot != other.FrequencySlot) return false;
+              return Equals(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override int GetHashCode() {
+              int hash = 1;
+              if (HasPreset) hash ^= Preset.GetHashCode();
+              if (Region != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) hash ^= Region.GetHashCode();
+              if (HasChannelIndex) hash ^= ChannelIndex.GetHashCode();
+              if (HasFrequencySlot) hash ^= FrequencySlot.GetHashCode();
+              if (_unknownFields != null) {
+                hash ^= _unknownFields.GetHashCode();
+              }
+              return hash;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public override string ToString() {
+              return pb::JsonFormatter.ToDiagnosticString(this);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void WriteTo(pb::CodedOutputStream output) {
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              output.WriteRawMessage(this);
+            #else
+              if (HasPreset) {
+                output.WriteRawTag(8);
+                output.WriteEnum((int) Preset);
+              }
+              if (Region != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) {
+                output.WriteRawTag(16);
+                output.WriteEnum((int) Region);
+              }
+              if (HasChannelIndex) {
+                output.WriteRawTag(32);
+                output.WriteUInt32(ChannelIndex);
+              }
+              if (HasFrequencySlot) {
+                output.WriteRawTag(40);
+                output.WriteUInt32(FrequencySlot);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(output);
+              }
+            #endif
+            }
+
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+              if (HasPreset) {
+                output.WriteRawTag(8);
+                output.WriteEnum((int) Preset);
+              }
+              if (Region != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) {
+                output.WriteRawTag(16);
+                output.WriteEnum((int) Region);
+              }
+              if (HasChannelIndex) {
+                output.WriteRawTag(32);
+                output.WriteUInt32(ChannelIndex);
+              }
+              if (HasFrequencySlot) {
+                output.WriteRawTag(40);
+                output.WriteUInt32(FrequencySlot);
+              }
+              if (_unknownFields != null) {
+                _unknownFields.WriteTo(ref output);
+              }
+            }
+            #endif
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public int CalculateSize() {
+              int size = 0;
+              if (HasPreset) {
+                size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Preset);
+              }
+              if (Region != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) {
+                size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Region);
+              }
+              if (HasChannelIndex) {
+                size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChannelIndex);
+              }
+              if (HasFrequencySlot) {
+                size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FrequencySlot);
+              }
+              if (_unknownFields != null) {
+                size += _unknownFields.CalculateSize();
+              }
+              return size;
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void MergeFrom(BroadcastTarget other) {
+              if (other == null) {
+                return;
+              }
+              if (other.HasPreset) {
+                Preset = other.Preset;
+              }
+              if (other.Region != global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode.Unset) {
+                Region = other.Region;
+              }
+              if (other.HasChannelIndex) {
+                ChannelIndex = other.ChannelIndex;
+              }
+              if (other.HasFrequencySlot) {
+                FrequencySlot = other.FrequencySlot;
+              }
+              _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+            }
+
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void MergeFrom(pb::CodedInputStream input) {
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+              input.ReadRawMessage(this);
+            #else
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+              if ((tag & 7) == 4) {
+                // Abort on any end group tag.
+                return;
+              }
+              switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                    break;
+                  case 8: {
+                    Preset = (global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset) input.ReadEnum();
+                    break;
+                  }
+                  case 16: {
+                    Region = (global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode) input.ReadEnum();
+                    break;
+                  }
+                  case 32: {
+                    ChannelIndex = input.ReadUInt32();
+                    break;
+                  }
+                  case 40: {
+                    FrequencySlot = input.ReadUInt32();
+                    break;
+                  }
+                }
+              }
+            #endif
+            }
+
+            #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+              uint tag;
+              while ((tag = input.ReadTag()) != 0) {
+              if ((tag & 7) == 4) {
+                // Abort on any end group tag.
+                return;
+              }
+              switch(tag) {
+                  default:
+                    _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                    break;
+                  case 8: {
+                    Preset = (global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.ModemPreset) input.ReadEnum();
+                    break;
+                  }
+                  case 16: {
+                    Region = (global::Meshtastic.Protobufs.Config.Types.LoRaConfig.Types.RegionCode) input.ReadEnum();
+                    break;
+                  }
+                  case 32: {
+                    ChannelIndex = input.ReadUInt32();
+                    break;
+                  }
+                  case 40: {
+                    FrequencySlot = input.ReadUInt32();
+                    break;
+                  }
+                }
+              }
+            }
+            #endif
+
+          }
+
+        }
+        #endregion
+
+      }
+
+      /// <summary>
+      ///
       /// TAK team/role configuration
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
@@ -9037,7 +9931,7 @@ namespace Meshtastic.Protobufs {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Meshtastic.Protobufs.ModuleConfig.Descriptor.NestedTypes[16]; }
+          get { return global::Meshtastic.Protobufs.ModuleConfig.Descriptor.NestedTypes[17]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

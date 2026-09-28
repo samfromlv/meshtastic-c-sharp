@@ -24,25 +24,28 @@ namespace Meshtastic.Protobufs {
     static PortnumsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChltZXNodGFzdGljL3BvcnRudW1zLnByb3RvEgptZXNodGFzdGljKqsFCgdQ",
+            "ChltZXNodGFzdGljL3BvcnRudW1zLnByb3RvEgptZXNodGFzdGljKrQGCgdQ",
             "b3J0TnVtEg8KC1VOS05PV05fQVBQEAASFAoQVEVYVF9NRVNTQUdFX0FQUBAB",
             "EhcKE1JFTU9URV9IQVJEV0FSRV9BUFAQAhIQCgxQT1NJVElPTl9BUFAQAxIQ",
             "CgxOT0RFSU5GT19BUFAQBBIPCgtST1VUSU5HX0FQUBAFEg0KCUFETUlOX0FQ",
             "UBAGEh8KG1RFWFRfTUVTU0FHRV9DT01QUkVTU0VEX0FQUBAHEhAKDFdBWVBP",
             "SU5UX0FQUBAIEg0KCUFVRElPX0FQUBAJEhgKFERFVEVDVElPTl9TRU5TT1Jf",
             "QVBQEAoSDQoJQUxFUlRfQVBQEAsSGAoUS0VZX1ZFUklGSUNBVElPTl9BUFAQ",
-            "DBINCglSRVBMWV9BUFAQIBIRCg1JUF9UVU5ORUxfQVBQECESEgoOUEFYQ09V",
-            "TlRFUl9BUFAQIhIeChpTVE9SRV9GT1JXQVJEX1BMVVNQTFVTX0FQUBAjEhMK",
-            "D05PREVfU1RBVFVTX0FQUBAkEg4KClNFUklBTF9BUFAQQBIVChFTVE9SRV9G",
-            "T1JXQVJEX0FQUBBBEhIKDlJBTkdFX1RFU1RfQVBQEEISEQoNVEVMRU1FVFJZ",
-            "X0FQUBBDEgsKB1pQU19BUFAQRBIRCg1TSU1VTEFUT1JfQVBQEEUSEgoOVFJB",
-            "Q0VST1VURV9BUFAQRhIUChBORUlHSEJPUklORk9fQVBQEEcSDwoLQVRBS19Q",
-            "TFVHSU4QSBISCg5NQVBfUkVQT1JUX0FQUBBJEhMKD1BPV0VSU1RSRVNTX0FQ",
-            "UBBKEhgKFFJFVElDVUxVTV9UVU5ORUxfQVBQEEwSDwoLQ0FZRU5ORV9BUFAQ",
-            "TRIQCgtQUklWQVRFX0FQUBCAAhITCg5BVEFLX0ZPUldBUkRFUhCBAhIICgNN",
-            "QVgQ/wNCXgoUb3JnLm1lc2h0YXN0aWMucHJvdG9CCFBvcnRudW1zWiJnaXRo",
-            "dWIuY29tL21lc2h0YXN0aWMvZ28vZ2VuZXJhdGVkqgIUTWVzaHRhc3RpYy5Q",
-            "cm90b2J1ZnO6AgBiBnByb3RvMw=="));
+            "DBIUChBSRU1PVEVfU0hFTExfQVBQEA0SDQoJUkVQTFlfQVBQECASEQoNSVBf",
+            "VFVOTkVMX0FQUBAhEhIKDlBBWENPVU5URVJfQVBQECISHgoaU1RPUkVfRk9S",
+            "V0FSRF9QTFVTUExVU19BUFAQIxITCg9OT0RFX1NUQVRVU19BUFAQJBITCg9N",
+            "RVNIX0JFQUNPTl9BUFAQJRIOCgpQQUdJTkdfQVBQECYSDgoKU0VSSUFMX0FQ",
+            "UBBAEhUKEVNUT1JFX0ZPUldBUkRfQVBQEEESEgoOUkFOR0VfVEVTVF9BUFAQ",
+            "QhIRCg1URUxFTUVUUllfQVBQEEMSCwoHWlBTX0FQUBBEEhEKDVNJTVVMQVRP",
+            "Ul9BUFAQRRISCg5UUkFDRVJPVVRFX0FQUBBGEhQKEE5FSUdIQk9SSU5GT19B",
+            "UFAQRxIPCgtBVEFLX1BMVUdJThBIEhIKDk1BUF9SRVBPUlRfQVBQEEkSEwoP",
+            "UE9XRVJTVFJFU1NfQVBQEEoSEgoOTE9SQVdBTl9CUklER0UQSxIYChRSRVRJ",
+            "Q1VMVU1fVFVOTkVMX0FQUBBMEg8KC0NBWUVOTkVfQVBQEE0SEgoOQVRBS19Q",
+            "TFVHSU5fVjIQThIQCgxMT1JBX09UQV9BUFAQTxISCg5HUk9VUEFMQVJNX0FQ",
+            "UBBwEhAKC1BSSVZBVEVfQVBQEIACEhMKDkFUQUtfRk9SV0FSREVSEIECEggK",
+            "A01BWBD/A0JeChRvcmcubWVzaHRhc3RpYy5wcm90b0IIUG9ydG51bXNaImdp",
+            "dGh1Yi5jb20vbWVzaHRhc3RpYy9nby9nZW5lcmF0ZWSqAhRNZXNodGFzdGlj",
+            "LlByb3RvYnVmc7oCAGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Meshtastic.Protobufs.PortNum), }, null, null));
@@ -161,6 +164,11 @@ namespace Meshtastic.Protobufs {
     [pbr::OriginalName("KEY_VERIFICATION_APP")] KeyVerificationApp = 12,
     /// <summary>
     ///
+    /// Module/port for handling primitive remote shell access.
+    /// </summary>
+    [pbr::OriginalName("REMOTE_SHELL_APP")] RemoteShellApp = 13,
+    /// <summary>
+    ///
     /// Provides a 'ping' service that replies to any packet it receives.
     /// Also serves as a small example module.
     /// ENCODING: ASCII Plaintext
@@ -194,6 +202,23 @@ namespace Meshtastic.Protobufs {
     /// Broadcasts on change and on a timer, possibly once a day.
     /// </summary>
     [pbr::OriginalName("NODE_STATUS_APP")] NodeStatusApp = 36,
+    /// <summary>
+    ///
+    /// Beacon module broadcast packets.
+    /// ENCODING: protobuf
+    /// Periodically broadcast by nodes in beacon mode; received by nodes with MeshBeaconConfig.FLAG_LISTEN_ENABLED.
+    /// Carries a text message plus optional channel/preset offers for client apps.
+    /// </summary>
+    [pbr::OriginalName("MESH_BEACON_APP")] MeshBeaconApp = 37,
+    /// <summary>
+    ///
+    /// Acknowledged paging: alerts a person is expected to physically acknowledge, and the
+    /// acknowledgements themselves.
+    /// ENCODING: protobuf PagingPacket
+    /// Distinct from ALERT_APP, which is a text message the recipient never confirms, and from a
+    /// routing or delivery ACK, which says the packet arrived rather than that someone saw it.
+    /// </summary>
+    [pbr::OriginalName("PAGING_APP")] PagingApp = 38,
     /// <summary>
     ///
     /// Provides a hardware serial interface to send and receive from the Meshtastic network.
@@ -273,6 +298,12 @@ namespace Meshtastic.Protobufs {
     [pbr::OriginalName("POWERSTRESS_APP")] PowerstressApp = 74,
     /// <summary>
     ///
+    /// LoraWAN Payload Transport
+    /// ENCODING: LoRaWANBridge protobuf, see lorawan_bridge.proto
+    /// </summary>
+    [pbr::OriginalName("LORAWAN_BRIDGE")] LorawanBridge = 75,
+    /// <summary>
+    ///
     /// Reticulum Network Stack Tunnel App
     /// ENCODING: Fragmented RNS Packet. Handled by Meshtastic RNS interface
     /// </summary>
@@ -284,6 +315,26 @@ namespace Meshtastic.Protobufs {
     /// ENCODING: CayenneLLP
     /// </summary>
     [pbr::OriginalName("CAYENNE_APP")] CayenneApp = 77,
+    /// <summary>
+    ///
+    /// ATAK Plugin V2
+    /// Portnum for payloads from the official Meshtastic ATAK plugin using
+    /// TAKPacketV2 with zstd dictionary compression.
+    /// </summary>
+    [pbr::OriginalName("ATAK_PLUGIN_V2")] AtakPluginV2 = 78,
+    /// <summary>
+    /// signed firmware updates over lora.
+    ///
+    /// ENCODING: binary (ota-common transport frames)
+    /// </summary>
+    [pbr::OriginalName("LORA_OTA_APP")] LoraOtaApp = 79,
+    /// <summary>
+    ///
+    /// GroupAlarm integration
+    /// Used for transporting GroupAlarm-related messages between Meshtastic nodes
+    /// and companion applications/services.
+    /// </summary>
+    [pbr::OriginalName("GROUPALARM_APP")] GroupalarmApp = 112,
     /// <summary>
     ///
     /// Private applications should use portnums >= 256.

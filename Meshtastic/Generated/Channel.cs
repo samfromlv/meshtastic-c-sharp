@@ -24,23 +24,23 @@ namespace Meshtastic.Protobufs {
     static ChannelReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhtZXNodGFzdGljL2NoYW5uZWwucHJvdG8SCm1lc2h0YXN0aWMiuAEKD0No",
+            "ChhtZXNodGFzdGljL2NoYW5uZWwucHJvdG8SCm1lc2h0YXN0aWMiygEKD0No",
             "YW5uZWxTZXR0aW5ncxIXCgtjaGFubmVsX251bRgBIAEoDUICGAESCwoDcHNr",
             "GAIgASgMEgwKBG5hbWUYAyABKAkSCgoCaWQYBCABKAcSFgoOdXBsaW5rX2Vu",
             "YWJsZWQYBSABKAgSGAoQZG93bmxpbmtfZW5hYmxlZBgGIAEoCBIzCg9tb2R1",
             "bGVfc2V0dGluZ3MYByABKAsyGi5tZXNodGFzdGljLk1vZHVsZVNldHRpbmdz",
-            "Ij4KDk1vZHVsZVNldHRpbmdzEhoKEnBvc2l0aW9uX3ByZWNpc2lvbhgBIAEo",
-            "DRIQCghpc19tdXRlZBgCIAEoCCKhAQoHQ2hhbm5lbBINCgVpbmRleBgBIAEo",
-            "BRItCghzZXR0aW5ncxgCIAEoCzIbLm1lc2h0YXN0aWMuQ2hhbm5lbFNldHRp",
-            "bmdzEiYKBHJvbGUYAyABKA4yGC5tZXNodGFzdGljLkNoYW5uZWwuUm9sZSIw",
-            "CgRSb2xlEgwKCERJU0FCTEVEEAASCwoHUFJJTUFSWRABEg0KCVNFQ09OREFS",
-            "WRACQmMKFG9yZy5tZXNodGFzdGljLnByb3RvQg1DaGFubmVsUHJvdG9zWiJn",
-            "aXRodWIuY29tL21lc2h0YXN0aWMvZ28vZ2VuZXJhdGVkqgIUTWVzaHRhc3Rp",
-            "Yy5Qcm90b2J1ZnO6AgBiBnByb3RvMw=="));
+            "EhAKCHVzZV9hZWFkGAggASgIIj4KDk1vZHVsZVNldHRpbmdzEhoKEnBvc2l0",
+            "aW9uX3ByZWNpc2lvbhgBIAEoDRIQCghpc19tdXRlZBgCIAEoCCKhAQoHQ2hh",
+            "bm5lbBINCgVpbmRleBgBIAEoBRItCghzZXR0aW5ncxgCIAEoCzIbLm1lc2h0",
+            "YXN0aWMuQ2hhbm5lbFNldHRpbmdzEiYKBHJvbGUYAyABKA4yGC5tZXNodGFz",
+            "dGljLkNoYW5uZWwuUm9sZSIwCgRSb2xlEgwKCERJU0FCTEVEEAASCwoHUFJJ",
+            "TUFSWRABEg0KCVNFQ09OREFSWRACQmMKFG9yZy5tZXNodGFzdGljLnByb3Rv",
+            "Qg1DaGFubmVsUHJvdG9zWiJnaXRodWIuY29tL21lc2h0YXN0aWMvZ28vZ2Vu",
+            "ZXJhdGVkqgIUTWVzaHRhc3RpYy5Qcm90b2J1ZnO6AgBiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ChannelSettings), global::Meshtastic.Protobufs.ChannelSettings.Parser, new[]{ "ChannelNum", "Psk", "Name", "Id", "UplinkEnabled", "DownlinkEnabled", "ModuleSettings" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ChannelSettings), global::Meshtastic.Protobufs.ChannelSettings.Parser, new[]{ "ChannelNum", "Psk", "Name", "Id", "UplinkEnabled", "DownlinkEnabled", "ModuleSettings", "UseAead" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.ModuleSettings), global::Meshtastic.Protobufs.ModuleSettings.Parser, new[]{ "PositionPrecision", "IsMuted" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.Channel), global::Meshtastic.Protobufs.Channel.Parser, new[]{ "Index", "Settings", "Role" }, null, new[]{ typeof(global::Meshtastic.Protobufs.Channel.Types.Role) }, null, null)
           }));
@@ -109,6 +109,7 @@ namespace Meshtastic.Protobufs {
       uplinkEnabled_ = other.uplinkEnabled_;
       downlinkEnabled_ = other.downlinkEnabled_;
       moduleSettings_ = other.moduleSettings_ != null ? other.moduleSettings_.Clone() : null;
+      useAead_ = other.useAead_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -257,6 +258,26 @@ namespace Meshtastic.Protobufs {
       }
     }
 
+    /// <summary>Field number for the "use_aead" field.</summary>
+    public const int UseAeadFieldNumber = 8;
+    private bool useAead_;
+    /// <summary>
+    ///
+    /// Enable authenticated encryption (AES-CCM) for this channel.
+    /// When true, messages include a 12-byte authentication tag that prevents
+    /// forgery and bit-flipping attacks. All nodes on the channel must have
+    /// this enabled - unauthenticated (AES-CTR) packets are rejected.
+    /// Experimental. Default: false (standard AES-CTR encryption).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool UseAead {
+      get { return useAead_; }
+      set {
+        useAead_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -279,6 +300,7 @@ namespace Meshtastic.Protobufs {
       if (UplinkEnabled != other.UplinkEnabled) return false;
       if (DownlinkEnabled != other.DownlinkEnabled) return false;
       if (!object.Equals(ModuleSettings, other.ModuleSettings)) return false;
+      if (UseAead != other.UseAead) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -293,6 +315,7 @@ namespace Meshtastic.Protobufs {
       if (UplinkEnabled != false) hash ^= UplinkEnabled.GetHashCode();
       if (DownlinkEnabled != false) hash ^= DownlinkEnabled.GetHashCode();
       if (moduleSettings_ != null) hash ^= ModuleSettings.GetHashCode();
+      if (UseAead != false) hash ^= UseAead.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -339,6 +362,10 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(58);
         output.WriteMessage(ModuleSettings);
       }
+      if (UseAead != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(UseAead);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -377,6 +404,10 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(58);
         output.WriteMessage(ModuleSettings);
       }
+      if (UseAead != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(UseAead);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -407,6 +438,9 @@ namespace Meshtastic.Protobufs {
       }
       if (moduleSettings_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ModuleSettings);
+      }
+      if (UseAead != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -443,6 +477,9 @@ namespace Meshtastic.Protobufs {
           ModuleSettings = new global::Meshtastic.Protobufs.ModuleSettings();
         }
         ModuleSettings.MergeFrom(other.ModuleSettings);
+      }
+      if (other.UseAead != false) {
+        UseAead = other.UseAead;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -494,6 +531,10 @@ namespace Meshtastic.Protobufs {
             input.ReadMessage(ModuleSettings);
             break;
           }
+          case 64: {
+            UseAead = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -542,6 +583,10 @@ namespace Meshtastic.Protobufs {
               ModuleSettings = new global::Meshtastic.Protobufs.ModuleSettings();
             }
             input.ReadMessage(ModuleSettings);
+            break;
+          }
+          case 64: {
+            UseAead = input.ReadBool();
             break;
           }
         }

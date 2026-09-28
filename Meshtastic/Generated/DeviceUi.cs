@@ -52,17 +52,17 @@ namespace Meshtastic.Protobufs {
             "IAEoCzIULm1lc2h0YXN0aWMuR2VvUG9pbnQSDQoFc3R5bGUYAiABKAkSEgoK",
             "Zm9sbG93X2dwcxgDIAEoCCo+CgtDb21wYXNzTW9kZRILCgdEWU5BTUlDEAAS",
             "DgoKRklYRURfUklORxABEhIKDkZSRUVaRV9IRUFESU5HEAIqJQoFVGhlbWUS",
-            "CAoEREFSSxAAEgkKBUxJR0hUEAESBwoDUkVEEAIqwAIKCExhbmd1YWdlEgsK",
+            "CAoEREFSSxAAEgkKBUxJR0hUEAESBwoDUkVEEAIq4AIKCExhbmd1YWdlEgsK",
             "B0VOR0xJU0gQABIKCgZGUkVOQ0gQARIKCgZHRVJNQU4QAhILCgdJVEFMSUFO",
             "EAMSDgoKUE9SVFVHVUVTRRAEEgsKB1NQQU5JU0gQBRILCgdTV0VESVNIEAYS",
             "CwoHRklOTklTSBAHEgoKBlBPTElTSBAIEgsKB1RVUktJU0gQCRILCgdTRVJC",
             "SUFOEAoSCwoHUlVTU0lBThALEgkKBURVVENIEAwSCQoFR1JFRUsQDRINCglO",
             "T1JXRUdJQU4QDhINCglTTE9WRU5JQU4QDxINCglVS1JBSU5JQU4QEBINCglC",
-            "VUxHQVJJQU4QERIJCgVDWkVDSBASEgoKBkRBTklTSBATEhYKElNJTVBMSUZJ",
-            "RURfQ0hJTkVTRRAeEhcKE1RSQURJVElPTkFMX0NISU5FU0UQH0JkChRvcmcu",
-            "bWVzaHRhc3RpYy5wcm90b0IORGV2aWNlVUlQcm90b3NaImdpdGh1Yi5jb20v",
-            "bWVzaHRhc3RpYy9nby9nZW5lcmF0ZWSqAhRNZXNodGFzdGljLlByb3RvYnVm",
-            "c7oCAGIGcHJvdG8z"));
+            "VUxHQVJJQU4QERIJCgVDWkVDSBASEgoKBkRBTklTSBATEg0KCUhVTkdBUklB",
+            "ThAUEg8KC0FaRVJCQUlKQU5JEBUSFgoSU0lNUExJRklFRF9DSElORVNFEB4S",
+            "FwoTVFJBRElUSU9OQUxfQ0hJTkVTRRAfQmQKFG9yZy5tZXNodGFzdGljLnBy",
+            "b3RvQg5EZXZpY2VVSVByb3Rvc1oiZ2l0aHViLmNvbS9tZXNodGFzdGljL2dv",
+            "L2dlbmVyYXRlZKoCFE1lc2h0YXN0aWMuUHJvdG9idWZzugIAYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Meshtastic.Protobufs.CompassMode), typeof(global::Meshtastic.Protobufs.Theme), typeof(global::Meshtastic.Protobufs.Language), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -218,6 +218,16 @@ namespace Meshtastic.Protobufs {
     /// Danish
     /// </summary>
     [pbr::OriginalName("DANISH")] Danish = 19,
+    /// <summary>
+    ///
+    /// Hungarian
+    /// </summary>
+    [pbr::OriginalName("HUNGARIAN")] Hungarian = 20,
+    /// <summary>
+    ///
+    /// Azerbaijani
+    /// </summary>
+    [pbr::OriginalName("AZERBAIJANI")] Azerbaijani = 21,
     /// <summary>
     ///
     /// Simplified Chinese (experimental)

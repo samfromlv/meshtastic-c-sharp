@@ -26,23 +26,25 @@ namespace Meshtastic.Protobufs {
           string.Concat(
             "ChttZXNodGFzdGljL2NsaWVudG9ubHkucHJvdG8SCm1lc2h0YXN0aWMaGm1l",
             "c2h0YXN0aWMvbG9jYWxvbmx5LnByb3RvGhVtZXNodGFzdGljL21lc2gucHJv",
-            "dG8iqQMKDURldmljZVByb2ZpbGUSFgoJbG9uZ19uYW1lGAEgASgJSACIAQES",
+            "dG8ihQQKDURldmljZVByb2ZpbGUSFgoJbG9uZ19uYW1lGAEgASgJSACIAQES",
             "FwoKc2hvcnRfbmFtZRgCIAEoCUgBiAEBEhgKC2NoYW5uZWxfdXJsGAMgASgJ",
             "SAKIAQESLAoGY29uZmlnGAQgASgLMhcubWVzaHRhc3RpYy5Mb2NhbENvbmZp",
             "Z0gDiAEBEjkKDW1vZHVsZV9jb25maWcYBSABKAsyHS5tZXNodGFzdGljLkxv",
             "Y2FsTW9kdWxlQ29uZmlnSASIAQESMQoOZml4ZWRfcG9zaXRpb24YBiABKAsy",
             "FC5tZXNodGFzdGljLlBvc2l0aW9uSAWIAQESFQoIcmluZ3RvbmUYByABKAlI",
-            "BogBARIcCg9jYW5uZWRfbWVzc2FnZXMYCCABKAlIB4gBAUIMCgpfbG9uZ19u",
-            "YW1lQg0KC19zaG9ydF9uYW1lQg4KDF9jaGFubmVsX3VybEIJCgdfY29uZmln",
-            "QhAKDl9tb2R1bGVfY29uZmlnQhEKD19maXhlZF9wb3NpdGlvbkILCglfcmlu",
-            "Z3RvbmVCEgoQX2Nhbm5lZF9tZXNzYWdlc0JmChRvcmcubWVzaHRhc3RpYy5w",
-            "cm90b0IQQ2xpZW50T25seVByb3Rvc1oiZ2l0aHViLmNvbS9tZXNodGFzdGlj",
-            "L2dvL2dlbmVyYXRlZKoCFE1lc2h0YXN0aWMuUHJvdG9idWZzugIAYgZwcm90",
-            "bzM="));
+            "BogBARIcCg9jYW5uZWRfbWVzc2FnZXMYCCABKAlIB4gBARIcCg9pc191bm1l",
+            "c3NhZ2FibGUYCSABKAhICIgBARIYCgtpc19saWNlbnNlZBgKIAEoCEgJiAEB",
+            "QgwKCl9sb25nX25hbWVCDQoLX3Nob3J0X25hbWVCDgoMX2NoYW5uZWxfdXJs",
+            "QgkKB19jb25maWdCEAoOX21vZHVsZV9jb25maWdCEQoPX2ZpeGVkX3Bvc2l0",
+            "aW9uQgsKCV9yaW5ndG9uZUISChBfY2FubmVkX21lc3NhZ2VzQhIKEF9pc191",
+            "bm1lc3NhZ2FibGVCDgoMX2lzX2xpY2Vuc2VkQmYKFG9yZy5tZXNodGFzdGlj",
+            "LnByb3RvQhBDbGllbnRPbmx5UHJvdG9zWiJnaXRodWIuY29tL21lc2h0YXN0",
+            "aWMvZ28vZ2VuZXJhdGVkqgIUTWVzaHRhc3RpYy5Qcm90b2J1ZnO6AgBiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Meshtastic.Protobufs.LocalonlyReflection.Descriptor, global::Meshtastic.Protobufs.MeshReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.DeviceProfile), global::Meshtastic.Protobufs.DeviceProfile.Parser, new[]{ "LongName", "ShortName", "ChannelUrl", "Config", "ModuleConfig", "FixedPosition", "Ringtone", "CannedMessages" }, new[]{ "LongName", "ShortName", "ChannelUrl", "Config", "ModuleConfig", "FixedPosition", "Ringtone", "CannedMessages" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Meshtastic.Protobufs.DeviceProfile), global::Meshtastic.Protobufs.DeviceProfile.Parser, new[]{ "LongName", "ShortName", "ChannelUrl", "Config", "ModuleConfig", "FixedPosition", "Ringtone", "CannedMessages", "IsUnmessagable", "IsLicensed" }, new[]{ "LongName", "ShortName", "ChannelUrl", "Config", "ModuleConfig", "FixedPosition", "Ringtone", "CannedMessages", "IsUnmessagable", "IsLicensed" }, null, null, null)
           }));
     }
     #endregion
@@ -62,6 +64,7 @@ namespace Meshtastic.Protobufs {
   {
     private static readonly pb::MessageParser<DeviceProfile> _parser = new pb::MessageParser<DeviceProfile>(() => new DeviceProfile());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DeviceProfile> Parser { get { return _parser; } }
@@ -89,6 +92,7 @@ namespace Meshtastic.Protobufs {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DeviceProfile(DeviceProfile other) : this() {
+      _hasBits0 = other._hasBits0;
       longName_ = other.longName_;
       shortName_ = other.shortName_;
       channelUrl_ = other.channelUrl_;
@@ -97,6 +101,8 @@ namespace Meshtastic.Protobufs {
       fixedPosition_ = other.fixedPosition_ != null ? other.fixedPosition_.Clone() : null;
       ringtone_ = other.ringtone_;
       cannedMessages_ = other.cannedMessages_;
+      isUnmessagable_ = other.isUnmessagable_;
+      isLicensed_ = other.isLicensed_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -304,6 +310,68 @@ namespace Meshtastic.Protobufs {
       cannedMessages_ = null;
     }
 
+    /// <summary>Field number for the "is_unmessagable" field.</summary>
+    public const int IsUnmessagableFieldNumber = 9;
+    private readonly static bool IsUnmessagableDefaultValue = false;
+
+    private bool isUnmessagable_;
+    /// <summary>
+    ///
+    /// Is the node unmessagable
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsUnmessagable {
+      get { if ((_hasBits0 & 1) != 0) { return isUnmessagable_; } else { return IsUnmessagableDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        isUnmessagable_ = value;
+      }
+    }
+    /// <summary>Gets whether the "is_unmessagable" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIsUnmessagable {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "is_unmessagable" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIsUnmessagable() {
+      _hasBits0 &= ~1;
+    }
+
+    /// <summary>Field number for the "is_licensed" field.</summary>
+    public const int IsLicensedFieldNumber = 10;
+    private readonly static bool IsLicensedDefaultValue = false;
+
+    private bool isLicensed_;
+    /// <summary>
+    ///
+    /// Is this node in licensed user mode
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsLicensed {
+      get { if ((_hasBits0 & 2) != 0) { return isLicensed_; } else { return IsLicensedDefaultValue; } }
+      set {
+        _hasBits0 |= 2;
+        isLicensed_ = value;
+      }
+    }
+    /// <summary>Gets whether the "is_licensed" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIsLicensed {
+      get { return (_hasBits0 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "is_licensed" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIsLicensed() {
+      _hasBits0 &= ~2;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -327,6 +395,8 @@ namespace Meshtastic.Protobufs {
       if (!object.Equals(FixedPosition, other.FixedPosition)) return false;
       if (Ringtone != other.Ringtone) return false;
       if (CannedMessages != other.CannedMessages) return false;
+      if (IsUnmessagable != other.IsUnmessagable) return false;
+      if (IsLicensed != other.IsLicensed) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -342,6 +412,8 @@ namespace Meshtastic.Protobufs {
       if (fixedPosition_ != null) hash ^= FixedPosition.GetHashCode();
       if (HasRingtone) hash ^= Ringtone.GetHashCode();
       if (HasCannedMessages) hash ^= CannedMessages.GetHashCode();
+      if (HasIsUnmessagable) hash ^= IsUnmessagable.GetHashCode();
+      if (HasIsLicensed) hash ^= IsLicensed.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -392,6 +464,14 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(66);
         output.WriteString(CannedMessages);
       }
+      if (HasIsUnmessagable) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsUnmessagable);
+      }
+      if (HasIsLicensed) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsLicensed);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -434,6 +514,14 @@ namespace Meshtastic.Protobufs {
         output.WriteRawTag(66);
         output.WriteString(CannedMessages);
       }
+      if (HasIsUnmessagable) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsUnmessagable);
+      }
+      if (HasIsLicensed) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsLicensed);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -467,6 +555,12 @@ namespace Meshtastic.Protobufs {
       }
       if (HasCannedMessages) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CannedMessages);
+      }
+      if (HasIsUnmessagable) {
+        size += 1 + 1;
+      }
+      if (HasIsLicensed) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -512,6 +606,12 @@ namespace Meshtastic.Protobufs {
       }
       if (other.HasCannedMessages) {
         CannedMessages = other.CannedMessages;
+      }
+      if (other.HasIsUnmessagable) {
+        IsUnmessagable = other.IsUnmessagable;
+      }
+      if (other.HasIsLicensed) {
+        IsLicensed = other.IsLicensed;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -573,6 +673,14 @@ namespace Meshtastic.Protobufs {
             CannedMessages = input.ReadString();
             break;
           }
+          case 72: {
+            IsUnmessagable = input.ReadBool();
+            break;
+          }
+          case 80: {
+            IsLicensed = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -631,6 +739,14 @@ namespace Meshtastic.Protobufs {
           }
           case 66: {
             CannedMessages = input.ReadString();
+            break;
+          }
+          case 72: {
+            IsUnmessagable = input.ReadBool();
+            break;
+          }
+          case 80: {
+            IsLicensed = input.ReadBool();
             break;
           }
         }
