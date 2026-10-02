@@ -10,6 +10,8 @@ using Meshtastic.Protobufs;
 using Org.BouncyCastle.Math.EC.Rfc8032;
 using Org.BouncyCastle.Crypto.Digests;
 using System.Buffers;
+using System.Buffers.Binary;
+using Google.Protobuf;
 
 namespace Meshtastic.Crypto;
 
@@ -19,6 +21,7 @@ namespace Meshtastic.Crypto;
 /// </summary>
 public static class XEdDSASigning
 {
+
     /// <summary>
     /// Generate an Ed25519 key pair for signing (simplified approach)
     /// </summary>
@@ -193,13 +196,35 @@ public static class XEdDSASigning
         return edPublicKeyResult;
     }
 
+    private static byte[] WriteUInt32LittleEndian(uint value)
+    {
+        var bytes = new byte[sizeof(uint)];
+        BinaryPrimitives.WriteUInt32LittleEndian(bytes, value);
+        return bytes;
+    }
+
+    private const byte XeddsaSigningVersion = 0x01;
+    private const byte XeddsaSignedFlagWantResponse = 0x01;
+    private const byte XeddsaSignedFlagHasBitfield = 0x02;
+
     private static byte[] BuildSigningBuffer(MeshPacket meshPacket)
     {
+        var decoded = meshPacket.Decoded;
+        var flags = (byte)((decoded.WantResponse ? XeddsaSignedFlagWantResponse : 0) |
+                           (decoded.HasBitfield ? XeddsaSignedFlagHasBitfield : 0));
+
         return [
-            ..BitConverter.GetBytes(meshPacket.From),
-            ..BitConverter.GetBytes(meshPacket.Id),
-            ..BitConverter.GetBytes((uint)meshPacket.Decoded.Portnum),
-            ..meshPacket.Decoded.Payload.ToByteArray()
+            XeddsaSigningVersion,
+            ..WriteUInt32LittleEndian(meshPacket.From),
+            ..WriteUInt32LittleEndian(meshPacket.Id),
+            ..WriteUInt32LittleEndian(meshPacket.To),
+            ..WriteUInt32LittleEndian((uint)decoded.Portnum),
+            ..WriteUInt32LittleEndian(decoded.RequestId),
+            ..WriteUInt32LittleEndian(decoded.ReplyId),
+            ..WriteUInt32LittleEndian(decoded.Emoji),
+            ..WriteUInt32LittleEndian(decoded.HasBitfield ? decoded.Bitfield : 0),
+            flags,
+            ..decoded.Payload.ToByteArray()
         ];
     }
 
@@ -253,6 +278,8 @@ public static class XEdDSASigning
     private const uint NodeNumBroadcast = 0xFFFFFFFF;
     private const uint NodeNumBroadcastNoLora = 1;
 
+    private static readonly ByteString EmptySignature = ByteString.CopyFrom(new byte[SignatureSize]);
+
     /// <summary>
     /// Checks whether the Data would still fit into a single LoRa frame with a 64-byte XEdDSA signature attached.
     /// C# port of firmware's signedDataFits (src/mesh/Router.cpp): the exact encoded size of Data with a
@@ -267,9 +294,7 @@ public static class XEdDSASigning
 
         // Size a copy with a signature-sized field instead of temporarily mutating the caller's object.
         var sized = data.Clone();
-        var emptySign = ArrayPool<byte>.Shared.Rent(SignatureSize); // Ensure the ByteString has enough capacity for the signature
-        sized.XeddsaSignature = Google.Protobuf.ByteString.CopyFrom(emptySign, 0, SignatureSize);
-        ArrayPool<byte>.Shared.Return(emptySign);
+        sized.XeddsaSignature = EmptySignature;
         return sized.CalculateSize() + MeshtasticHeaderLength <= MaxLoraPayloadLength;
     }
 

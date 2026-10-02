@@ -185,15 +185,6 @@ public class XEdDSASigningTests
         Assert.That(isValid, Is.False);
     }
 
-    [Test]
-    public void Verify_RealLife_ValidSignature()
-    {
-        var rawCapturedPacket = Convert.FromBase64String("DbVdZX4V/////xgVIkwIARIEVGVzdEgBUkDdbuxwz2lvDyBKpCW1ojj+pMPfnRfWiUsDwf1cwisx+82L7fA5/g5OW5LrpWfU4z73AHqysNLKBUOt3TfhBEQONXE20CI9ieBNakgHWGR4B5gBtQE=");
-        var senderPublicKey = Convert.FromBase64String("t0hKwMywRb2nKFOvVXcjFAGPWgCSta4ZwEkgPkgJWwM=");
-        var meshPacket = MeshPacket.Parser.ParseFrom(rawCapturedPacket);
-        var isValid = XEdDSASigning.VerifyPacketSignature(senderPublicKey, meshPacket);
-        Assert.That(isValid, Is.True);
-    }
 
     [Test]
     public void Verify_RealLife_InvalidPubkey()
