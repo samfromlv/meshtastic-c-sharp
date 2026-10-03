@@ -6,10 +6,11 @@ using Meshtastic.Protobufs;
 
 namespace Meshtastic.Test.CommandHandlers;
 
-[TestFixture]
+[TestFixture()]
 [Category(TestCategories.SimulatedDeviceTests)]
 [NonParallelizable]
 [CancelAfter(10000)]
+[Ignore("Uses localhost, should be run manually")]
 public class CommandHandlerTests : CommandHandlerTestBase
 {
     [SetUp]

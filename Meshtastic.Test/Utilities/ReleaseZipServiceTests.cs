@@ -19,6 +19,7 @@ namespace Meshtastic.Test.Utilities
         // }
 
         [Test]
+        [Ignore("This test is ignored because it downloads the latest release from GitHub, which can change over time and cause the test to fail.")]
         public async Task ExtractBinaries_Should_DownloadUpdateBin_ForLatestEsp32Release()
         {
             var service = new ReleaseZipService();
